@@ -1,0 +1,90 @@
+---
+title: Disclosure
+---
+
+import { Disclosure } from "@interledger/docs-design-system";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+Use this component if you have some content that you want to show/hide via a collapsible container. This component wraps around whatever content you wish to have this expand/collapse behaviour. Note that the `client:load` attribute is required for the functionality to work because this component relies on state.
+
+To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+
+## Usage
+
+Import the `Disclosure` component like so:
+
+```jsx
+import { Disclosure } from "@interledger/docs-design-system";
+```
+
+Use the `<Disclosure>` component within your content like so:
+
+```jsx
+<Disclosure toggleText='Show code snippets' client:load>
+   <!-- Your content, can be markup or markdown -->
+</Disclosure>
+```
+
+For the specific use-case of displaying multiple code-snippets, it might be worth considering also using the [built-in Starlight `<Tabs>`](https://starlight.astro.build/guides/components#tabs) component:
+
+````jsx
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+
+<Disclosure toggleText='Show code snippets' client:load>
+   <Tabs>
+      <TabItem label='Request'>
+      ```bash
+      GET /alice HTTP/1.1
+      Accept: application/json
+      Host: wallet.example
+      ```
+      </TabItem>
+      <TabItem label='Response'>
+      ```bash
+      HTTP/1.1 200 Success
+      Content-Type: application/json
+
+      {
+         "id":"https://wallet.example/alice",
+         "assetCode":"USD",
+         "assetScale":2,
+         "authServer":"https://wallet.example/auth",
+      }
+      ```
+      </TabItem>
+
+   </Tabs>
+</Disclosure>
+````
+
+## Working examples
+
+<Disclosure toggleText="Show hidden text" client:load>
+  Just some text that does not need to be seen on first load
+</Disclosure>
+
+<Disclosure toggleText='Show code snippets' client:load>
+   <Tabs>
+      <TabItem label='Request'>
+      ```bash
+      GET /alice HTTP/1.1
+      Accept: application/json
+      Host: wallet.example
+      ```
+      </TabItem>
+      <TabItem label='Response'>
+      ```bash
+      HTTP/1.1 200 Success
+      Content-Type: application/json
+
+      {
+         "id":"https://wallet.example/alice",
+         "assetCode":"USD",
+         "assetScale":2,
+         "authServer":"https://wallet.example/auth",
+      }
+      ```
+      </TabItem>
+
+   </Tabs>
+</Disclosure>

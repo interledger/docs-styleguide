@@ -1,0 +1,148 @@
+---
+title: Global style guide
+---
+
+:::caution
+This guide is in progress and won’t be complete until we start digging into the other doc sites.
+:::
+
+This guide covers styles that are shared between all doc sites using the Starlight framework.
+
+Styles should apply to all sites whenever possible; however, there could be a need for site-specific styles. If you can’t find what you’re looking for in this guide, check in a site-specific guide.
+
+- [Web Monetization](/content/webmonetization)
+- Rafiki (not started)
+- Open Payments (not started)
+- Payment Pointers (not started)
+- Interledger (not started)
+
+## Rule #1
+
+Break the rules.
+
+Ok, try not to, but the audience’s best interest should always come first. Deviations are OK if they help enhance the clarity of the doc.
+
+## Capitalization
+
+### Headings, subheadings, and page titles
+
+Use sentence case for headings, subheadings, and page titles unless a word/term is a proper noun or has a specific capitalization (e.g., “amountSent”, not “AmountSent” to represent a property).
+
+### Initialisms
+
+Capitalize each letter in an initialism. For example, WM for Web Monetization.
+
+### Commas
+
+Add a comma before the conjunction in a list of three or more items. This is known as an Oxford, or serial, comma.
+
+| Do this…                                                                             | Instead of this…                                                                    |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| Web Monetization provides an open, native, and efficient way to compensate creators. | Web Monetization provides an open, native and efficient way to compensate creators. |
+
+## Content reuse
+
+Consider using MDX transclusion, also called MDX partials, if you’re using the same content across multiple pages. Transclusion lets you embed MDX documents in other documents. We’ll refer to these embedded documents as snippets.
+
+### /src/snippets
+
+Place MDX files to embed within the /src/snippets folder. Create the folder if it doesn’t exist.
+
+### Snippet files
+
+- Only use snippets for small chunks of repeating content. If the snippet file contains more than a paragraph, there may be a better way to present the information in the doc project.
+- Don’t include front matter in your snippet file.
+- Headings within a snippet file do not appear in a page’s table of contents.
+- Multiple snippets are supported within a single page.
+
+### Embedding a snippet
+
+First, import the snippet into the page:
+
+```jsx
+import NoPay from "/src/snippets/glitchNoPay.mdx";
+```
+
+Name the snippet however you’d like, but without spaces. In the example above, the snippet’s name is NoPay.
+
+Then, add the snippet where it belongs within the page’s content like so:
+
+```mdx
+<NoPay />
+```
+
+## Digital wallet vs account
+
+The term digital wallet can be interpreted a number of ways and we want to be as unambiguous as possible. The term is also more appropriate for some of our sites (like Open Payments) than others (like Web Monetization). Be aware of the context in which you’re using the term. Think about whether using account or Open Payments-enabled account would be more accurate.
+
+## Doc file extensions (MD/MDX)
+
+Create new doc files in MDX unless there’s a need for something else.
+
+## Example URLs, including payment pointers
+
+Use example.com and subdomain.example.com in example URLs.
+
+- wallet.example.com
+- wallet.example.com/alice
+
+Reference: https://en.wikipedia.org/wiki/Example.com
+
+## Headings and subheadings
+
+### Best practices
+
+- Keep headings short.
+- Avoid headings that ask questions when possible.
+- When using a gerund (verb + -ing) as the first word in a heading, consider whether a verb would be better. For example, Linking to a WM agent vs. Link to a WM agent.
+
+### Overviews
+
+Starlight automatically sets the first heading on a page to Overview, even if the markdown file has an H1 or H2 defined. Keep this in mind when composing content.
+
+## Images
+
+### Alt text
+
+Include alt text for images.  
+https://moz.com/learn/seo/alt-text
+
+## Initialisms
+
+- Capitalize each letter in an initialism.
+- Spell out the entire phrase on first use within a page, then include initialism in parentheses.
+- In long pages, periodically spell out the entire phrase and include the initialism in parentheses. Long is subjective, use your best judgment.
+- If you use an initialism for a term in the glossary, add the initialism to the glossary.
+- Don’t use initialisms for a term that only appears a few times within a page.
+
+## Lists
+
+- Lists should usually contain a minimum of three items.
+- Use unordered lists (bullets) when item order is unimportant.
+- Use ordered (numbered) lists when order is important (e.g., item #1 must be completed before item #2).
+- Keep lists as parallel as possible. This list is not a good example.
+  - E.g., all items start with a noun, or all start with a verb.
+  - E.g., all items have ending punctuation, or none do.
+- If a list is introduced by a full sentence, end the sentence with the proper punctuation. If introduced with a sentence fragment, end with a colon.
+
+## See, View [link]
+
+When possible, avoid using the words see and view when referencing a link. It’s a small thing, but some of our audience might use screen readers. The terms visit and review might be acceptable substitutes.
+
+## Sidenav categories
+
+Docusaurus allowed pages to be categories in the left sidenav. Starlight purposefully prevents this behavior. Because of this, ensure a category’s name and the first page within the category are somewhat different.
+
+For example:
+
+- Intro to Web Monetization
+- References
+  - Web Monetization API
+  - Monetization events
+    - MonetizationEvent
+
+## Tooltips
+
+TBD…
+
+Tooltips can be tips only, or can also link to a page (such as a glossary). There’s no max character limit (yet). Longer tooltips at the top of a page may be cut off by the UI.

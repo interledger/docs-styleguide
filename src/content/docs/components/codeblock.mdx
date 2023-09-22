@@ -1,0 +1,59 @@
+---
+title: CodeBlock
+---
+
+import { CodeBlock } from "@interledger/docs-design-system";
+
+Use this component if you wish to add a title to your code block. It takes a `title` attribute, which will be displayed above the code. To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+
+## Usage
+
+Import the `CodeBlock` component like so:
+
+```jsx
+import { CodeBlock } from "@interledger/docs-design-system";
+```
+
+Use the `<CodeBlock>` component within your content like so:
+
+````jsx
+<CodeBlock title="Response">
+
+```http
+{
+   "id":"https://wallet.example/alice/incoming-payments/08394f02-7b7b-45e2-b645-51d04e7c330c",
+   "paymentPointer":"https://wallet.example/alice",
+   "receivedAmount": {
+      "value":"0",
+      "assetCode":"USD",
+      "assetScale":2
+   },
+   "completed":false,
+   "createdAt":"2022-03-12T23:20:50.52Z",
+   "updatedAt":"2022-03-12T23:20:50.52Z",
+}
+```
+
+</CodeBlock>
+````
+
+## Working example
+
+<CodeBlock title="Response">
+
+```http
+{
+   "id":"https://wallet.example/alice/incoming-payments/08394f02-7b7b-45e2-b645-51d04e7c330c",
+   "paymentPointer":"https://wallet.example/alice",
+   "receivedAmount": {
+      "value":"0",
+      "assetCode":"USD",
+      "assetScale":2
+   },
+   "completed":false,
+   "createdAt":"2022-03-12T23:20:50.52Z",
+   "updatedAt":"2022-03-12T23:20:50.52Z",
+}
+```
+
+</CodeBlock>

@@ -1,0 +1,29 @@
+---
+title: Hidden
+---
+
+import { Hidden } from "@interledger/docs-design-system";
+
+Use this component to hide content that is temporarily not ready to be shown to the public. This is not meant for long-term use, but a stop-gap when the current implementation is still far away from our documentation/specifications, and the content we have will be relevant but in the future. It just adds a `display: none` to whatever is in the `<Hidden>` component.
+
+## Usage
+
+```jsx
+import { Hidden } from "@interledger/docs-design-system";
+
+This is respectable content that should be read by everyone.
+
+<Hidden>This is not ready to be shown.</Hidden>
+
+This is fine to show too.
+```
+
+Unfortunately, due to the nature of how the ToC on the right is generated, if we want to hide an entire section (including the header), we will have to manually hide the section heading by either commenting it out or deleting it.
+
+## Working example
+
+This is respectable content that should be read by everyone.
+
+<Hidden>This is not ready to be shown.</Hidden>
+
+This is fine to show too.

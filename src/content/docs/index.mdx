@@ -1,0 +1,47 @@
+---
+title: Interledger documentation style guide
+description: Style guide for Interledger's documentation sites
+---
+
+Interledger uses Starlight (powered by Astro) for all its documentation sites. In order to keep our visual styling consistent across our numerous documentation sites, we have packaged our styles and shared components in an [npm package](https://www.npmjs.com/package/@interledger/docs-design-system).
+
+```bash
+npm i @interledger/docs-design-system
+```
+
+Feel free to install with the package manager of your choice.
+
+## Visual themes
+
+We have 2 visual themes, green for specification documentation and orange for product documentation. These themes are built on top of Starlight's defaults and overrides some of the out-of-the-box styling. They are just CSS files, so use them with the path to `node_modules`. Unfortunately, we did not have enough braincells to figure out how to make it prettier than that. To use them in the `astro.config.mjs`:
+
+```js
+export default defineConfig({
+  integrations: [
+    starlight({
+      customCss: [
+        "./node_modules/@interledger/docs-design-system/src/styles/green-theme.css",
+        "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
+      ],
+    }),
+  ],
+});
+```
+
+If you are using them in an Astro layout file, then the import would look like this for the build to not fail:
+
+```jsx
+import '/node_modules/@interledger/docs-design-system/src/styles/green-theme
+```
+
+## Components
+
+We also have a number of documentation-specific helper components that can be imported and used where necessary. You can refer to the individual pages in the sidebar to see them in action.
+
+For the shared components, if you are using both CodeBlock and Disclosure on the same page, you can import them both like so:
+
+```jsx
+import { CodeBlock, Disclosure } from "@interledger/docs-design-system";
+```
+
+For more information about importing things in Javascript, please refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
