@@ -5,7 +5,7 @@ title: Disclosure
 import { Disclosure } from "@interledger/docs-design-system";
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 
-Use this component if you have some content that you want to show/hide via a collapsible container. This component wraps around whatever content you wish to have this expand/collapse behaviour. Note that the `client:load` attribute is required for the functionality to work because this component relies on state.
+Use this component if you have some content that you want to show/hide via a collapsible container. This component wraps around whatever content you wish to have this expand/collapse behaviour. Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
 
 To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
@@ -84,6 +84,21 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
          "authServer":"https://wallet.example/auth",
       }
       ```
+      </TabItem>
+
+      <TabItem label='TypeScript'>
+         <Disclosure toggleText='Clone Open Payments snippets repo' client:load>
+
+         1. Open Terminal.
+         2. Change the current working directory to where you want to clone repo.
+         3. Type `git clone`.
+         4. Paste the following URL, then press _Enter_.
+            ```http
+            https://github.com/interledger/open-payments-snippets
+            ```
+
+         </Disclosure>
+
       </TabItem>
 
    </Tabs>
