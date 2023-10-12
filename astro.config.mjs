@@ -19,7 +19,7 @@ export default defineConfig({
         "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
       ],
       social: {
-        github: "https://github.com/interledger",
+        github: "https://github.com/interledger/docs-styleguide",
       },
       sidebar: [
         {

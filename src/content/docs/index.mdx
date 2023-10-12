@@ -3,6 +3,8 @@ title: Interledger documentation style guide
 description: Style guide for Interledger's documentation sites
 ---
 
+import { CodeBlock } from "@interledger/docs-design-system";
+
 Interledger uses [Starlight](https://starlight.astro.build/getting-started/) (powered by [Astro](https://docs.astro.build/en/getting-started/)) for all its documentation sites. In order to keep our visual styling consistent across our numerous documentation sites, we have packaged our styles and shared components in an [npm package](https://www.npmjs.com/package/@interledger/docs-design-system).
 
 ```bash
@@ -49,3 +51,102 @@ import { CodeBlock, Disclosure } from "@interledger/docs-design-system";
 ```
 
 For more information about importing things in Javascript, please refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
+
+## Docs site building
+
+Each documentation site will inevitably have their own unique requirements, some may have custom pages and components which do not apply to any of the other documentation sites. As such, we have a general pattern for handling this. For CSS, our shared styles are all in the [docs-design-system](https://www.npmjs.com/package/@interledger/docs-design-system) npm package. If the documentation site you're building is simple enough, you might not even need more than what was [outlined above](#visual-themes).
+
+In the event there are certain components or elements that only apply to specific documentation sites, we will need to write additional styles. These will go into the /src/styles folder, and use the project name as the file name, e.g. rafiki.css.
+
+```js
+export default defineConfig({
+  integrations: [
+    starlight({
+      customCss: [
+        "./node_modules/@interledger/docs-design-system/src/styles/orange-theme.css",
+        "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
+        "./src/styles/rafiki.css",
+      ],
+    }),
+  ],
+});
+```
+
+Some of our sites also have custom pages, like (Web Monetization)[https://webmonetization.org] or the (Interledger Developer Portal)[https://interledger.org/developers].
+
+These are pages that live outside the Starlight integration ecosystem, and do not come with any styles nor structure. As such, you will also need to create a layout which forms the base structure of a standard web page, down to the `<!doctype html>` and `<head>` elements.
+
+You can create multiple layout files if there are different types of pages required, and all these layout files will go into the /src/layouts folder, while the pages themselves will go into the /src/pages folder. It is highly suggested you read the [Astro documentation](https://docs.astro.build/en/core-concepts/astro-pages/) to familiarise yourself with how this all works.
+
+This is a very generic starter sample layout that you can work off from:
+
+<CodeBlock title="/src/layouts/Layout.astro">
+
+```astro
+---
+import '../styles/dinosaurland.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Interledger Foundation" />
+    <meta name="description" content={description ? description : 'Making
+    payments as easy as sending an email'}>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="{Astro.generator}" />
+    <title>{title ? `${title} | Interledger` : 'Interledger'}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
+```
+
+</CodeBlock>
+
+It had been possible to [override the default Starlight components](https://starlight.astro.build/guides/overriding-components/) since v0.11.0, and most of our documentation sites implement this for our site header. This is because the default search bar takes up too much space for our aesthetic liking. 乁 ⁠(⁠ ⁠•⁠_⁠•⁠ ⁠)⁠ ㄏ
+
+Although we have contemplated making this a shared component, each site header is different enough that we've decided to leave it up to each individual site to handle. Please consult the documentation for how this works.
+
+We want to keep some other UI components that come with the default header, so those have to be imported like so:
+
+<CodeBlock title="/src/components/Header.astro">
+
+```astro
+---
+import type { Props } from '@astrojs/starlight/props';
+import Search from "@astrojs/starlight/components/Search.astro";
+import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
+import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
+---
+<div class="header sl-flex">
+  <a href="/" class="site-logo">
+    <img src="/img/logo.svg" alt="Rafiki logo">
+  </a>
+  <div class="secondary-wrap">
+    <Search {...Astro.props} />
+    <SocialIcons {...Astro.props} />
+    <div class="sl-hidden md:sl-flex">
+      <ThemeSelect {...Astro.props} />
+    </div>
+  </div>
+</div>
+
+<style>
+  /* necessary styles not displayed here */
+</style>
+```
+
+</CodeBlock>
