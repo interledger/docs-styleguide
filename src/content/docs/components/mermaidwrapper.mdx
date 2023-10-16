@@ -57,12 +57,8 @@ If you happen to be using some sort of format on save functionality in your code
 
 ## Working example
 
-:::caution
-Live example is temporarily disabled because of a known yet unresolvable issue with the [remark-mermaidjs]() plugin's Playwright dependency causing a build failure in with our deployment pipeline. This issue always occurs when Playwright releases a new version, but our build runners keep looking for browser executables installed in an older folder version. Possibly because of caching? We have yet to find a way to manually clear the Github Actions cache, nor the Netlify cache.
-:::
-
 {/* prettier-ignore */}
-{/* <MermaidWrapper client:load>
+<MermaidWrapper client:load>
 
 ```mermaid
 sequenceDiagram
@@ -76,4 +72,4 @@ sequenceDiagram
    Bob-->>John: Jolly good!
 ```
 
-</MermaidWrapper> */}
+</MermaidWrapper>
