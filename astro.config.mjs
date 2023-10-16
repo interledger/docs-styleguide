@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import react from "@astrojs/react";
 import remarkMermaid from "remark-mermaidjs";
 
 // https://astro.build/config
@@ -36,7 +35,6 @@ export default defineConfig({
         },
       ],
     }),
-    react(),
   ],
   server: {
     port: 1105,
