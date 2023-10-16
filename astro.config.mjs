@@ -33,6 +33,12 @@ export default defineConfig({
             directory: "components",
           },
         },
+        {
+          label: "Classes",
+          autogenerate: {
+            directory: "classes",
+          },
+        },
       ],
     }),
   ],
