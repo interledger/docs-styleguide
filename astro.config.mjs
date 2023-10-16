@@ -23,9 +23,19 @@ export default defineConfig({
       sidebar: [
         {
           label: "Content",
-          autogenerate: {
-            directory: "content",
-          },
+          items: [
+            { label: "Global style guide", link: "/content/global/" },
+            {
+              label: "Open Payments style guide",
+              link: "/content/openpayments/",
+            },
+            {
+              label: "Web Monetization style guide",
+              link: "/content/webmonetization/",
+            },
+            { label: "Prettier", link: "/content/prettier/" },
+            { label: "Test", link: "/content/test/" },
+          ],
         },
         {
           label: "Components",
