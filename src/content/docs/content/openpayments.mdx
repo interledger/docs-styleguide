@@ -2,6 +2,37 @@
 title: Open Payments style guide
 ---
 
+## Before you commit and publish changes
+
+Run the following command in the doc directory:
+
+```
+npx prettier . --write
+```
+
+#### Why
+
+**Reason 1**
+
+It's an Open Payments thing that was put in long ago. Current assumption: It's needed because of the way the specs are integrated with the docs.
+
+**Reason 2**
+
+> It removes all original styling and ensures that all outputted code conforms to a consistent style. - [prettier docs](https://prettier.io/docs/en/)
+
+For example, if you're like Melissa and add italics in markdown using single asterisks:
+
+```
+I'm making *this part* italic.
+```
+
+Prettier automatically converts the asterisk set to underscores:
+
+```
+I'm making _this part_ italic.
+```
+
+
 ## Nouns
 
 ### Common nouns
