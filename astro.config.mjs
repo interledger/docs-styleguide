@@ -34,7 +34,7 @@ export default defineConfig({
           },
         },
         {
-          label: "Classes",
+          label: "Classes and styles",
           autogenerate: {
             directory: "classes",
           },
