@@ -2,6 +2,10 @@
 title: MermaidWrapper
 ---
 
+:::caution
+This component requires an extra dependency on [remark-mermaidjs](https://github.com/remcohaszing/remark-mermaidjs) and thus is not enabled by default on all projects. Please ping the person responsible for documentation architecture if your project doesn't render mermaid markdown properly.
+:::
+
 import { MermaidWrapper } from "@interledger/docs-design-system";
 
 Use this component if your Mermaid diagram is much larger than our available space and you would like users to view the full diagram in another tab. This adds "View full diagram" button with an external link indicator on the bottom right corner under the diagram. Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
