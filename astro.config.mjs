@@ -1,12 +1,15 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import remarkMath from "remark-math";
+import rehypeMathjax from "rehype-mathjax";
 import remarkMermaid from "remark-mermaidjs";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://interledger.tech",
   markdown: {
-    remarkPlugins: [remarkMermaid],
+    remarkPlugins: [remarkMath, remarkMermaid],
+    rehypePlugins: [rehypeMathjax],
   },
   integrations: [
     starlight({
@@ -20,6 +23,9 @@ export default defineConfig({
       social: {
         github: "https://github.com/interledger/docs-styleguide",
       },
+      components: {
+        Header: "./src/components/Header.astro",
+      },
       sidebar: [
         {
           label: "Content",
@@ -28,15 +34,27 @@ export default defineConfig({
           },
         },
         {
-          label: "Components",
-          autogenerate: {
-            directory: "components",
-          },
-        },
-        {
           label: "Classes and styles",
           autogenerate: {
             directory: "classes",
+          },
+        },
+        {
+          label: "Shared Components",
+          autogenerate: {
+            directory: "shared",
+          },
+        },
+        {
+          label: "Open Payments Components",
+          autogenerate: {
+            directory: "oppm",
+          },
+        },
+        {
+          label: "Web Monetization Components",
+          autogenerate: {
+            directory: "webm",
           },
         },
       ],
