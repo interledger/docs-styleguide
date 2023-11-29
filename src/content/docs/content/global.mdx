@@ -2,6 +2,8 @@
 title: Global style guide
 ---
 
+import { Tooltip } from "@interledger/docs-design-system";
+
 :::caution
 This guide is in progress and won’t be complete until we start digging into the other doc sites.
 :::
@@ -12,7 +14,7 @@ Styles should apply to all sites whenever possible; however, there could be a ne
 
 - [Web Monetization](/content/webmonetization)
 - Rafiki (not started)
-- [Open Payments (in progress)](/content/openpayments)
+- [Open Payments](/content/openpayments)
 - Payment Pointers (not started)
 - Interledger (not started)
 
@@ -29,15 +31,15 @@ Ok, try not to, but the audience’s best interest should always come first. Dev
 
 ## Buttons
 
-For buttons with labels/text strings, bold the text that appears in the button. If you're instructing someone to click the button, don't use the word *on*. For example:
+For buttons with labels/text strings, bold the text that appears in the button. If you're instructing someone to click the button, don't use the word _on_. For example:
 
-* Click **Revoke public & private key**. ✅
-* Click on Revoke public & private key ❌
+- Click **Revoke public & private key**. ✅
+- Click on Revoke public & private key. ❌
 
-For buttons that are icons (e.g., arrows), describe what should be clicked and don't use bold. Avoid using the word *on* unless it helps with clarity. For example:
+For buttons that are icons (e.g., arrows), describe what should be clicked and don't use bold. Avoid using the word _on_ unless it helps with clarity. For example:
 
-* Click the arrow to proceed. ✅
-* Click on the **arrow** to proceed. ❌
+- Click the arrow to proceed. ✅
+- Click on the **arrow** to proceed. ❌
 
 ## Capitalization
 
@@ -59,30 +61,33 @@ Add a comma before the conjunction in a list of three or more items. This is kno
 
 ## Content reuse
 
-Consider using MDX transclusion, also called MDX partials, if you’re using the same content across multiple pages. Transclusion lets you embed MDX documents in other documents. We’ll refer to these embedded documents as snippets.
+Consider using MDX transclusion, also called MDX partials, if you’re using the same content across multiple pages. Transclusion lets you embed MDX documents in other documents. We’ll refer to these embedded documents as partials.
 
-### /src/snippets
+### /src/partials
 
-Place MDX files to embed within the /src/snippets folder. Create the folder if it doesn’t exist.
+Place MDX files to embed within the /src/partials folder. Create the folder if it doesn’t exist.
 
-### Snippet files
+### Partial files
 
-- Only use snippets for small chunks of repeating content. If the snippet file contains more than a paragraph, there may be a better way to present the information in the doc project.
-- Don’t include front matter in your snippet file.
-- Headings within a snippet file do not appear in a page’s table of contents.
-- Multiple snippets are supported within a single page.
+Typically, partials should be used for small chunks of repeating content. If the partial file contains more than a paragraph, there may be a better way to present the information within the doc project.
 
-### Embedding a snippet
+Note:
 
-First, import the snippet into the page:
+- Don’t include front matter in your partials file.
+- Headings within a partials file do not appear in a page’s table of contents.
+- Multiple partial files are supported within a single page.
+
+### Embed a partial file
+
+First, import the partial file into the page:
 
 ```jsx
-import NoPay from "/src/snippets/glitchNoPay.mdx";
+import NoPay from "/src/partials/glitchNoPay.mdx";
 ```
 
-Name the snippet however you’d like, but without spaces. In the example above, the snippet’s name is NoPay.
+Name the partial however you’d like, but without spaces. In the example above, the partial's name is NoPay.
 
-Then, add the snippet where it belongs within the page’s content like so:
+Then, add the partial where it belongs within the page’s content like so:
 
 ```mdx
 <NoPay />
@@ -90,7 +95,7 @@ Then, add the snippet where it belongs within the page’s content like so:
 
 ## Digital wallet vs account
 
-The term digital wallet can be interpreted a number of ways and we want to be as unambiguous as possible. The term is also more appropriate for some of our sites (like Open Payments) than others (like Web Monetization). Be aware of the context in which you’re using the term. Think about whether using account or Open Payments-enabled account would be more accurate.
+The term digital wallet can be interpreted a number of ways and we want to be as unambiguous as possible. The term is also more appropriate for some of our sites (like Open Payments) than others (like Web Monetization). Be aware of the context in which you’re using the term. Think about whether using account or Open Payments-enabled account would be more accurate than using digital wallet.
 
 ## Doc file extensions (MD/MDX)
 
@@ -98,7 +103,7 @@ Create new doc files in MDX unless there’s a need for something else.
 
 ## Example URLs, including payment pointers
 
-Use example.com and subdomain.example.com in example URLs.
+Use `example.com` and `subdomain.example.com` in example URLs.
 
 - wallet.example.com
 - wallet.example.com/alice
@@ -115,7 +120,7 @@ Reference: https://en.wikipedia.org/wiki/Example.com
 
 ### Overviews
 
-Starlight automatically sets the first heading on a page to Overview, even if the markdown file has an H1 or H2 defined. Keep this in mind when composing content.
+Starlight automatically sets the first heading on a page to Overview, even if the markdown file has an H1 or H2 defined.
 
 ## Images
 
@@ -129,26 +134,29 @@ https://moz.com/learn/seo/alt-text
 - Capitalize each letter in an initialism.
 - Spell out the entire phrase on first use within a page, then include initialism in parentheses.
 - In long pages, periodically spell out the entire phrase and include the initialism in parentheses. Long is subjective, use your best judgment.
-- If you use an initialism for a term in the glossary, add the initialism to the glossary.
-- Don’t use initialisms for a term that only appears a few times within a page.
+- If you use an initialism for a term that also appears in the glossary, add the initialism to the glossary term.
+- Don’t use initialisms for a term that only appears a few times within a page. Few is subjective, use your best judgment.
 
 ## Lists
 
-- Lists should usually contain a minimum of three items.
+- Lists should typically contain a minimum of three items.
 - Use unordered lists (bullets) when item order is unimportant.
 - Use ordered (numbered) lists when order is important (e.g., item #1 must be completed before item #2).
-- Keep lists as parallel as possible. This list is not a good example.
+- Keep each list as parallel as possible. This list is not a good example.
   - E.g., all items start with a noun, or all start with a verb.
   - E.g., all items have ending punctuation, or none do.
+  - E.g., all items start with a capital letter, or all start with lowercase
 - If a list is introduced by a full sentence, end the sentence with the proper punctuation. If introduced with a sentence fragment, end with a colon.
 
 ## See, View [link]
 
-When possible, avoid using the words see and view when referencing a link. It’s a small thing, but some of our audience might use screen readers. The terms visit and review might be acceptable substitutes.
+When possible, avoid using the words "see" and "view" when referencing a link. It’s a small thing, but some of our audience might use screen readers. The terms "visit", "review", and "refer to" might be acceptable substitutes.
 
-## Sidenav categories
+## Sidebar categories
 
-Docusaurus allowed pages to be categories in the left sidenav. Starlight purposefully prevents this behavior. Because of this, ensure a category’s name and the first page within the category are somewhat different.
+Starlight does not allow a category, or book, within the sidebar to also be a page. For example, clicking **Shared Component** in this project's sidebar expands/collapses the category without navigating you to a new page.
+
+Since a category cannot be a page, ensure the category's name and pages within the category are titled somewhat differently.
 
 For example:
 
@@ -160,6 +168,8 @@ For example:
 
 ## Tooltips
 
-TBD…
+The [Tooltip](/shared/tooltip) component allows you to add additional text to a word or phrase. The text appears when you hover your cursor over the <Tooltip content='This is an example tooltip' client:load><span>question mark</span></Tooltip>.
 
-Tooltips can be tips only, or can also link to a page (such as a glossary). There’s no max character limit (yet). Longer tooltips at the top of a page may be cut off by the UI.
+- Tooltips should be short. Consider linking to a page or glossary term instead of using the Tooltip component if a tooltip becomes too long.
+- You can include links within tooltips.
+- Longer tooltips that appear at the top of the page might be cut off by the UI.

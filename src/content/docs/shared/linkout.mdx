@@ -4,7 +4,9 @@ title: LinkOut
 
 import { LinkOut } from "@interledger/docs-design-system";
 
-Use this component if you need to add an external link to your content that opens in a new tab. This component adds the necessary attributes for external links and adds an external link indicator icon to the end of the link content. The icon can be turned off, if necessary.
+By default, external links within Starlight open in the same window. Use this component to force an external link to open in a new tab.
+
+This component adds the necessary attributes for external links and adds an external link indicator icon to the end of the link content. The icon can be turned off, if necessary.
 
 To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
@@ -30,6 +32,12 @@ If you do not want the external link icon to appear, you can set the `withIcon` 
 </LinkOut>
 ```
 
-## Working example
+## Working examples
+
+### With icon
 
 Please consult the <LinkOut href="https://openpayments.guide/">OpenPayments API</LinkOut> for more information.
+
+### Without icon
+
+Please consult the <LinkOut href="https://openpayments.guide/" withIcon={false}>OpenPayments API</LinkOut> for more information.

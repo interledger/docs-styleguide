@@ -4,7 +4,7 @@ title: MermaidWrapper
 
 import { MermaidWrapper, Mermaid } from "@interledger/docs-design-system";
 
-Use this component if your Mermaid diagram is much larger than our available space and you would like users to view the full diagram in another tab. This adds "View full diagram" button with an external link indicator on the bottom right corner under the diagram. Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
+Use this component if your Mermaid diagram is much larger than our available space and you would like users to view the full diagram in another tab. This adds a link to "View full diagram" with an external link indicator under the bottom-right corner of the diagram. Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
 
 We assume that you have already imported the `Mermaid` component, otherwise, what on earth are you wrapping with this?
 
@@ -65,7 +65,9 @@ If you happen to be using some sort of format on save functionality in your code
 {/* prettier-ignore */}
 ```
 
-## Working example
+## Working examples
+
+### Default style with border
 
 The default styling which includes a border:
 
@@ -86,6 +88,8 @@ The default styling which includes a border:
 />
 
 </MermaidWrapper>
+
+### Style without border
 
 When `hasBorder: false` is used:
 
