@@ -2,13 +2,11 @@
 title: MermaidWrapper
 ---
 
-:::caution
-This component requires an extra dependency on [remark-mermaidjs](https://github.com/remcohaszing/remark-mermaidjs) and thus is not enabled by default on all projects. Please ping the person responsible for documentation architecture if your project doesn't render mermaid markdown properly.
-:::
-
-import { MermaidWrapper } from "@interledger/docs-design-system";
+import { MermaidWrapper, Mermaid } from "@interledger/docs-design-system";
 
 Use this component if your Mermaid diagram is much larger than our available space and you would like users to view the full diagram in another tab. This adds "View full diagram" button with an external link indicator on the bottom right corner under the diagram. Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
+
+We assume that you have already imported the `Mermaid` component, otherwise, what on earth are you wrapping with this?
 
 To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
@@ -17,7 +15,7 @@ To use it, your docs page must be in `.mdx` format. Please change the format fro
 Import the `MermaidWrapper` component like so:
 
 ```jsx
-import { MermaidWrapper } from "@interledger/docs-design-system";
+import { Mermaid, MermaidWrapper } from "@interledger/docs-design-system";
 ```
 
 Use the `<MermaidWrapper>` component within your content like so:
@@ -25,47 +23,28 @@ Use the `<MermaidWrapper>` component within your content like so:
 {/* prettier-ignore */}
 ````jsx
 <MermaidWrapper client:load>
-```mermaid
-sequenceDiagram
+
+{/* prettier-ignore */}
+<Mermaid
+  graph={`sequenceDiagram
    Alice->>John: Hello John, how are you?
    John-->>Alice: Great!
    Alice-)John: See you later!
-```
+`}
+/>
+
 </MermaidWrapper>
 ````
 
 By default, there will be a border around the image, but if you want to remove the border, pass in a `hasBorder={false}` attribute.
 
 {/* prettier-ignore */}
-````jsx
+```jsx
 <MermaidWrapper client:load hasBorder={false}>
-```mermaid
-sequenceDiagram
-   Alice->>John: Hello John, how are you?
-   loop Healthcheck
-      John->>John: Fight against hypochondria
-   end
-   Note right of John: Rational thoughts!
-   John-->>Alice: Great!
-   John->>Bob: How about you?
-   Bob-->>John: Jolly good!
-```
-</MermaidWrapper>
-````
-
-If you happen to be using some sort of format on save functionality in your code editor, like Prettier, it might sometimes screw up your formatting. You might want to ask Prettier to ignore your Mermaid block just in case.
-
-```
-{/* prettier-ignore */}
-```
-
-## Working example
 
 {/* prettier-ignore */}
-<MermaidWrapper client:load>
-
-```mermaid
-sequenceDiagram
+<Mermaid
+  graph={`sequenceDiagram
    Alice->>John: Hello John, how are you?
    loop Healthcheck
    John->>John: Fight against hypochondria
@@ -74,6 +53,51 @@ sequenceDiagram
    John-->>Alice: Great!
    John->>Bob: How about you?
    Bob-->>John: Jolly good!
+`}
+/>
+
+</MermaidWrapper>
 ```
+
+If you happen to be using some sort of format on save functionality in your code editor, like Prettier, it might sometimes screw up your formatting. You might want to ask Prettier to ignore your Mermaid block just in case. Refer to the example code above.
+
+```
+{/* prettier-ignore */}
+```
+
+## Working example
+
+The default styling which includes a border:
+
+<MermaidWrapper client:load>
+
+{/* prettier-ignore */}
+<Mermaid
+  graph={`sequenceDiagram
+   Alice->>John: Hello John, how are you?
+   loop Healthcheck
+   John->>John: Fight against hypochondria
+   end
+   Note right of John: Rational thoughts!
+   John-->>Alice: Great!
+   John->>Bob: How about you?
+   Bob-->>John: Jolly good!
+`}
+/>
+
+</MermaidWrapper>
+
+When `hasBorder: false` is used:
+
+<MermaidWrapper client:load hasBorder={false}>
+
+{/* prettier-ignore */}
+<Mermaid
+  graph={`sequenceDiagram
+   Alice->>John: Hello John, how are you?
+   John-->>Alice: Great!
+   Alice-)John: See you later!
+`}
+/>
 
 </MermaidWrapper>
