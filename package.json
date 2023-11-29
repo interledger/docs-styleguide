@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.13.1",
-    "@interledger/docs-design-system": "^0.2.0",
+    "@interledger/docs-design-system": "^0.2.1",
     "astro": "^3.6.3",
     "rehype-mathjax": "^5.0.0",
     "remark-math": "^6.0.0",
