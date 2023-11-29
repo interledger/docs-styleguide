@@ -1,0 +1,51 @@
+---
+title: Mermaid
+---
+
+import { Mermaid } from "@interledger/docs-design-system";
+
+Due to various CI pipeline issues with the [remark-mermaidjs](https://github.com/remcohaszing/remark-mermaidjs), we have decided to create our own Mermaid component that [calls the Mermaid Javascript API](https://mermaid.js.org/intro/getting-started.html#_3-calling-the-javascript-api) directly.
+
+Use this component if you wish to render a diagram written in Mermaid on the docs pages. You can refer to the [Mermaid documentation](https://mermaid.js.org/intro/syntax-reference.html) for diagram syntax. This component takes in the mermaid diagram syntax as a template literal through the `graph` attribute.
+
+To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+
+## Usage
+
+Import the `MermaidWrapper` component like so:
+
+```jsx
+import { Mermaid } from "@interledger/docs-design-system";
+```
+
+Use the `<Mermaid>` component within your content like so:
+
+```jsx
+<Mermaid
+  graph={`sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+    John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+`}
+/>
+```
+
+## Working example
+
+<Mermaid
+  graph={`sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+    John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+  `}
+/>

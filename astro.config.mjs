@@ -2,13 +2,12 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import remarkMath from "remark-math";
 import rehypeMathjax from "rehype-mathjax";
-import remarkMermaid from "remark-mermaidjs";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://interledger.tech",
   markdown: {
-    remarkPlugins: [remarkMath, remarkMermaid],
+    remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeMathjax],
   },
   integrations: [

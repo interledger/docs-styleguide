@@ -272,27 +272,9 @@ Starlight uses Astro’s Markdown and MDX renderer built on remark and rehype. Y
 
 ### Mermaid diagrams
 
-:::caution
-This component requires an extra dependency on [remark-mermaidjs](https://github.com/remcohaszing/remark-mermaidjs) and thus is not enabled by default on all projects. Please ping the person responsible for documentation architecture if your project doesn't render mermaid diagrams properly.
+:::danger
+We no longer support mermaid diagrams using the markdown syntax. Instead, please use the [`Mermaid` component](/shared/mermaid).
 :::
-
-```mermaid
-sequenceDiagram
-  participant Sarah
-  participant John
-  Sarah->>John: Hello John, how are you?
-  John-->>Sarah: Not too bad, thanks!
-```
-
-````md
-```mermaid
-sequenceDiagram
-  participant Sarah
-  participant John
-  Sarah->>John: Hello John, how are you?
-  John-->>Sarah: Not too bad, thanks!
-```
-````
 
 ### Mathjax
 
