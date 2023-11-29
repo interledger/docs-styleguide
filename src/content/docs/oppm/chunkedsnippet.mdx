@@ -3,12 +3,16 @@ title: ChunkedSnippet
 ---
 
 :::caution
-This component only exists in the [Open Payments repository](https://github.com/interledger/open-payments/tree/main/docs/src/components). Please raise [an issue](https://github.com/interledger/docs-design-system/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml&title=%5BFEATURE%5D+%3Ctitle%3E) if you feel it should be elevated into the shared library
+This component only exists in the [Open Payments repository](https://github.com/interledger/open-payments/tree/main/docs/src/components). Please raise [an issue](https://github.com/interledger/docs-design-system/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml&title=%5BFEATURE%5D+%3Ctitle%3E) if you feel it should be elevated into the shared library.
 :::
 
-Use this component on specially formatted code snippet files from a public Github repository to be displayed as code. The code files must have "chunking comments" to allow the component to work correctly without borking out the whole site.
+Use this component on specially formatted code snippet files from a public Github repository to be displayed as code.
 
-It takes a `source` attribute which must be a raw Github link, and a `chunk` attribute which specifies which chunk you want to display. To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+The code files must have "chunking comments" to allow the component to work correctly without borking out the whole site. [Example](https://raw.githubusercontent.com/interledger/open-payments-snippets/main/wallet-address/wallet-address-get.ts).
+
+The component takes a `source` attribute which must be a **raw Github link**, and a `chunk` attribute which specifies which chunk you want to display.
+
+To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
 
@@ -29,4 +33,4 @@ Use the `<ChunkedSnippet>` component within your content like so:
 
 ## Working example
 
-See https://openpayments.guide/snippets/pp-get-info/#prerequisites
+Refer to the TypeScript code snippets within the Open Payments documentation for [Get wallet address information](https://openpayments.guide/snippets/wallet-get-info/#prerequisites). The raw source file is located [here](https://raw.githubusercontent.com/interledger/open-payments-snippets/main/wallet-address/wallet-address-get.ts).

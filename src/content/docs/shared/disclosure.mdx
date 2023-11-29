@@ -25,7 +25,7 @@ Use the `<Disclosure>` component within your content like so:
 </Disclosure>
 ```
 
-For the specific use-case of displaying multiple code-snippets, it might be worth considering also using the [built-in Starlight `<Tabs>`](https://starlight.astro.build/guides/components#tabs) component:
+You can nest the Disclosure component with the [built-in Starlight `<Tabs>`](https://starlight.astro.build/guides/components#tabs) component. This is helpful when displaying multiple related code snippets.
 
 ````jsx
 import { Tabs, TabItem } from '@astrojs/starlight/components'
@@ -59,9 +59,13 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
 
 ## Working examples
 
+### Simple hidden text
+
 <Disclosure toggleText="Show hidden text" client:load>
   Just some text that does not need to be seen on first load
 </Disclosure>
+
+### Combination of disclosures, tabs, and code blocks
 
 <Disclosure toggleText='Show code snippets' client:load>
    <Tabs>
@@ -92,7 +96,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
          1. Open Terminal.
          2. Change the current working directory to where you want to clone repo.
          3. Type `git clone`.
-         4. Paste the following URL, then press _Enter_.
+         4. Paste the following URL, then press __Enter__.
             ```http
             https://github.com/interledger/open-payments-snippets
             ```

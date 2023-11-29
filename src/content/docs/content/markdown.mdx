@@ -4,6 +4,8 @@ sidebar:
   order: 1
 ---
 
+import { CodeBlock } from "@interledger/docs-design-system";
+
 Starlight supports the full range of [Markdown](https://daringfireball.net/projects/markdown/) syntax in `.md` files as well as frontmatter [YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f) to define metadata such as a title and description.
 
 Please be sure to check the [MDX docs](https://mdxjs.com/docs/what-is-mdx/#markdown) or [Markdoc docs](https://markdoc.dev/docs/syntax) if using those file formats, as Markdown support and usage can differ.
@@ -47,16 +49,18 @@ Markdown and MDX support the Markdown syntax for displaying images that includes
 ![An illustration of Ernie perched atop a laptop next to the Interledger Logo](/img/image.png)
 
 ```md
-![An illustration of planets and stars featuring the word “astro”](/img/image.png)
+![An illustration of Ernie perched atop a laptop next to the Interledger Logo](/img/image.png)
 ```
 
-We standardise our image location for every project to be in the `/public/img` folder. You may want to further organise that folder if the project has a lot of images.
+We standardise our image location for every project to be in the `/public/img` folder. Start with `/img/` when calling an image.
 
 ```md
 /// src/content/docs/introduction/architecture.md
 
 ![Architecture diagram](/img/rafiki-architecture.png)
 ```
+
+You may want to further organise the img folder with subfolders if the project has a lot of images.
 
 ## Headings
 
@@ -81,11 +85,11 @@ I can link to [my conclusion](#conclusion) lower on the same page.
 `https://my-site.com/page1/#introduction` navigates directly to my Introduction.
 ```
 
-Level 2 (`<h2>`) and Level 3 (`<h3>`) headings will automatically appear in the page table of contents.
+Level 2 (`<h2>`) and Level 3 (`<h3>`) headings will automatically appear in the page table of contents. Starlight allows you to [override](https://starlight.astro.build/reference/overrides/#toc) this behavior.
 
 ## Asides
 
-Asides (also known as “admonitions” or “callouts”) are useful for displaying secondary information alongside a page’s main content.
+[Asides](https://starlight.astro.build/guides/authoring-content/#asides) (also known as “admonitions” or “callouts”) are useful for displaying secondary information alongside a page’s main content.
 
 Starlight provides a custom Markdown syntax for rendering asides. Aside blocks are indicated using a pair of triple colons `:::` to wrap your content, and can be of type `note`, `tip`, `caution` or `danger`.
 
@@ -174,19 +178,39 @@ Your users may be more productive and find your product easier to use thanks to 
 
 ## Code blocks
 
-A code block is indicated by a block with three backticks <code>```</code> at the start and end. You can indicate the programming language being used after the opening backticks.
+A code block is indicated by a block with three backticks <code>```</code> at the start and end.
+
+```
+This is a simple rendered code block.
+```
+
+```md
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+```
+
+Hovering over a Starlight code block will display a copy button.
+
+:::note
+As of November 29, 2023, this button will not appear when using the in-house [ChunkedSnippet](/oppm/chunkedsnippet) component.
+:::
+
+### Syntax highlighting
+
+You can indicate the programming language to use if you want to use syntax highlighting. Astro uses the [Shiki highlighter](https://github.com/shikijs/shiki/blob/main/docs/languages.md#all-languages), so check their documentation if you aren't sure if your language is supported.
+
+The following example shows Javascript syntax highlighting.
 
 ```js
-// Javascript code with syntax highlighting.
 var fun = function lang(l) {
   dateformat.i18n = require("./lang/" + l);
   return true;
 };
 ```
 
-````md
+Apply syntax highlighting by adding the language directly after the opening backticks, with no space in between.
+
+````tex
 ```js
-// Javascript code with syntax highlighting.
 var fun = function lang(l) {
   dateformat.i18n = require("./lang/" + l);
   return true;
@@ -194,9 +218,47 @@ var fun = function lang(l) {
 ```
 ````
 
-```md
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+### Expressive code
+
+Starlight uses [Expressive Code](https://github.com/expressive-code/expressive-code/tree/main/packages/astro-expressive-code) to extend formatting possibilities for code blocks. These include [text markers](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-text-markers/README.md#contents), [titles, and frames](https://github.com/expressive-code/expressive-code/tree/main/packages/%40expressive-code/plugin-frames).
+
+#### Titles
+
+When we first deployed Starlight, it didn't support adding titles to code blocks. This is why we have the in-house [CodeBlock](/shared/codeblock) component.
+
+<CodeBlock title="Example code block with a title">
+
 ```
+This code block has a title! HJ made the component. Isn't she neat?
+```
+
+</CodeBlock>
+
+As of November 2023, Starlight now supports adding titles to code blocks; however, the title is styled to appear in a tab. Also, to use the Starlight title, you must specify a language.
+
+```tex title="Starlight default title style"
+I mean, at least it works by default now, right?
+```
+
+````tex
+```tex title="Starlight default title style"
+I mean, at least it works by default now, right?
+```
+````
+
+Code blocks will be rendered as a terminal window if their language identifier is `bash`, `shellscript`, `shell`, `sh`, or `zsh`. Titles are styled differently in this context.
+
+For example:
+
+```bash title="This uses bash"
+See what it looks like?
+```
+
+#### Frames
+
+A terminal window is a type of frame. [Expressive Code](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-frames/README.md#overriding-frame-types) allows you to override whichever default frame a code block uses.
+
+Note that using `none` will hide a code block's title.
 
 ## Other common Markdown features
 

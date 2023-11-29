@@ -4,9 +4,13 @@ title: Tooltip
 
 import { Tooltip } from "@interledger/docs-design-system";
 
-Use the tooltip component for adding a short explanation to specific terms. This component is built to be accessible in accordance to the guidance from [WAI Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/). Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
+Use the Tooltip component for adding a short explanation to specific terms. This component is built to be accessible in accordance to the guidance from [WAI Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/). Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
 
 To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+
+:::note
+Using apostrophes in a tooltip will throw an error.
+:::
 
 ## Usage
 
@@ -19,15 +23,31 @@ import { Tooltip } from "@interledger/docs-design-system";
 Use the `<Tooltip>` component within your content like so:
 
 ```jsx
-<Tooltip content='THIS CONTENT IS DISPLAYED IN THE TOOLTIP UPON INTERACTION' client:load><span>text that you are trying to explain</span></Tooltip>.
+<Tooltip
+  content="Content to display in the tooltip upon interaction"
+  client:load
+>
+  <span>Text that you are trying to explain.</span>
+</Tooltip>
 ```
 
-If the text you are trying to explain is also a link to somewhere else, please put the link within the `<Tooltip>` like so:
+To link a word or phrase that has an associated tooltip, add the link within the `<Tooltip>` like so:
 
 ```jsx
-<Tooltip content='THIS CONTENT IS DISPLAYED IN THE TOOLTIP UPON INTERACTION' client:load><a href="/URL">text that you are trying to explain</a></Tooltip>.
+<Tooltip
+  content="Content to display in the tooltip upon interaction"
+  client:load
+>
+  <a href="/URL">Text that you are trying to explain</a>
+</Tooltip>
 ```
 
-## Working example
+## Working examples
 
-This is a sentence that has many technical terms, a <Tooltip content="Consise and clear explanation here" client:load>tooltip</Tooltip> could help with explaining them when users hover over the term. Don't make them too long though.
+### Simple tooltip
+
+This is a sentence that has many technical terms. A <Tooltip content="Concise and clear explanation here" client:load>tooltip</Tooltip> could help with explaining a term when hovered over. Don't make them too long though.
+
+### Tooltip and link
+
+This example contains a tooltip along with a link to see <Tooltip content='Bubees is not a typo. Bubees is a cat.' client:load><a href="http://www.autofish.net/mirrors/images/animals/cats/bubees.jpg">Bubees</a></Tooltip>.

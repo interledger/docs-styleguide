@@ -8,9 +8,15 @@ Use this component to hide content that is temporarily not ready to be shown to 
 
 ## Usage
 
+Import the Hidden component like so:
+
 ```jsx
 import { Hidden } from "@interledger/docs-design-system";
+```
 
+Use the `Hidden` component within your content like so:
+
+```jsx
 This is respectable content that should be read by everyone.
 
 <Hidden>This is not ready to be shown.</Hidden>
@@ -18,12 +24,12 @@ This is respectable content that should be read by everyone.
 This is fine to show too.
 ```
 
-Unfortunately, due to the nature of how the ToC on the right is generated, if we want to hide an entire section (including the header), we will have to manually hide the section heading by either commenting it out or deleting it.
+Unfortunately, due to the nature of how page-level TOCs are generated, if we want to hide an entire section (including the header), we will have to manually hide the section heading by either commenting it out or deleting it.
 
 ## Working example
 
-This is respectable content that should be read by everyone.
+Trust me, there's a line that isn't visible. View the page source.
 
 <Hidden>This is not ready to be shown.</Hidden>
 
-This is fine to show too.
+This is fine to show.
