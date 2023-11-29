@@ -20,6 +20,12 @@ export default defineConfig({
         "./node_modules/@interledger/docs-design-system/src/styles/green-theme.css",
         "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
       ],
+      expressiveCode: {
+        styleOverrides: {
+          borderColor: "transparent",
+          borderRadius: "var(--border-radius)",
+        },
+      },
       social: {
         github: "https://github.com/interledger/docs-styleguide",
       },
