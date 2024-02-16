@@ -16,7 +16,7 @@ export default defineConfig({
       description:
         "The style guide for all Interledger documentation sites. Because we love consistency.",
       customCss: [
-        "./node_modules/@interledger/docs-design-system/src/styles/green-theme.css",
+        "./node_modules/@interledger/docs-design-system/src/styles/teal-theme.css",
         "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
       ],
       expressiveCode: {
