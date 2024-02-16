@@ -9,9 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.16.0",
-    "@interledger/docs-design-system": "^0.2.1",
-    "astro": "^4.2.4",
+    "@astrojs/starlight": "^0.18.1",
+    "@interledger/docs-design-system": "^0.3.0",
+    "astro": "^4.4.0",
     "rehype-mathjax": "^6.0.0",
     "remark-math": "^6.0.0",
     "sharp": "^0.33.2"
