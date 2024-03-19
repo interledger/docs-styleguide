@@ -9,6 +9,10 @@ Use this component if you have some content that you want to show/hide via a col
 
 To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
+:::note[Single vs double quotes]
+In general, the `toggleText` can be wrapped in single or double quotes. However, if the content contains punctuation, you must wrap the content in double quotes to avoid errors. 
+:::
+
 ## Usage
 
 Import the `Disclosure` component like so:
@@ -20,7 +24,7 @@ import { Disclosure } from "@interledger/docs-design-system";
 Use the `<Disclosure>` component within your content like so:
 
 ```jsx
-<Disclosure toggleText='Show code snippets' client:load>
+<Disclosure toggleText="Show code snippets" client:load>
    <!-- Your content, can be markup or markdown -->
 </Disclosure>
 ```
@@ -30,7 +34,7 @@ You can nest the Disclosure component with the [built-in Starlight `<Tabs>`](htt
 ````jsx
 import { Tabs, TabItem } from '@astrojs/starlight/components'
 
-<Disclosure toggleText='Show code snippets' client:load>
+<Disclosure toggleText="Show code snippets" client:load>
    <Tabs>
       <TabItem label='Request'>
       ```bash
@@ -67,7 +71,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
 
 ### Combination of disclosures, tabs, and code blocks
 
-<Disclosure toggleText='Show code snippets' client:load>
+<Disclosure toggleText="Show code snippets" client:load>
    <Tabs>
       <TabItem label='Request'>
       ```bash
@@ -91,7 +95,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
       </TabItem>
 
       <TabItem label='TypeScript'>
-         <Disclosure toggleText='Clone Open Payments snippets repo' client:load>
+         <Disclosure toggleText="Clone Open Payments snippets repo" client:load>
 
          1. Open Terminal.
          2. Change the current working directory to where you want to clone repo.
