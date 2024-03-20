@@ -5,13 +5,11 @@ title: Disclosure
 import { Disclosure } from "@interledger/docs-design-system";
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 
-Use this component if you have some content that you want to show/hide via a collapsible container. This component wraps around whatever content you wish to have this expand/collapse behaviour. Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
+This component allows you to show/hide content within a collapsible container. 
 
-To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+The `client:load` attribute is required for the component to work because the component uses Javascript for interactivity.
 
-:::note[Single vs double quotes]
-In general, the `toggleText` can be wrapped in single or double quotes. However, if the content contains punctuation, you must wrap the content in double quotes to avoid errors. 
-:::
+To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
 
@@ -29,7 +27,11 @@ Use the `<Disclosure>` component within your content like so:
 </Disclosure>
 ```
 
-You can nest the Disclosure component with the [built-in Starlight `<Tabs>`](https://starlight.astro.build/guides/components#tabs) component. This is helpful when displaying multiple related code snippets.
+:::note[Single vs double quotes]
+In general, the `toggleText` can be wrapped in single or double quotes. However, if the content contains punctuation, you must wrap the content in double quotes to avoid errors. 
+:::
+
+You can nest the Disclosure component with the built-in Starlight [`<Tabs>`](https://starlight.astro.build/guides/components#tabs) component. This is helpful when displaying multiple related code snippets.
 
 ````jsx
 import { Tabs, TabItem } from '@astrojs/starlight/components'

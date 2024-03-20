@@ -2,6 +2,16 @@
 title: Web Monetization style guide
 ---
 
+import { Card } from '@astrojs/starlight/components';
+
+<Card title="After a Starlight upgrade" icon="star">
+```
+cd <to project folder>
+bun install
+bun run start
+```
+</Card>
+
 ## Nouns
 
 ### Common nouns
@@ -31,10 +41,3 @@ Use the US spelling of monetization, with a z rather than an s. Z is used in the
 If we follow standard US grammar rules, then web monetize and its other forms (e.g., web monetized) should probably be hyphenated.
 
 In the past, I found that the term was used so frequently that the hyphens were visually distracting. I made a style decision to drop the hyphens. We can revisit this decision.
-
-## Sessions
-
-There are different types of sessions. Always specify which one.
-
-- payment session (occurs between the WM provider and WM receiver)
-- Web Monetization session (browser/page based) [aka monetization session]

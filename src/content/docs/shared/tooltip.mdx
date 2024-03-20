@@ -4,13 +4,18 @@ title: Tooltip
 
 import { Tooltip } from "@interledger/docs-design-system";
 
-Use the Tooltip component for adding a short explanation to specific terms. This component is built to be accessible in accordance to the guidance from [WAI Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/). Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
+This component allows you add a small, stylized question mark element that, when hovered over, displays a text box. 
 
-To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
-
-:::note
-Using apostrophes in a tooltip will throw an error.
+:::note[Considerations]
+* Tooltip text should be short. If the text becomes too long, consider linking to a page or glossary term instead.
+* Longer tooltips that appear near the top of the page might be cut off by the UI.
 :::
+
+The component is built to be accessible in accordance to the guidance from [WAI Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/). 
+
+The `client:load` attribute is required for the component to work because it uses Javascript for interactivity.
+
+To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
 
@@ -20,34 +25,30 @@ Import the `Tooltip` component like so:
 import { Tooltip } from "@interledger/docs-design-system";
 ```
 
-Use the `<Tooltip>` component within your content like so:
+The component can be used within your content in a few ways. Technically, you can add the following in the location you want the question mark element to appear:
 
 ```jsx
-<Tooltip
-  content="Content to display in the tooltip upon interaction"
-  client:load
->
-  <span>Text that you are trying to explain.</span>
-</Tooltip>
+<Tooltip content="This appears on hover" client:load></Tooltip>
 ```
 
-To link a word or phrase that has an associated tooltip, add the link within the `<Tooltip>` like so:
+However, a better practice is to wrap the word or phrase that the tooltip pertains to.
+
+In the following example, the question mark element will appear after the word _this_.
 
 ```jsx
-<Tooltip
-  content="Content to display in the tooltip upon interaction"
-  client:load
->
-  <a href="/URL">Text that you are trying to explain</a>
-</Tooltip>
+Define <Tooltip content="Hint text" client:load>this</Tooltip> term.
+```
+
+In this next example, the question mark element will appear between the word _to_ and the ending punctuation.
+
+```jsx title="Example 2"
+<Tooltip content="This appears on hover" client:load>
+  <a href="/URL">This is the content</a> that the tooltip relates to 
+</Tooltip>.
 ```
 
 ## Working examples
 
-### Simple tooltip
-
 This is a sentence that has many technical terms. A <Tooltip content="Concise and clear explanation here" client:load>tooltip</Tooltip> could help with explaining a term when hovered over. Don't make them too long though.
-
-### Tooltip and link
 
 This example contains a tooltip along with a link to see <Tooltip content='Bubees is not a typo. Bubees is a cat.' client:load><a href="http://www.autofish.net/mirrors/images/animals/cats/bubees.jpg">Bubees</a></Tooltip>.
