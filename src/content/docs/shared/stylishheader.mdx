@@ -4,9 +4,9 @@ title: StylishHeader
 
 import { StylishHeader } from "@interledger/docs-design-system";
 
-Use this component to exclude a heading from the page-level TOC and stylize the heading with an accent color.
+This component styles text similar to an H3, but excludes the text from the page-level TOC.
 
-To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
 
@@ -24,6 +24,6 @@ Use the `<StylishHeader>` component within your content like so:
 
 ## Working example
 
-| Boring heading                                                  | Stylish heading                                          |
-| --------------------------------------------------------------- | -------------------------------------------------------- |
-| <p style="font-weight: bold; font-size: 20px;">I'm so basic</p> | <StylishHeader>Wow I'm a stylish heading</StylishHeader> |
+### This is in the TOC
+<p />
+<StylishHeader>This is not in the TOC</StylishHeader>

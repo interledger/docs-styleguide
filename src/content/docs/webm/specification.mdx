@@ -6,9 +6,9 @@ title: Specification
 This component only exists in the [Web Monetization repository](https://github.com/WICG/webmonetization/tree/main/src/components/docs). Please raise [an issue](https://github.com/interledger/docs-design-system/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml&title=%5BFEATURE%5D+%3Ctitle%3E) if you feel it should be elevated into the shared library.
 :::
 
-This component will display a link to the relevant section of the [Web Monetization specification](https://webmonetization.org/specification/) in a table.
+This component displays a link to the relevant section of the [Web Monetization specification](https://webmonetization.org/specification/) within a table.
 
-To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
 
@@ -18,7 +18,7 @@ Import the `Specification` component like so:
 import Specification from "/src/components/docs/Specification";
 ```
 
-Use the `<Specification>` component on your docs page where relevant under a "Specifications" heading like so:
+Use the `<Specification>` component on your page and under a "Specifications" heading like so:
 
 ```jsx
 ## Specifications
@@ -26,7 +26,7 @@ Use the `<Specification>` component on your docs page where relevant under a "Sp
 <Specification anchor='link-type-monetization' />
 ```
 
-This component takes in an optional `anchor` prop which allows you to specify the particular section of the spec that's relevant to the doc (page) you're working on. If no `anchor` prop is provided, it will default to the specification itself.
+The `anchor` prop, while optional, allows you to specify the particular section of the spec that's relevant to the page you're working on. If no `anchor` prop is provided, the link will default to the specification itself.
 
 ## Working example
 

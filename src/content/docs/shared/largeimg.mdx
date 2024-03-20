@@ -4,9 +4,11 @@ title: LargeImg
 
 import { LargeImg } from "@interledger/docs-design-system";
 
-Use this component if you have a diagram or image that is much larger than our available space and you would like users to view the full image in another tab. This adds a link to "View full image" with an external link indicator under the bottom-right corner of the image. It takes in a `src` and `alt`, just like a normal `img` element.
+If you're working with an image or diagram that is larger than our available content area, use this component to allow users to view the full image/diagram in a new tab.
 
-To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+The component adds a link to "View full image" with an external link indicator under the bottom-right corner of the image. It takes in a `src` and `alt`, just like a normal `img` element.
+
+To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
 
@@ -22,7 +24,7 @@ Use the `<LargeImg>` component within your content like so:
 <LargeImg src="/img/OMG_A_GIGANTIC_IMG.png" alt="A really large diagram" />
 ```
 
-By default, there will be a border around the image, but if you want to remove the border, pass in a `hasBorder={false}` attribute.
+By default, there will be a border around the image. To remove the border, pass in a `hasBorder={false}` attribute.
 
 ```jsx
 <LargeImg

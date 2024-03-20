@@ -13,10 +13,10 @@ This guide covers styles that are shared between all doc sites using the Starlig
 Styles should apply to all sites whenever possible; however, there could be a need for site-specific styles. If you can’t find what you’re looking for in this guide, check in a site-specific guide.
 
 - [Web Monetization](/content/webmonetization)
-- Rafiki (not started)
+- [Rafiki](/content/rafiki) (not started)
 - [Open Payments](/content/openpayments)
 - Payment Pointers (not started)
-- Interledger (not started)
+- [Interledger](/content/interledger) (not started)
 
 ## Rule #1
 
@@ -61,11 +61,11 @@ Add a comma before the conjunction in a list of three or more items. This is kno
 
 ## Content reuse
 
-Consider using MDX transclusion, also called MDX partials, if you’re using the same content across multiple pages. Transclusion lets you embed MDX documents in other documents. We’ll refer to these embedded documents as partials.
+Consider using MDX transclusion, also called MDX partials, if you’re using the same content across multiple page in the same doc project. Transclusion lets you embed MDX documents in other documents. We’ll refer to these embedded documents as partials.
 
 ### /src/partials
 
-Place MDX files to embed within the /src/partials folder. Create the folder if it doesn’t exist.
+Place MDX files to embed within the `/src/partials` folder. Create the folder if it doesn’t exist.
 
 ### Partial files
 
@@ -85,23 +85,25 @@ First, import the partial file into the page:
 import NoPay from "/src/partials/glitchNoPay.mdx";
 ```
 
-Name the partial however you’d like, but without spaces. In the example above, the partial's name is NoPay.
+Name the partial however you’d like, but without spaces. In the example above, the partial's name is `NoPay`.
 
-Then, add the partial where it belongs within the page’s content like so:
+Using the name you defined, add the partial within the page's content, in the location it should appear:
 
 ```mdx
+This is a paragraph of text. I want the partial content to appear beneath this paragraph.
+
 <NoPay />
 ```
 
 ## Digital wallet vs account
 
-The term digital wallet can be interpreted a number of ways and we want to be as unambiguous as possible. The term is also more appropriate for some of our sites (like Open Payments) than others (like Web Monetization). Be aware of the context in which you’re using the term. Think about whether using account or Open Payments-enabled account would be more accurate than using digital wallet.
+The term _digital wallet_ can be interpreted a number of ways and we want to be as unambiguous as possible. Be aware of the context in which you’re using the term. Think about whether _account_ or _Open Payments-enabled account_ would be more accurate than _digital wallet_.
 
 ## Doc file extensions (MD/MDX)
 
 Create new doc files in MDX unless there’s a need for something else.
 
-## Example URLs, including payment pointers
+## Example URLs, including wallet addresses
 
 Use `example.com` and `subdomain.example.com` in example URLs.
 
@@ -115,8 +117,8 @@ Reference: https://en.wikipedia.org/wiki/Example.com
 ### Best practices
 
 - Keep headings short.
-- Avoid headings that ask questions when possible.
-- When using a gerund (verb + -ing) as the first word in a heading, consider whether a verb would be better. For example, Linking to a WM agent vs. Link to a WM agent.
+- Avoid headings that ask questions when possible (unless you're crafting an FAQ).
+- When using a gerund (verb + -ing) as the first word in a heading, consider whether a verb would be more direct. For example, _Linking to a WM agent_ vs. _Link to a WM agent_.
 
 ### Overviews
 
@@ -145,7 +147,7 @@ https://moz.com/learn/seo/alt-text
 - Keep each list as parallel as possible. This list is not a good example.
   - E.g., all items start with a noun, or all start with a verb.
   - E.g., all items have ending punctuation, or none do.
-  - E.g., all items start with a capital letter, or all start with lowercase
+  - E.g., all items start with a capital letter, or all start with lowercase.
 - If a list is introduced by a full sentence, end the sentence with the proper punctuation. If introduced with a sentence fragment, end with a colon.
 
 ## See, View [link]
@@ -154,7 +156,7 @@ When possible, avoid using the words "see" and "view" when referencing a link. I
 
 ## Sidebar categories
 
-Starlight does not allow a category, or book, within the sidebar to also be a page. For example, clicking **Shared Component** in this project's sidebar expands/collapses the category without navigating you to a new page.
+Starlight does not allow a sidebar category, or book, to also be a page. For example, clicking **Shared Component** in this project's sidebar expands/collapses the category without navigating you to a new page.
 
 Since a category cannot be a page, ensure the category's name and pages within the category are titled somewhat differently.
 
@@ -171,5 +173,4 @@ For example:
 The [Tooltip](/shared/tooltip) component allows you to add additional text to a word or phrase. The text appears when you hover your cursor over the <Tooltip content='This is an example tooltip' client:load><span>question mark</span></Tooltip>.
 
 - Tooltips should be short. Consider linking to a page or glossary term instead of using the Tooltip component if a tooltip becomes too long.
-- You can include links within tooltips.
 - Longer tooltips that appear at the top of the page might be cut off by the UI.

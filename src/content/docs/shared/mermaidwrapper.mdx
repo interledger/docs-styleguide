@@ -4,11 +4,17 @@ title: MermaidWrapper
 
 import { MermaidWrapper, Mermaid } from "@interledger/docs-design-system";
 
-Use this component if your Mermaid diagram is much larger than our available space and you would like users to view the full diagram in another tab. This adds a link to "View full diagram" with an external link indicator under the bottom-right corner of the diagram. Note that the `client:load` attribute is required for the functionality to work because this component uses Javascript for interactivity.
+This component allows users to open a Mermaid diagram in a new tab. The component is helpful when a diagram is larger than our available content area.
 
-We assume that you have already imported the `Mermaid` component, otherwise, what on earth are you wrapping with this?
+:::note
+We assume that you have already imported the [Mermaid component](/shared/mermaid), otherwise, what on earth are you wrapping with this?
+:::
 
-To use it, your docs page must be in `.mdx` format. Please change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
+The component adds a link to "View full image" with an external link indicator under the bottom-right corner of the image. It takes in a `src` and `alt`, just like a normal `img` element.
+
+The `client:load` attribute is required for the component to work because the component uses Javascript for interactivity.
+
+To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
 
@@ -36,7 +42,7 @@ Use the `<MermaidWrapper>` component within your content like so:
 </MermaidWrapper>
 ````
 
-By default, there will be a border around the image, but if you want to remove the border, pass in a `hasBorder={false}` attribute.
+By default, there will be a border around the diagram. To remove the border, pass in a `hasBorder={false}` attribute.
 
 {/* prettier-ignore */}
 ```jsx
@@ -59,7 +65,7 @@ By default, there will be a border around the image, but if you want to remove t
 </MermaidWrapper>
 ```
 
-If you happen to be using some sort of format on save functionality in your code editor, like Prettier, it might sometimes screw up your formatting. You might want to ask Prettier to ignore your Mermaid block just in case. Refer to the example code above.
+If you're using some sort of format-on-save functionality in your code editor, like Prettier, it might mess up your formatting. Ask Prettier, for example, to ignore your Mermaid block just in case. Refer to the example code above.
 
 ```
 {/* prettier-ignore */}

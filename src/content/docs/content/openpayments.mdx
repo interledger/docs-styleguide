@@ -2,37 +2,25 @@
 title: Open Payments style guide
 ---
 
-import { Icon } from "@astrojs/starlight/components";
+import { Card, Steps } from '@astrojs/starlight/components';
 
-## Before you commit and publish changes
+<Card title="Before committing changes" icon="star">
+Run the following command in the `doc` directory:
 
-Run the following command in the doc directory:
-
-```tex
+```
 npx prettier . --write
 ```
+[Why tho? ಠ╭╮ಠ](#prettier-notes)
+</Card>
 
-#### Why
-
-**Reason 1**
-
-It's an Open Payments thing that was put in long ago. Current assumption: It's needed because of the way the specs are integrated with the docs.
-
-**Reason 2**
-
-> It removes all original styling and ensures that all outputted code conforms to a consistent style. - [prettier docs](https://prettier.io/docs/en/)
-
-For example, if you're like Melissa and add italics in markdown using single asterisks:
-
+<Card title="After a Starlight upgrade" icon="star">
 ```
-I'm making *this part* italic.
+cd <to project folder>
+pnpm install
+cd docs
+pnpm start
 ```
-
-Prettier automatically converts the asterisk set to underscores:
-
-```
-I'm making _this part_ italic.
-```
+</Card>
 
 ## Nouns
 
@@ -54,3 +42,24 @@ I'm making _this part_ italic.
 ### Open Payments
 
 Spell as two words, not one (OpenPayments).
+
+## Prettier notes
+
+Why do we have to run `npx prettier . --write` before we commit our changes?
+
+<Steps>
+1. Because the Open Payments project demands it. We think it's because of the way the API specs are integrated with the docs.
+2. It ensures all outputted code conforms to a consistent style. - [prettier docs](https://prettier.io/docs/en/)
+</Steps>
+
+For example, if you're like Melissa and add italics in markdown using single asterisks:
+
+```
+I'm making *this part* italic.
+```
+
+Prettier automatically converts the asterisk set to underscores:
+
+```
+I'm making _this part_ italic.
+```
