@@ -9,11 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.21.1",
-    "@interledger/docs-design-system": "^0.3.2",
-    "astro": "^4.5.4",
+    "@astrojs/starlight": "^0.21.4",
+    "@interledger/docs-design-system": "^0.3.4",
+    "astro": "^4.5.16",
     "rehype-mathjax": "^6.0.0",
     "remark-math": "^6.0.0",
-    "sharp": "^0.33.2"
+    "sharp": "^0.33.3"
   }
 }
