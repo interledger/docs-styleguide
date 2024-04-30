@@ -1,6 +1,6 @@
 # Interledger documentation style guide
 
-This is the source code for Interledger's documentation style guide, which lives at [interledger.tech](https://interledger.tech). It is built with [Starlight](https://starlight.astro.build/getting-started/), a documentation framework based on [Astro](https://astro.build/). It is hosted on GitHub Pages.
+This is the source code for Interledger's documentation style guide, which lives at [interledger.net](https://interledger.net). It is built with [Starlight](https://starlight.astro.build/getting-started/), a documentation framework based on [Astro](https://astro.build/). It is hosted on GitHub Pages.
 
 ## 🚀 Project Structure
 
