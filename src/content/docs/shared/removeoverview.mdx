@@ -1,0 +1,30 @@
+---
+title: RemoveOverview
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+:::note[April 30, 2024]
+This component is only implemented in Melissa's local Web Monetization branch. If you need it added to another doc set, let HJ know. 
+:::
+
+This component allows you to hide the *Overview* heading from a page's table of contents.
+
+## Usage
+
+Open the `PageSidebar.astro` file.
+
+<FileTree>
+- src
+    - components
+        - docs
+            - **PageSidebar.astro**
+</FileTree>
+
+Enter the path to the offending page in the `removeOverview` section like so:
+
+```js
+const removeOverview = [
+    'docs/resources/glossary',
+    'docs/payments/send-receive',
+```
