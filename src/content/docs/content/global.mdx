@@ -168,6 +168,24 @@ For example:
   - Monetization events
     - MonetizationEvent
 
+## Sidebar external links
+
+If an external link is required in the sidebar, you can make use of Astro's [sidebar `attrs` property](https://starlight.astro.build/guides/sidebar/#custom-html-attributes) to open the link in a new tab and also add an indicator icon to show the link is external.
+
+```js
+sidebar: [
+  {
+    label: 'Types of Dinosaurs',
+    link: 'https://www.amnh.org/dinosaurs/types-of-dinosaurs',
+    attrs: {
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      'data-icon': 'external'
+    },
+  },
+],
+```
+
 ## Tooltips
 
 The [Tooltip](/shared/tooltip) component allows you to add additional text to a word or phrase. The text appears when you hover your cursor over the <Tooltip content='This is an example tooltip' client:load><span>question mark</span></Tooltip>.
