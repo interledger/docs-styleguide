@@ -1,0 +1,57 @@
+---
+title: Starlight components
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+Starlight has a number of [built-in components](https://starlight.astro.build/guides/components/#built-in-components) that are useful for documentation sites.
+
+## Synced tabs
+
+In the future, when our Open Payments SDK has been ported to various languages, we would probably want to show the same feature in different languages and synced tabs might be a good way to present those code snippets.
+
+_Initialize Open Payments client_:
+
+<Tabs syncKey="walletAddress">
+  <TabItem label="Javascript">
+  ```js
+  const client = await createAuthenticatedClient({
+    walletAddressUrl: WALLET_ADDRESS,
+    privateKey: PRIVATE_KEY_PATH,
+    keyId: KEY_ID,
+  });
+  ```
+  </TabItem>
+  <TabItem label="Ruby">
+  ```ruby
+  =begin
+  I have no idea how the
+  Ruby code should look like
+  And that is why we do not
+  have a Ruby SDK today
+  =end
+  ```
+</TabItem>
+</Tabs>
+
+_Get wallet address:_
+
+<Tabs syncKey="walletAddress">
+  <TabItem label="Javascript">
+  ```js
+  const walletAddress = await client.walletAddress.get({
+    url: WALLET_ADDRESS,
+  });
+  ```
+  </TabItem>
+  <TabItem label="Ruby">
+  ```ruby
+  =begin
+  I have no idea how the
+  Ruby code should look like
+  And that is why we do not
+  have a Ruby SDK today
+  =end
+  ```
+  </TabItem>
+</Tabs>
