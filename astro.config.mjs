@@ -5,7 +5,7 @@ import rehypeMathjax from "rehype-mathjax";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://interledger.tech",
+  site: "https://interledger.net",
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeMathjax],
