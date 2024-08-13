@@ -35,6 +35,10 @@ export default defineConfig({
       },
       sidebar: [
         {
+          label: "Overview of Interledger doc styles",
+          link: "/",
+        },
+        {
           label: "Content",
           autogenerate: {
             directory: "content",
