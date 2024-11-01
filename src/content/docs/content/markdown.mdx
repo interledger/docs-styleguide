@@ -8,11 +8,11 @@ import { CodeBlock } from "@interledger/docs-design-system";
 
 Starlight supports the full range of [Markdown](https://daringfireball.net/projects/markdown/) syntax in `.md` files as well as frontmatter [YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f) to define metadata such as a title and description.
 
-Please be sure to check the [MDX docs](https://mdxjs.com/docs/what-is-mdx/#markdown) or [Markdoc docs](https://markdoc.dev/docs/syntax) if using those file formats, as Markdown support and usage can differ.
+Be sure to check the [MDX docs](https://mdxjs.com/docs/what-is-mdx/#markdown) or [Markdoc docs](https://markdoc.dev/docs/syntax) if using those file formats, as Markdown support and usage can differ.
 
 ## Frontmatter
 
-The `title` is a required field and if you create an `.md` or `.mdx` file without it in the content folder, the site will yell at you. Please check the full list of [frontmatter configuration](https://starlight.astro.build/reference/frontmatter/) for more fun options.
+The `title` is a required field and if you create an `.md` or `.mdx` file without it in the content folder, the site will yell at you. Check the full list of [frontmatter configuration](https://starlight.astro.build/reference/frontmatter/) for more fun options.
 
 ```md
 ---
@@ -64,7 +64,7 @@ You may want to further organise the img folder with subfolders if the project h
 
 ## Headings
 
-Starlight is configured to automatically use your page title as a top-level heading and will include an "Overview" heading at top of each page's table of contents. If you need to modify this behavior for whatever reason, please consult the person responsible for documentation architecture.
+Starlight is configured to automatically use your page title as a top-level heading and will include an "Overview" heading at top of each page's table of contents. If you need to modify this behavior for whatever reason, consult the person responsible for documentation architecture.
 
 ### Automatic heading anchor links
 
@@ -314,13 +314,13 @@ Starlight uses Astro’s Markdown and MDX renderer built on remark and rehype. Y
 ### Mermaid diagrams
 
 :::danger
-We no longer support mermaid diagrams using the markdown syntax. Instead, please use our custom [`Mermaid` component](/shared/mermaid).
+We no longer support mermaid diagrams using the markdown syntax. Instead, use our custom [`Mermaid` component](/shared/mermaid).
 :::
 
 ### Mathjax
 
 :::caution
-This component requires an extra dependency on [remark-math](https://github.com/remarkjs/remark-math/tree/main) and [rehype-mathjax](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-mathjax) and thus is not enabled by default on all projects. Please ping the person responsible for documentation architecture if your project doesn't render mathjax properly.
+This component requires an extra dependency on [remark-math](https://github.com/remarkjs/remark-math/tree/main) and [rehype-mathjax](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-mathjax) and thus is not enabled by default on all projects. Ping the person responsible for documentation architecture if your project doesn't render mathjax properly.
 :::
 
 $currencyAmount = \frac{value}{10^{assetScale}}$
