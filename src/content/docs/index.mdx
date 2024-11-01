@@ -49,7 +49,7 @@ import '/node_modules/@interledger/docs-design-system/src/styles/teal-theme
 
 ## Components
 
-Starlight provides some built-in components that are commonly used for documentation sites. Please refer to the [Starlight documentation](https://starlight.astro.build/guides/components#built-in-components) for detailed information on how to use them.
+Starlight provides some built-in components that are commonly used for documentation sites. Refer to the [Starlight documentation](https://starlight.astro.build/guides/components#built-in-components) for detailed information on how to use them.
 
 :::note
 The Starlight team releases new components from time to time. If you find a component in their doc that doesn't work with an Interledger doc site, we may need to upgrade our version of Starlight.
@@ -63,7 +63,7 @@ If you are using multiple shared components on a single page, you can import the
 import { CodeBlock, Disclosure } from "@interledger/docs-design-system";
 ```
 
-For more information about importing things in Javascript, please refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
+For more information about importing things in Javascript, refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
 
 ## Docs site building
 
@@ -131,7 +131,7 @@ const { title, description } = Astro.props;
 
 It had been possible to [override the default Starlight components](https://starlight.astro.build/guides/overriding-components/) since v0.11.0, and most of our documentation sites implement this for our site header. This is because the default search bar takes up too much space for our aesthetic liking. 乁 ⁠(⁠ ⁠•⁠_⁠•⁠ ⁠)⁠ ㄏ
 
-Although we have contemplated making this a shared component, each site header is different enough that we've decided to leave it up to each individual site to handle. Please consult the documentation for how this works.
+Although we have contemplated making this a shared component, each site header is different enough that we've decided to leave it up to each individual site to handle. Consult the documentation for how this works.
 
 We want to keep some other UI components that come with the default header, so those have to be imported like so:
 
