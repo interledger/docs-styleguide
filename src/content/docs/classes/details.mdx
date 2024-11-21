@@ -1,0 +1,33 @@
+---
+title: details
+---
+
+The `<details>` disclosure element is an HTML element that creates a disclosure widget in which information is visible only when the widget is toggled into an open state. A `summary` or label must be provided using the `<summary>` element. - [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+
+:::note
+We also have an in-house [Disclosure component](/shared/disclosure), but we decided in October 2024 to move away from using it. We may deprecate the component completely in the future.
+:::
+
+You can nest any other Markdown syntax inside a `<details>` element. Some, if not all, of Starlight's components can also be nested. For example, you can use an aside within the element.
+
+## Example usage
+
+```html
+<details>
+<summary>Who has two thumbs, speaks limited French, and hasn't cried once today?</summary>
+<img
+  src="/img/thismoi.png"
+  alt="Liz Lemon"
+  style="max-width:200px"
+/>
+</details>
+```
+
+<details>
+<summary>Who has two thumbs, speaks limited French, and hasn't cried once today?</summary>
+<img
+  src="/img/thismoi.png"
+  alt="Liz Lemon"
+  style="max-width:200px"
+/>
+</details>

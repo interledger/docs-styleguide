@@ -4,7 +4,7 @@ title: Web Monetization style guide
 
 import { Card } from '@astrojs/starlight/components';
 
-<Card title="After a Starlight upgrade" icon="star">
+<Card title="After a Starlight upgrade to webmonetization" icon="star">
 ```
 cd <to project folder>
 bun install
@@ -32,7 +32,7 @@ bun run start
 
 ## Account servicing entity
 
-Don't use account servicing entity/ASE in the Web Monetization docs. Use wallet.
+Don't use account servicing entity/ASE in the Web Monetization docs. Use wallet/digital wallet/digital wallet provider.
 
 ## Payment pointer vs wallet address
 
@@ -49,3 +49,21 @@ We are a US-based 501(c)(3). Use the US spelling of monetization, with a z rathe
 If we follow standard US grammar rules, then web monetize and its other forms (e.g., web monetized) should probably be hyphenated.
 
 In the past, I found that the term was used so frequently that the hyphens were visually distracting. I made a style decision to drop the hyphens. We can revisit this decision.
+
+## Web Monetization-specific styles
+
+### Remove overview
+
+The Web Monetization project gives us the ability to hide the Overview heading from a page's table of contents. This is handy on, for example, the Glossary page. 
+
+On Nov. 21, 2024, Melissa requested this functionality be added to all of our doc projects: https://github.com/interledger/docs-design-system/issues/27
+
+All you need to do is add the page that you want the Overview heading removed from to the `removeOverview` portion of `components/docs/PageSidebar.astro`.
+
+```
+const removeOverview = [
+ 'docs/resources/glossary',
+]
+```
+
+The magic happens because of `components/docs/shared/removeoverview.mdx`, but you don't need to make any changes to this file. 
