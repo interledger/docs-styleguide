@@ -6,13 +6,19 @@ sidebar:
 
 import { CodeBlock } from "@interledger/docs-design-system";
 
-Starlight supports the full range of [Markdown](https://daringfireball.net/projects/markdown/) syntax in `.md` files as well as frontmatter [YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f) to define metadata such as a title and description.
+The majority of content within the documentation projects are written in Markdown. This page touches on some high-level Markdown topics. For more information on Markdown syntax, see:
 
-Be sure to check the [MDX docs](https://mdxjs.com/docs/what-is-mdx/#markdown) or [Markdoc docs](https://markdoc.dev/docs/syntax) if using those file formats, as Markdown support and usage can differ.
+* https://starlight.astro.build/guides/authoring-content/
+* https://www.markdownguide.org/basic-syntax/
+* https://www.markdownguide.org/extended-syntax/
+
+Frontmatter [YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f) is used to define metadata such as a title and description.
 
 ## Frontmatter
 
-The `title` is a required field and if you create an `.md` or `.mdx` file without it in the content folder, the site will yell at you. Check the full list of [frontmatter configuration](https://starlight.astro.build/reference/frontmatter/) for more fun options.
+A `title` is required frontmatter for most files. One scenario in which a title is **not** required is when the file is a [partial](/content/global#content-reuse). 
+
+Check the full list of [frontmatter configuration](https://starlight.astro.build/reference/frontmatter/) for more fun options.
 
 ```md
 ---
@@ -20,37 +26,9 @@ title: Remember to set this
 ---
 ```
 
-## Inline styles
-
-Text can be **bold**, _italic_, or ~~strikethrough~~.
-
-```md
-Text can be **bold**, _italic_, or ~~strikethrough~~.
-```
-
-You can [link to another page](/).
-
-```md
-You can [link to another page](/).
-```
-
-You can highlight `inline code` with backticks.
-
-```md
-You can highlight `inline code` with backticks.
-```
-
 ## Images
 
 Images in Starlight use [Astro’s built-in optimized asset support](https://docs.astro.build/en/guides/assets/).
-
-Markdown and MDX support the Markdown syntax for displaying images that includes alt-text for screen readers and assistive technology.
-
-![An illustration of Ernie perched atop a laptop next to the Interledger Logo](/img/image.png)
-
-```md
-![An illustration of Ernie perched atop a laptop next to the Interledger Logo](/img/image.png)
-```
 
 We standardise our image location for every project to be in the `/public/img` folder. Start with `/img/` when calling an image.
 
@@ -60,252 +38,17 @@ We standardise our image location for every project to be in the `/public/img` f
 ![Architecture diagram](/img/rafiki-architecture.png)
 ```
 
-You may want to further organise the img folder with subfolders if the project has a lot of images.
+You may want to further organise the `img` folder with subfolders if the project has a lot of images.
 
 ## Headings
 
-Starlight is configured to automatically use your page title as a top-level heading and will include an "Overview" heading at top of each page's table of contents. If you need to modify this behavior for whatever reason, consult the person responsible for documentation architecture.
+Starlight is configured to automatically use your page title as a top-level heading and will include an "Overview" heading at top of each page's table of contents. Starlight does not provide a native way hide "Overview" or change the wording. 
 
 ### Automatic heading anchor links
 
 Using headings in Markdown will automatically give you anchor links so you can link directly to certain sections of your page:
 
-```md
----
-title: My page of content
-description: How to use Starlight's built-in anchor links
----
-
-## Introduction
-
-I can link to [my conclusion](#conclusion) lower on the same page.
-
-## Conclusion
-
-`https://my-site.com/page1/#introduction` navigates directly to my Introduction.
-```
-
-Level 2 (`<h2>`) and Level 3 (`<h3>`) headings will automatically appear in the page table of contents. Starlight allows you to [override](https://starlight.astro.build/reference/overrides/#toc) this behavior.
-
-## Asides
-
-[Asides](https://starlight.astro.build/guides/authoring-content/#asides) (also known as “admonitions” or “callouts”) are useful for displaying secondary information alongside a page’s main content.
-
-Starlight provides a custom Markdown syntax for rendering asides. Aside blocks are indicated using a pair of triple colons `:::` to wrap your content, and can be of type `note`, `tip`, `caution` or `danger`.
-
-You can nest any other Markdown content types inside an aside, but asides are best suited to short and concise chunks of content.
-
-### Example
-
-:::note
-Starlight is a documentation website toolkit built with [Astro](https://astro.build/). You can get started with this command:
-
-```sh
-npm create astro@latest -- --template starlight
-```
-
-:::
-
-````md
-:::note
-Starlight is a documentation website toolkit built with [Astro](https://astro.build/). You can get started with this command:
-
-```sh
-npm create astro@latest -- --template starlight
-```
-
-:::
-````
-
-### Custom titles
-
-You can specify a custom title for the aside in square brackets following the aside type. For example:
-
-```
-:::tip[Did you know?]
-```
-
-:::tip[Guess what?!]
-Astro helps you build faster websites with [“Islands Architecture”](https://docs.astro.build/en/concepts/islands/).
-:::
-
-```md
-:::tip[Guess what?!]
-Astro helps you build faster websites with [“Islands Architecture”](https://docs.astro.build/en/concepts/islands/).
-:::
-```
-
-## Blockquotes
-
-> This is a blockquote, which is commonly used when quoting another person or document.
->
-> Blockquotes are indicated by a `>` at the start of each line.
-
-```md
-> This is a blockquote, which is commonly used when quoting another person or document.
->
-> Blockquotes are indicated by a `>` at the start of each line.
-```
-
-## Code blocks
-
-A code block is indicated by a block with three backticks <code>```</code> at the start and end.
-
-```
-This is a simple rendered code block.
-```
-
-```md
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-Hovering over a Starlight code block will display a copy button.
-
-:::note
-As of November 29, 2023, this button will not appear when using the in-house [ChunkedSnippet](/oppm/chunkedsnippet) component. We're tracking the issue in https://github.com/interledger/open-payments/issues/384.
-:::
-
-### Syntax highlighting
-
-You can indicate the programming language to use if you want to use syntax highlighting. Astro uses [Shiki](https://shiki.style/languages), so check their documentation if you aren't sure if your language is supported.
-
-The following example shows Javascript syntax highlighting.
-
-```js
-var fun = function lang(l) {
-  dateformat.i18n = require("./lang/" + l);
-  return true;
-};
-```
-
-Apply syntax highlighting by adding the language directly after the opening backticks, with no space in between.
-
-````tex
-```js
-var fun = function lang(l) {
-  dateformat.i18n = require("./lang/" + l);
-  return true;
-};
-```
-````
-
-### Expressive code
-
-Starlight uses [Expressive Code](https://github.com/expressive-code/expressive-code/tree/main/packages/astro-expressive-code) to extend formatting possibilities for code blocks. These include [text markers](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-text-markers/README.md#contents), [titles, and frames](https://github.com/expressive-code/expressive-code/tree/main/packages/%40expressive-code/plugin-frames).
-
-#### Titles
-
-When we first deployed Starlight, it didn't support adding titles to code blocks. This is why we have the in-house [CodeBlock](/shared/codeblock) component.
-
-<CodeBlock title="Example code block with a title">
-
-```
-This code block has a title! HJ made the component. Isn't she neat?
-```
-
-</CodeBlock>
-
-As of November 2023, Starlight now supports adding titles to code blocks; however, the title is styled to appear in a tab. Also, to use the Starlight title, you must specify a language.
-
-```js title="Starlight default title style"
-I mean, at least it works by default now, right?
-```
-
-````js
-```js title="Starlight default title style"
-I mean, at least it works by default now, right?
-```;
-````
-
-Code blocks will be rendered as a terminal window if their language identifier is `bash`, `shellscript`, `shell`, `sh`, or `zsh`. Titles are styled differently in this context.
-
-For example:
-
-```bash title="This uses bash"
-See what it looks like?
-```
-
-#### Frames
-
-A terminal window is a type of frame. [Expressive Code](https://github.com/expressive-code/expressive-code/blob/main/packages/%40expressive-code/plugin-frames/README.md#overriding-frame-types) allows you to override whichever default frame a code block uses.
-
-Note that using `none` will hide a code block's title.
-
-## Other common Markdown features
-
-Starlight supports all other Markdown authoring syntax, such as lists and tables. See the [Markdown Cheat Sheet from The Markdown Guide](https://www.markdownguide.org/cheat-sheet/) for a quick overview of all the Markdown syntax elements.
-
-### Tables
-
-| Syntax    | Description |
-| --------- | ----------- |
-| Header    | Title       |
-| Paragraph | Text        |
-
-```
-| Syntax    | Description |
-| --------- | ----------- |
-| Header    | Title       |
-| Paragraph | Text        |
-```
-
-:::note
-If the style of a Markdown table doesn't work for what you're doing, you can create an HTML table.
-:::
-
-### Lists
-
-**Unordered List**
-
-Use when the order of the items in the list isn't important.
-
-- Dinosaurs are cool
-- Cats are awesome
-- Sleep more, it's good for your brain
-
-```
-- Dinosaurs are cool
-- Cats are awesome
-- Sleep more, it's good for your brain
-```
-
-**Ordered List**
-
-Use when the order of the items in the list is important, such as for steps that must be followed in a specific order.
-
-1. Wake up
-2. Brew coffee
-3. Do work
-
-```
-1. Wake up
-2. Brew coffee
-3. Do work
-```
-
-**Task List**
-
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
-
-```
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
-```
-
-### Footnotes
-
-Here's a sentence with a footnote. [^1]
-
-```
-Here's a sentence with a footnote. [^1]
-```
-
-The footnote will show up at the end of the content, down the bottom of the page. It is by default formatted as an ordered list, under a screen-reader only section `<h2>` header called `Footnotes`.
-
-[^1]: This is the footnote.
+Level 2 (`<h2>`) and Level 3 (`<h3>`) headings automatically appear in a page's table of contents. Starlight allows you to [override](https://starlight.astro.build/reference/overrides/#toc) this behavior.
 
 ## Advanced Markdown and MDX configuration
 

@@ -5,6 +5,10 @@ title: Disclosure
 import { Disclosure } from "@interledger/docs-design-system";
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 
+:::caution
+In October 2024, we decided to move away from using the Disclosure component in favor of the standard HTML [details element](/classes/details). Please use `<details>` going forward. We may deprecate the Disclosure component in the future.
+:::
+
 This component allows you to show/hide content within a collapsible container. 
 
 The `client:load` attribute is required for the component to work because the component uses Javascript for interactivity.

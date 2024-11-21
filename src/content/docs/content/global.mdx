@@ -53,7 +53,7 @@ Use sentence case for headings, subheadings, and page titles unless a word/term 
 
 ### Initialisms
 
-Capitalize each letter in an initialism. For example, WM for Web Monetization.
+Capitalize each letter in an initialism. For example, ASE for account servicing entity.
 
 ### Commas
 
@@ -77,11 +77,11 @@ Typically, partials should be used for small chunks of repeating content. If the
 
 Note:
 
-- Don’t include front matter in your partials file.
+- Don’t include frontmatter in your partials file (e.g., `title`).
 - Headings within a partials file do not appear in a page’s table of contents.
 - Multiple partial files are supported within a single page.
 
-### Embed a partial file
+### Embed a partial
 
 First, import the partial file into the page:
 
@@ -99,13 +99,15 @@ This is a paragraph of text. I want the partial content to appear beneath this p
 <NoPay />
 ```
 
+That's it!
+
 ## Digital wallet vs account
 
 The term _digital wallet_ can be interpreted a number of ways and we want to be as unambiguous as possible. Be aware of the context in which you’re using the term. Think about whether _account_ or _Open Payments-enabled account_ would be more accurate than _digital wallet_.
 
 ## Doc file extensions (MD/MDX)
 
-Create new doc files in MDX unless there’s a need for something else.
+Create new doc files in MDX unless you have a good reason not to.
 
 ## Example URLs, including wallet addresses
 
@@ -126,7 +128,7 @@ Reference: https://en.wikipedia.org/wiki/Example.com
 
 ### Overviews
 
-Starlight automatically sets the first heading on a page to Overview, even if the markdown file has an H1 or H2 defined.
+Starlight automatically sets the first heading on a page to "Overview", even if the markdown file has an H1 or H2 defined.
 
 ## Images
 

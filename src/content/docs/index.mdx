@@ -6,7 +6,7 @@ description: Style guide for Interledger's documentation sites
 import { CodeBlock } from "@interledger/docs-design-system";
 import { Card } from "@astrojs/starlight/components";
 
-<Card title="After a Starlight upgrade" icon="star">
+<Card title="After a Starlight upgrade to docs-styleguide" icon="star">
 ```
 cd <to project folder>
 bun install
@@ -22,7 +22,13 @@ npm i @interledger/docs-design-system
 
 Feel free to install with the package manager of your choice.
 
-Because we are using Starlight, content has to be authored in Markdown or MDX. Components can be written in JSX, and imported into MDX files. Documentation pages cannot be `.astro` files. You are free to create Astro pages in the `/pages` folder though.
+Because we are using Starlight, content has to be authored in Markdown or MDX. 
+
+:::caution[Best practice]
+Create new pages as MDX files. 
+:::
+
+Components can be written in JSX, and imported into MDX files. Documentation pages cannot be `.astro` files. You are free to create Astro pages in the `/pages` folder though.
 
 ## Visual themes
 
@@ -60,7 +66,7 @@ We also have a number of documentation-specific helper components that can be im
 If you are using multiple shared components on a single page, you can import them like so:
 
 ```jsx
-import { CodeBlock, Disclosure } from "@interledger/docs-design-system";
+import { CodeBlock, LinkOut } from "@interledger/docs-design-system";
 ```
 
 For more information about importing things in Javascript, refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).

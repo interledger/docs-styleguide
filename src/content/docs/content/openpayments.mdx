@@ -8,12 +8,12 @@ import { Card, Steps } from '@astrojs/starlight/components';
 Run the following command in the `doc` directory:
 
 ```
-npx prettier . --write
+pnpm format
 ```
-[Why tho? ಠ╭╮ಠ](#prettier-notes)
+[Why tho? ಠ╭╮ಠ](#pnpm-format)
 </Card>
 
-<Card title="After a Starlight upgrade" icon="star">
+<Card title="After a Starlight upgrade to open-payments" icon="star">
 ```
 cd <to project folder>
 pnpm install
@@ -43,13 +43,13 @@ pnpm start
 
 Spell as two words, not one (OpenPayments).
 
-## Prettier notes
+## Pnpm format
 
-Why do we have to run `npx prettier . --write` before we commit our changes?
+Why do we have to run `pnpm format` before we commit our changes?
 
 <Steps>
-1. Because the Open Payments project demands it. We think it's because of the way the API specs are integrated with the docs.
-2. It ensures all outputted code conforms to a consistent style. - [prettier docs](https://prettier.io/docs/en/)
+1. Because the Open Payments project demands it.
+2. It ensures all outputted code conforms to a consistent style.
 </Steps>
 
 For example, if you're like Melissa and add italics in markdown using single asterisks:
@@ -58,7 +58,7 @@ For example, if you're like Melissa and add italics in markdown using single ast
 I'm making *this part* italic.
 ```
 
-Prettier automatically converts the asterisk set to underscores:
+Running `pnpm format` automatically converts the asterisk set to underscores:
 
 ```
 I'm making _this part_ italic.
