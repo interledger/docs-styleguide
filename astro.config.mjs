@@ -14,8 +14,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Docs style guide",
-      description:
-        "The style guide for all Interledger documentation sites. Because we love consistency.",
+      description: "The style guide for all Interledger documentation sites. Because we love consistency.",
       customCss: [
         "./node_modules/@interledger/docs-design-system/src/styles/teal-theme.css",
         "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
@@ -35,7 +34,7 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: "Overview of Interledger doc styles",
+          label: "Overview of doc styles",
           link: "/",
         },
         {
