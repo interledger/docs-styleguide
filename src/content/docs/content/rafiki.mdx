@@ -6,18 +6,19 @@ import { Card } from '@astrojs/starlight/components';
 
 <Card title="Before committing changes" icon="star">
 
-Your PR title must contain the appropriate prefix (probably `docs:`).
+1. Your PR title must contain the appropriate prefix (`docs:`).
 
-:::caution[Before committing changes]
-As of November 2024, we should run the following command in the **root**.
+2. Run the following command within the `/packages/documentation` directory:
 
-```
-pnpm format
-```
+    ```
+    npx prettier . --write
+    ```
 
-Running this command from the `/packages/documentation` directory will blow up our manually formatted tables. Until Sarah has a good solution for us, running the command from the root will skip the `documentation` folder, which we want.
-:::
+    You can also try the following. It might work, or you might get an error. 
 
+    ```
+    pnpm format
+    ```
 </Card>
 
 <Card title="After a Starlight upgrade to rafiki" icon="star">
