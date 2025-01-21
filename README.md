@@ -12,7 +12,7 @@ Inside this project, you'll see the following folders and files:
 ├── src/
 │   ├── content/
 │   │   ├── docs/
-│   │   └── config.ts
+│   └── content.config.ts
 │   └── env.d.ts
 ├── astro.config.mjs
 ├── package.json
