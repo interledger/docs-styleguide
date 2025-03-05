@@ -21,3 +21,7 @@ pnpm-debug.log*
 
 # no lock file 乁⁠(⁠ ⁠•⁠_⁠•⁠ ⁠)⁠ㄏ
 bun.lockb
+
+# vale
+vale/*
+!vale/config/
