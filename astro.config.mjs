@@ -44,7 +44,7 @@ export default defineConfig({
           },
         },
         {
-          label: "Classes, styles, HTML",
+          label: "Classes, styles, HTML, etc",
           autogenerate: {
             directory: "classes",
           },

@@ -1,0 +1,23 @@
+---
+title: External links
+---
+
+To add an icon to external links that appear in the left sidenav, follow the format below in the `astro.config.mjs` file.
+
+```js
+{
+    label: 'Open Payments API',
+    link: 'https://openpayments.guide/',
+    attrs: {
+        target: '_blank',
+        rel: 'noopener noreferrer',
+        'data-icon': 'external',
+},
+```
+Et voila
+
+<img
+  src="/img/external-link-icon.png"
+  style="max-width:300px"
+  class="img-outline"
+/>
