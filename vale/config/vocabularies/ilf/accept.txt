@@ -1,8 +1,6 @@
 APIs
 ASE
 ASEs
-Interledger
-interledger
+[Ii]nterledger
 micropayment
-Rafiki
-rafiki
+[Rr]afiki
