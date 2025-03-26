@@ -25,3 +25,4 @@ bun.lockb
 # vale
 vale/*
 !vale/config/
+!vale/docStyles

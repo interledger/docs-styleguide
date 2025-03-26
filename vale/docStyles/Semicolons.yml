@@ -1,0 +1,7 @@
+extends: existence
+message: "Do you really need this semicolon?"
+nonword: true
+scope: sentence
+level: suggestion
+tokens:
+  - ';'
