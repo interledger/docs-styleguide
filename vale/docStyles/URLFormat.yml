@@ -1,0 +1,8 @@
+extends: substitution
+message: Use 'of' (not 'for') to describe the relationship of the word URL to a resource.
+ignorecase: true
+level: suggestion
+action:
+  name: replace
+swap:
+  URL for: URL of
