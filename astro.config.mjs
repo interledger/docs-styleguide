@@ -26,9 +26,7 @@ export default defineConfig({
           borderRadius: "var(--border-radius)",
         },
       },
-      social: {
-        github: "https://github.com/interledger/docs-styleguide",
-      },
+      social: [{ icon: "github", label: "GitHub", href: "https://github.com/interledger/docs-styleguide" }],
       components: {
         Header: "./src/components/Header.astro",
       },
