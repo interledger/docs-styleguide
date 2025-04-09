@@ -1,0 +1,270 @@
+---
+title: Sequence diagram style guide
+head:
+  - tag: style
+    content: th, td {vertical-align:top !important; min-width:105px;}
+---
+
+:::note
+We use an [in-house Mermaid component](../../shared/mermaid) that calls the Mermaid JavaScript API directly. Our component may not support every notation that’s supported by Mermaid itself (e.g., diagonal lines). Additionally, some style decisions may deviate from industry norms due to Mermaid specifically and/or our component’s capabilities and limitations.
+:::
+
+## Quick reference
+
+### Arrows
+* Sending - solid line `-`
+* Replying - dashed line `--`
+* Sync - closed arrowhead `>>`
+* Async - open arrowhead `)`
+
+### Line breaks
+
+Add `<br/>` where you want a line of text to break.
+
+### GraphQL APIs
+
+Use camelCase for mutation names.
+
+### Rest APIs
+* Use UPPERCASE for methods
+* Include both the number and description for response codes
+
+## Rule breaking
+You can break a rule if:
+* It eliminates ambiguity
+* It makes a complex diagram more simple or straightforward
+
+## Basics
+
+<details>
+<summary>Actor</summary>
+<table>
+   <tr style="background-color:white;">
+     <td>
+        <img src="/img/sequencediagrams/actor.png" alt="actor symbol" style="max-width:50px;" />
+     </td>
+     <td><p>A human entity (e.g., sender/recipient of a payment) that interacts with the system by sending or receiving messages or performing an action. An excellent example of when to depict a human is during the Open Payments interactive grant flow.</p><p>**Using the actor shape is optional, but if you do choose to use it, only use it with a human entity.**</p><p>**The ordering of actors shouldn't be arbitrary if possible.** See Participant.</p><p>Capitalization: Sentence case</p></td>
+   </tr>
+</table>
+</details>
+
+<details>
+<summary>Participant</summary>
+<table>
+   <tr style="background-color:white;">
+     <td>
+        <img src="/img/sequencediagrams/participant.png" alt="participant symbol" style="max-width:100px;" />
+     </td>
+     <td><p>A human or non-human entity that interacts with the system by sending or receiving messages.</p><p>**The ordering of participants shouldn't be arbitrary if possible. Ideally, the first instance (actor/participant) in a diagram should be where the first message originates.**</p><p>Capitalization: Sentence case</p></td>
+   </tr>
+</table>
+</details>
+
+<details>
+<summary>Lifeline</summary>
+<table>
+   <tr style="background-color:white;">
+     <td>
+        <img src="/img/sequencediagrams/lifeline.png" alt="lifeline symbol" style="max-width:100px;" />
+     </td>
+     <td><p>A vertical line descending from the center-bottom of an actor or participant and represents the existence of the actor/participant over a period of time.</p><p>Used as a boundary to show the sequential events that occur to the actor/participant.</p></td>
+   </tr>
+</table>
+</details>
+
+<details>
+<summary>Groups</summary>
+<table>
+   <tr style="background-color:white;">
+     <td>
+        <img src="/img/sequencediagrams/groups.png" alt="group symbol" style="max-width:350px;" />
+     </td>
+     <td><p>Actors/participants can be grouped in vertical boxes.</p><p>**Always provide a title, in sentence case, for a group.**</p><p>**Don’t use a group to give a diagram a border.**</p><p>See the [Color](#colors) section for additional info.</p></td>
+   </tr>
+</table>
+</details>
+
+## Arrows and messages
+
+Arrows represent messages between lifelines. The style of the arrow line and arrowhead depends on the message type.
+
+The first message should start in the top-left corner. This means the actor/participant that's sending the first message should be placed first in the diagram.
+
+The left-to-right direction of the example arrows below is for illustrative purposes.
+
+| Look | Description | Syntax |
+| ---- | ----------- | ------ |
+| <img src="/img/sequencediagrams/arrow-send-sync.png" alt="arrow with a solid line and solid arrowhead on the terminating end" /> | A synchronous message being sent (e.g., an API request); the sender must wait for a response before continuing.<p></p><p>**The solid line represents “sending” and the shape of the arrowhead represents sync.**</p> | `->>` |
+| <img src="/img/sequencediagrams/arrow-reply-sync.png" alt="arrow with a dashed line and solid arrowhead on the terminating end" /> | A synchronous message reply (e.g., an API response).<p></p><p>**The dashed line represents a reply and the shape of the arrowhead represents sync.**</p> | `-->>` |
+| <img src="/img/sequencediagrams/arrow-send-async.png" alt="arrow with a solid line and open arrowhead on the terminating end" /> | An asynchronous message being sent; the sender doesn't wait for a response and immediately continues with the next step.<p></p><p>**The solid line represents “sending” and the shape of the arrowhead represents async.**</p> | `-)` |
+| <img src="/img/sequencediagrams/arrow-reply-async.png" alt="arrow with a dashed line and open arrowhead on the terminating end" /> | An asynchronous message reply.<p></p><p>**The dashed line represents a reply and the shape of the arrowhead represents async.**</p> | `--)` |
+| <img src="/img/sequencediagrams/arrow-bidirectional-sync.png" alt="solid line with solid arrowheads at each end" /> | A bidirectional synchronous message.<p></p><p>**I don’t know when we’d use this.**</p><p>Note that it follows the standard syntax patterns for a dashed line and async arrowhead.</p> | `<<-->>` |
+| <img src="/img/sequencediagrams/arrow-send-destroy.png" alt="solid line with x marking on the terminating end" /> | A stop/destroy message being sent.<p></p><p>**Leads to the deletion of the actor/participant or indicates the actor/participant is no longer needed.**</p> | `-x` |
+| <img src="/img/sequencediagrams/arrow-reply-destroy.png" alt="dashed line with x marking on the terminating end" /> | A stop/destroy message received.<p></p><p>**Leads to the deletion of the actor/participant or indicates the actor/participant is no longer needed.**</p> | `--x` |
+| <img src="/img/sequencediagrams/arrow-self-message.png" alt="arrow with a solid line and solid arrowhead on the terminating end pointing back to originating lifeline" /> | A self-message; a recursive call.<p></p><p>**Note that it follows the standard syntax patterns for sending/replying and sync/async.**</p> | `->>` |
+
+### Lines without arrowheads
+
+Mermaid supports solid and dashed lines without arrowheads. In general, we should save these as a last resort. Think about why you want to include the line, then see if there’s some other way to show the information (e.g., note).
+
+One example of an arrowless line being used is in the OP Client Keys diagram:
+https://openpayments.dev/introduction/client-keys/#sequence-diagram 
+
+After Step 1, there’s a line from the client to the resource server to show that Step 1 also “somehow” links to the resource server, since that’s where the keys end up being stored. But this isn’t a particular OP API call. It’s just something that an ASE would do (upload the keys to be available from the RS). In other words, a 🪄step.
+
+### Adding text to messages
+
+**Every message should have descriptive text even if you think it’s obvious what the messages represent.** It doesn’t need to be a novel. 
+
+A simple example...
+
+| Good | Bad |
+| ---- | --- |
+| <img src="/img/sequencediagrams/message-with-text.png" /> | <img src="/img/sequencediagrams/message-without-text.png" /> |
+
+Depending on how wide the sequence diagram is, or the information you’re conveying, **you might need to add line breaks to text**. This will make the diagram more narrow (so it fits better within Starlight’s content frame) and increase the font size, making the diagram more readable.
+
+Compare:
+
+| Line breaks | No line breaks |
+| ---- | --- |
+| <img src="/img/sequencediagrams/message-with-linebreaks.png" /> | <img src="/img/sequencediagrams/message-without-linebreaks.png" /> |
+
+### Formatting code
+
+Mermaid does not allow you to format text using a code-like font. 
+
+<img src="/img/sequencediagrams/message-without-linebreaks.png" />
+
+If you think the text needs to stand out in some way, you could use:
+* Single or double quotes
+* Square or curly brackets
+* Line breaks
+* A combination of what’s above
+
+**Instead of prescribing specific formatting, the most important thing is to remain as consistent as possible both within a single message and a single diagram.**
+
+### Formatting REST APIs
+
+#### Methods
+
+If including the method in the request, include the method in uppercase at the beginning of the description.
+* ✅ GET wallet address
+* ❌ Grant request (POST)
+* ✅ Get incoming and outgoing wallet addresses
+
+What follows the method is up to you. Any of these are OK:
+* GET wallet address url
+* POST make initial grant request
+* POST /incoming-payments
+* GET \{client_domain/jwks.json\}
+
+#### Response codes
+
+If including the response number, include the number at the beginning of the description, followed by either the HTTP response code description or the Open Payments description, whichever is more descriptive.
+* ✅ 200 OK
+* ✅ 200 wallet address found
+* ❌ Incoming payment not found (404)
+
+### Formatting GraphQL APIs
+
+#### API names
+
+Rafiki currently has two GraphQL APIs: the Backend Admin API and the Auth Admin API. Since they’re both “admin” APIs, it’s important that we write out the API name completely, so readers know which API we’re discussing. Capitalize each word.
+
+**We don’t have many (any?) sequence diagrams in the Rafiki docs outside of the webhook events page. I don’t know if there are any instances where we’d include the API name but not include a specific mutation.**
+
+#### Mutations
+
+Write mutations in camelCase.
+
+At this time, we **don't** need styles like these:
+* Follow each API name with call: and the mutation in camelCase
+* Always include both the API name and the mutation
+
+This example shows the previous points applied to the response. This way you can get an idea about what it would look like should we make them a standard.
+
+<img src="/img/sequencediagrams/graphql-mutation-format.png" style="max-width:500px;" />
+
+## Notes
+
+Mermaid allows you to place notes to the right of, the left of, and over an actor/participant. They can also span across multiple actors/participants. 
+
+Notes have a yellow background that you can't change.
+
+<img src="/img/sequencediagrams/note.png" alt="example of a note to the right of a participant" style="max-width:200px;" />
+
+Occasionally, you might want to call out and section off portions of a diagram. Groups aren’t appropriate because they stretch vertically. A background color might be distracting or make the diagram too busy. And the information might not be an [operator](#interaction-operators).
+
+**In this case, it might be a good idea to use a note that spans over multiple participants as a way to call out and section off information.**
+
+<img src="/img/sequencediagrams/notes-span.png" alt="three notes spanning over all participants to group calls by interactive and non-interactive grants"/>
+
+## Sequence numbers
+
+Using `autonumber`, you can have Mermaid attach a sequence number to each message in a diagram. This includes messages without arrowheads. You can't change their styling.
+
+```
+sequenceDiagram
+	autonumber
+	Alice->>John: etc…
+```
+
+The more complex a sequence diagram is, the more likely it is that adding sequence numbers will help with clarity. Use your best judgement. A diagram with 2 - 4 messages probably doesn’t need numbering.
+
+<img src="/img/sequencediagrams/sequence-numbers.png" alt="diagram using numbering" style="max-width:500px;"/>
+
+## Activations
+
+<table>
+   <tr style="background-color:white;">
+     <td>
+        <img src="/img/sequencediagrams/activation.png" alt="activation symbol" />
+     </td>
+     <td>An activation represents the time during which a participant is performing an action. The longer the task will take, the longer the activation box will be.<p></p><p>Examples include polling and showing how long a connection persists.</p><p></p><p>**When including an activation, always have a reply message for clarity.**</p><p></p><p>Activations can be stacked.</p></td>
+   </tr>
+</table>
+
+## Interaction operators
+
+An interaction operator is a container that groups interaction fragments. Containers are all formatted the same way, with the notation appearing in the top-left.
+
+Titles are optional **but strongly recommended**. Titles appear centered at the top and enclosed in brackets.
+
+Operators should be used intentionally and not as a way to draw a box around something.
+
+<img src="/img/sequencediagrams/interaction-operator.png" alt="loop operator symbol" style="max-width:250px;"/>
+
+Some, if not all, operators can be nested.
+
+| Notation | Description |
+| -------- | ----------- |
+| `alt` | Alternative<p></p><p>An *if-then* or *if-then-else* process or interaction. Symbolizes a choice between two or more message sequences.</p> |
+| `opt` | Option<p></p><p>An *if* process or interaction. The process only occurs if a certain condition is met.</p> |
+| `loop` | Loop<p></p><p>A basic repeating interaction.</p> |
+| `par` | Parallel<p></p><p>Shows actions are happening in parallel; shows interactions running concurrently with each other.</p> |
+| `critical` | Critical region<p></p><p>Indicates that the fragment can only have one thread that it runs at any time. The fragment must complete before another thread can run. Shows actions that must happen automatically with conditional handling of circumstances.</p> | 
+| `break` | Break<p></p><p>Indicates a stop of the sequence within the flow, usually to model exceptions.</p><p></p><p>The sequence breaks/stops/doesn't perform any of the remaining sequence and does what’s defined in the operator instead.</p><p></p><p>Breaks only cause the exiting of an enclosed interaction’s sequence and not necessarily the entire sequence depicted in the diagram. In cases where a break combination is part of an alt or loop, then only the alt or loop is exited.</p> |
+
+## Colors
+
+You can change the background color of groups and, separately, through background highlighting. Color can be added using [RGB values](https://www.rapidtables.com/web/color/RGB_Color.html).
+
+:::tip
+As we decide to use colors, we should keep a list of which ones we use. We might be able to build a list of allowed colors that align with best practices and ultimately make usage consistent across diagrams.
+:::
+
+Also remember that using spanning Notes is a way to call out and section off information. Notes have a yellow background color that can't be changed.
+
+Best practices when it comes to using color:
+
+* **Use color sparingly.** Think about why you want to use colors. Groups have transparent backgrounds by default. The border around the group is probably enough to call attention to the contents within the group. 
+* **Use color consistently** within a single diagram.
+* **Check the contrast** between color(s) and text. Make sure the text is still legible.
+* **Consider color blindness when selecting colors–especially if they overlap.** Difficulties distinguishing between red and green is the most common type of color blindness. [Coloring for Colorblindness](https://davidmathlogic.com/colorblind/) is one of many tools that can help you see how colors may appear to others.<p></p><p>The following example color palette uses a few ILF-flavored colors as the *True* colors and shows how these colors will appear to someone with colorblindness (depending on the type).</p><img src="/img/sequencediagrams/color-palette.png" style="max-width:400px;"/>
+* **Check the diagram on multiple screens** if you have them (e.g., laptop/desktop monitor). A light color on one monitor, for example, might look significantly darker on another.
+* **Check the diagram in light and dark mode.** If you add color to a diagram, check that the diagram is legible in light and dark mode. *It probably will be* because I think Mermaid keeps the background white. It’s still a good habit to get into. Even if a diagram is legible in dark mode, for example, the contrast between the dark UI, the white diagram background, and a light background highlight color might be a bit harsh on the eyes.
+
+Regardless of how nice you think the following diagram looks, the use of colors checks *most* of the boxes. I’d argue that the purple is pushing it when it comes to text contrast/legibility.
+
+<img src="/img/sequencediagrams/diagram-with-colors.png" alt="diagram using a purple group overtop of a blue group and a yellow note overtop the blue group" style="max-width:400px;"/>

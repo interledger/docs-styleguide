@@ -38,7 +38,7 @@ export default defineConfig({
           link: "/",
         },
         {
-          label: "Content",
+          label: "Style guides",
           autogenerate: {
             directory: "content",
           },

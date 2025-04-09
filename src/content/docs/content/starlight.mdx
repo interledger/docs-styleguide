@@ -4,15 +4,16 @@ title: Starlight components and misc
 
 import { CodeBlock } from "@interledger/docs-design-system";
 
+## Components
 Starlight offers a number of native components that we can use to style pages. The [Components](https://starlight.astro.build/components/using-components/) section in their docs outline how to use each one, though a few we commonly use are listed here.
 
 * [Asides](https://starlight.astro.build/components/asides/)
-* [Badges*](https://starlight.astro.build/components/badges/)
+* [Badges](https://starlight.astro.build/components/badges/)
 * [Tabs](https://starlight.astro.build/components/tabs/)
 
 If a component is listed in their doc, but you get an error when trying to use it, we may need to upgrade Starlight.
 
-## Badges*
+### Badges
 
 If you use badges to call out a particular REST API method, use the variant that most closely matches what appears for OpenAPIs in Swagger.
 
@@ -21,7 +22,7 @@ If you use badges to call out a particular REST API method, use the variant that
 * PUT - `variant="caution"` (yellow)
 * DELETE - `variant="danger"` (red)
 
-## Code blocks
+### Code blocks
 
 Code blocks in Markdown are fenced by three beginning and ending backticks (` ``` `). More information is found [here](https://starlight.astro.build/guides/authoring-content/#code-blocks). Information about how Starlight uses Expressive Code is also provided.
 
@@ -31,11 +32,11 @@ Hovering over a Starlight code block will display a copy button.
 As of November 29, 2023, this button will not appear when using the in-house [ChunkedSnippet](/oppm/chunkedsnippet) component. We're tracking the issue in https://github.com/interledger/open-payments/issues/384.
 :::
 
-### Syntax highlighting
+#### Syntax highlighting
 
 You can indicate the programming language to use if you want to use syntax highlighting. Astro uses [Shiki](https://shiki.style/languages), so check their documentation if you aren't sure if your language is supported.
 
-### Block titles and frames
+#### Block titles and frames
 
 When we first deployed Starlight, it didn't support adding titles to code blocks. This is why we have the in-house [CodeBlock](/shared/codeblock) component.
 
@@ -58,7 +59,7 @@ I mean, at least it works by default now, right?
 ````js
 ```js title="Starlight default title style"
 I mean, at least it works by default now, right?
-```;
+```
 ````
 
 By default, a Starlight code block will be rendered as a terminal window if a shell scripting language is used (e.g., `bash`, `shell`, `zsh`). Titles are styled differently in this context.
@@ -70,3 +71,29 @@ See what it looks like?
 ```
 
 See the [Frames and titles](https://starlight.astro.build/guides/authoring-content/#frames-and-titles) section in Starlight's docs for more information.
+
+### Tabs
+<p>
+<mark>*This section needs to be added, along with info about tab synching.*</mark>
+</p>
+
+## Misc
+
+### Style a single page with CSS
+
+If there's a style you need to apply to an entire page, to every instance of an element, you can do so in the frontmatter. 
+
+For example, the tables in the [Sequence diagram style guide](/content/sequence-diagrams) were behaving poorly. Text aligned itself to `baseline` which pushed the content in the last row outside of the table's bounds. Also, some code that needed to appear on a single line was breaking. 
+
+Instead of adding styles within each table in the page, the styles were applied to the page itself like so:
+
+```
+---
+title: Sequence diagram style guide
+head:
+  - tag: style
+    content: th, td {vertical-align:top !important; min-width:105px;}
+---
+```
+
+Starlight can get a little testy when it comes to indentations. If you're getting errors, copy the code block above and update it as needed.
