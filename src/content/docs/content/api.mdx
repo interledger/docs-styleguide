@@ -1,0 +1,194 @@
+---
+title: API style guide
+---
+
+import { CodeBlock } from "@interledger/docs-design-system"
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+
+## Introduction
+
+This guide is designed for writers and contributors involved in documenting our APIs, which use both GraphQL and REST API technologies.
+
+At Interledger, we maintain multiple repositories that encompass a variety of projects, each serving different purposes within our ecosystem. This style guide aims to provide a cohesive framework for documenting these APIs so that our docs are clear, consistent, and aligned with our standards.
+
+## GraphQL
+
+From [GraphQL.org](https://graphql.org/), GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. Unlike REST APIs, where multiple endpoints are often required to retrieve and update related data, GraphQL allows clients to request exactly the data they need in a single query. This reduces the amount of data transferred over the network and minimizes the number of requests made to the server. No more over- or under-fetching of data!
+
+For more in-depth information about GraphQL, take a look at the following resources:
+
+- [GraphQL official website](https://graphql.org/)
+- [GraphQL specification](https://spec.graphql.org/)
+- [How To GraphQL](https://www.howtographql.com/)
+
+### Documenting GraphQL examples
+
+We've created a standardized format to maintain a consistent look and feel when documenting example GraphQL queries and mutations. Each GraphQL example should be organized into three tabs: **Operation**, **Variables**, and **Response**.
+
+To create these multi-tabbed GraphQL examples, we're using the built-in Starlight [`<Tabs>` and `<TabItem>`](https://starlight.astro.build/components/tabs/) components. Each of the examples below will show the `<TabItem>` tags. The full example will be wrapped in the `<Tabs>` tag.
+
+:::tip
+Make sure you import the `<Tabs>` and `<TabItem>` components to your MDX file like so:
+
+`import { Tabs, TabItem } from '@astrojs/starlight/components'`
+:::
+
+
+#### Operation tab
+
+- Include the query/mutation in a code block
+- Specify `graphql` as the language for syntax highlighting
+- Do not include the query/mutation name in the header
+
+<CodeBlock title="Operation tab markdown format">
+
+````
+<TabItem label="Operation">
+    ```graphql
+    mutation [AnotherMutationName]($input: [AnotherInputType]!) {
+      [AnotherMutationName](input: $input) {
+        [AnotherResponseFields]
+      }
+    }
+    ```
+</TabItem>
+````
+
+</CodeBlock>
+
+#### Variables tab
+
+- Provide the JSON input object in a code block
+- Specify `json` as the language for syntax highlighting
+- Below the code block, include a sentence linking to the input object documentation
+
+<CodeBlock title="Variables tab markdown format">
+
+````
+<TabItem label="Variables">
+    ```json
+    {
+      "input": {
+        "field1": "[value]",
+        "field2": "[value]",
+        "field3": "[value]",
+        // Add additional fields as necessary
+      }
+    }
+    ```
+    For more information about this mutation's input object, see [`[AnotherInputObjectLink]`](https://example.com).
+</TabItem>
+````
+
+</CodeBlock>
+
+:::note
+Before this style guide was created, there were older GraphQL examples that, in most cases, contained a table displaying variable names and descriptions. If you are updating one of these older examples, delete this table. The input object documentation explains all of the variables and we link to that page in the Variables tab. 
+:::
+
+#### Response tab
+
+- Include the JSON response in a code block
+- Specify `json` as the language for syntax highlighting
+- Provide a brief description of the expected reponse
+
+<CodeBlock title="Response tab markdown format">
+
+````
+<TabItem label="Response">
+    When the operation is successful, `[AnotherMutationName]` returns `[ExpectedResponse]`.
+    ```json
+    {
+      data: {
+        success: true
+      }
+    }
+    ```
+</TabItem>
+````
+
+</CodeBlock>
+
+#### Example of a complete GraphQL query/mutation example
+
+<CodeBlock title="Code for the complete GraphQL query/mutation example">
+````
+<Tabs>
+  <TabItem label="Operation">
+    ```graphql
+    mutation [MutationName]($input: [InputType]!) {
+      [MutationName](input: $input) {
+        [ResponseFields]
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Arguments">
+    ```json
+    {
+      "input": {
+        "field1": "[value]",
+        "field2": "[value]",
+        "field3": "[value]",
+        // Add additional fields as necessary
+      }
+    }
+    ```
+    For more information about this mutation's input object, see [`[InputObjectLink]`](https://example.com).
+  </TabItem>
+  <TabItem label="Response">
+    When the operation is successful, `[MutationName]` returns `[ExpectedResponse]`.
+
+    ```json
+    {
+      data: {
+        success: true
+      }
+    }
+    ```
+  </TabItem>
+</Tabs>
+````
+</CodeBlock>
+
+#### HTML rendering of example
+
+<Tabs>
+  <TabItem label="Operation">
+    ```graphql
+    mutation [MutationName]($input: [InputType]!) {
+      [MutationName](input: $input) {
+        [ResponseFields]
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Arguments">
+    ```json
+    {
+      "input": {
+        "field1": "[value]",
+        "field2": "[value]",
+        "field3": "[value]",
+        // Add additional fields as necessary
+      }
+    }
+    ```
+    For more information about this mutation's input object, see [`[InputObjectLink]`](https://example.com).
+  </TabItem>
+  <TabItem label="Response">
+    When the operation is successful, `[MutationName]` returns `[ExpectedResponse]`.
+
+    ```json
+    {
+      data: {
+        success: true
+      }
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+## REST API
+
+Coming soon
