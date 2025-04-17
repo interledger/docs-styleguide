@@ -1,0 +1,104 @@
+---
+---
+<div class="checkbox-wrap">
+  <input type="checkbox" id="hideSidebar">
+  <label for="hideSidebar">
+    <svg viewBox="0 0 16 16" height="20" width="20"><title>Hide Sidebar</title><path d="M12.258 4.872a.8.8 0 1 0-1.088-1.173l-4 3.715a.8.8 0 0 0 0 1.172l4 3.714a.8.8 0 0 0 1.088-1.172L8.891 8l3.368-3.128Z"/><path fill-rule="evenodd" d="M0 2.571A2.571 2.571 0 0 1 2.571 0H13.43A2.571 2.571 0 0 1 16 2.571V13.43A2.57 2.57 0 0 1 13.429 16H2.57A2.571 2.571 0 0 1 0 13.429V2.57Zm2.571-.857a.857.857 0 0 0-.857.857V13.43c0 .473.384.857.857.857h1.486V1.714H2.571ZM13.43 14.286H5.657V1.714h7.772a.857.857 0 0 1 .857.857V13.43a.857.857 0 0 1-.857.857Z" clip-rule="evenodd"/></svg>
+  </label>  
+</div>
+
+<div class="checkbox-wrap">
+  <input type="checkbox" id="hideToC">
+  <label for="hideToC">
+    <svg viewBox="0 0 16 16" height="20" width="20"><title>Hide ToC</title><path d="M3.742 4.872A.8.8 0 1 1 4.83 3.699l4 3.715a.8.8 0 0 1 0 1.172l-4 3.714a.8.8 0 0 1-1.088-1.172L7.109 8 3.74 4.872Z"/><path fill-rule="evenodd" d="M16 2.571A2.571 2.571 0 0 0 13.429 0H2.57A2.571 2.571 0 0 0 0 2.571V13.43A2.571 2.571 0 0 0 2.571 16H13.43A2.57 2.57 0 0 0 16 13.429V2.57Zm-2.571-.857a.857.857 0 0 1 .857.857V13.43a.857.857 0 0 1-.857.857h-1.486V1.714h1.486ZM2.57 14.286h7.772V1.714H2.57a.857.857 0 0 0-.857.857V13.43a.857.857 0 0 0 .857.857Z" clip-rule="evenodd"/></svg>
+  </label>
+</div>
+
+<style>
+  .checkbox-wrap {
+    display: none;
+    position: relative;
+  }
+
+  .checkbox-wrap input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .checkbox-wrap label {
+    display: block;
+    height: 20px;
+  }
+
+  .checkbox-wrap label:hover {
+    cursor: pointer;
+  }
+  .checkbox-wrap input[type="checkbox"]:focus + label {
+    outline: 2px solid var(--sl-color-accent);
+  }
+
+  input[type="checkbox"]:checked ~ label svg path {
+    fill: var(--sl-color-text-accent);
+  }
+
+  label svg path {
+    fill: var(--sl-color-gray-3);
+  }
+
+  @media screen and (min-width:72rem) {
+    .checkbox-wrap {
+      display: block;
+    }
+  }
+</style>
+
+
+<script>
+const hideSidebar = document.getElementById('hideSidebar') as HTMLInputElement;
+const sidebar = document.querySelector<HTMLElement>('.sidebar');
+const mainFrame = document.querySelector<HTMLElement>('.main-frame');
+const hideToC = document.getElementById('hideToC') as HTMLInputElement;
+const rightSidebarPanel = document.querySelector<HTMLElement>('.right-sidebar-container');
+const mainPane = document.querySelector<HTMLElement>('.main-pane');
+const tocCollapseWidth = window.matchMedia("(max-width: 72rem)");
+tocCollapseWidth.addEventListener("change", (e: MediaQueryListEvent) => {
+  if (sidebar && mainFrame && mainPane && rightSidebarPanel && hideSidebar && hideToC) {
+    if (e.matches) {
+      hideSidebar.checked = false;
+      hideToC.checked = false;
+      rightSidebarPanel.style.display = 'revert';
+      mainPane.style.setProperty('--sl-sidebar-width', 'revert');
+      sidebar.style.display = 'revert';
+      mainFrame.style.setProperty('--sl-content-inline-start', 'revert');
+    } else {
+      mainPane.style.removeProperty('width');
+    }
+  } 
+});
+
+hideSidebar?.addEventListener('change', (e) => {
+  if (sidebar && mainFrame && mainPane) {
+		if ((e.target as HTMLInputElement).checked) {
+			sidebar.style.display = 'none';
+			mainFrame.style.setProperty('--sl-content-inline-start', '0rem');
+      mainPane.style.width = '100%';
+		} else {
+			sidebar.style.display = 'block';
+			mainFrame.style.setProperty('--sl-content-inline-start', 'revert');
+      mainPane.style.removeProperty('width');
+		}
+	}
+});
+
+hideToC?.addEventListener('change', (e) => {
+	if (rightSidebarPanel && mainPane) {
+		if ((e.target as HTMLInputElement).checked) {
+			rightSidebarPanel.style.display = 'none';
+			mainPane.style.setProperty('--sl-sidebar-width', '0rem');
+		} else {
+			rightSidebarPanel.style.display = 'block';
+			mainPane.style.setProperty('--sl-sidebar-width', '14rem');
+		}
+	}
+});
+</script>
