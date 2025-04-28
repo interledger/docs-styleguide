@@ -1,0 +1,10 @@
+extends: existence
+message: "For a general audience, use 'address' rather than 'URL'."
+level: suggestion
+action:
+  name: replace
+  params:
+    - URL
+    - address
+tokens:
+  - URL
