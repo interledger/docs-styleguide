@@ -1,6 +1,11 @@
 APIs
 ASE
 ASEs
+[Hh]ackathon
 [Ii]nterledger
 micropayment
+onboarding
+repo
+[Rr]evshare
 [Rr]afiki
+RSS
