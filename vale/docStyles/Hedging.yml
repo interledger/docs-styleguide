@@ -1,0 +1,29 @@
+extends: existence
+message: "Is '%s' hedging?"
+ignorecase: true
+level: suggestion
+tokens:
+  - it appears that
+  - appears to be
+  - I would argue that
+  - it can be argued that
+  - I assume
+  - it's probable that
+  - probable
+  - probably
+  - possible
+  - potentially
+  - perhaps
+  - seems like
+  - seems to be
+  - ', so to speak'
+  - to a certain degree
+  - kind of
+  - sort of
+  - could be
+  - may
+  - might
+  - likely
+  - unlikely
+  - usually
+  - not necessarily
