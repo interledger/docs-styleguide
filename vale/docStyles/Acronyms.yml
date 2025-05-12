@@ -8,9 +8,11 @@ second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
   - API
+  - ACH
   - ASE
   - ASP
   - CAD
+  - CHIPS
   - CLI
   - CPU
   - CSS
@@ -41,16 +43,19 @@ exceptions:
   - MXN
   - NET
   - NOTE
+  - NPM
   - NVDA
   - OSS
   - PATH
   - PDF
   - PEB
   - PHP
+  - PNPM
   - POST
   - RAM
   - REPL
   - RSA
+  - RSS
   - SCM
   - SCSS
   - SDK
@@ -59,9 +64,11 @@ exceptions:
   - SSH
   - SSL
   - SVG
+  - SWIFT
   - TBD
   - TCP
   - TODO
+  - TSX
   - URI
   - URL
   - USB
