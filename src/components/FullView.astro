@@ -1,10 +1,13 @@
 ---
 ---
 <div class="checkbox-wrap">
-  <input type="checkbox" id="fullView">
-  <label for="fullView">
-    Full View
-  </label>  
+  <input type="checkbox" id="hideSidebar">
+  <label for="hideSidebar">Hide Nav</label>  
+</div>
+
+<div class="checkbox-wrap">
+  <input type="checkbox" id="hideToC">
+  <label for="hideToC">Hide ToC</label>
 </div>
 
 <style>
@@ -29,15 +32,15 @@
     cursor: pointer;
   }
 
-   input[type="checkbox"]:checked ~ label {
-    color: var(--sl-color-text-accent);
-    font-weight: 600;
-    border: 1px solid var(--sl-color-accent);
-  }
+input[type="checkbox"]:checked ~ label {
+  color: var(--sl-color-text-accent);
+  font-weight: 600;
+  border: 1px solid var(--sl-color-accent);
+}
 
-  .checkbox-wrap input[type="checkbox"]:focus-visible + label {
-    outline: 2px solid var(--sl-color-accent);
-  }
+.checkbox-wrap input[type="checkbox"]:focus-visible + label {
+  outline: 2px solid var(--sl-color-accent);
+}
 
   @media screen and (min-width:72rem) {
     .checkbox-wrap {
@@ -48,17 +51,27 @@
 
 
 <script>
+const hideSidebar = document.getElementById('hideSidebar') as HTMLInputElement;
 const sidebar = document.querySelector<HTMLElement>('.sidebar');
 const mainFrame = document.querySelector<HTMLElement>('.main-frame');
-const fullView = document.getElementById('fullView') as HTMLInputElement;
+const hideToC = document.getElementById('hideToC') as HTMLInputElement;
 const rightSidebarPanel = document.querySelector<HTMLElement>('.right-sidebar-container');
 const mainPane = document.querySelector<HTMLElement>('.main-pane');
 const tocCollapseWidth = window.matchMedia("(max-width: 72rem)");
+const updateClass = () => {
+  if (hideSidebar.checked || hideToC.checked) {
+    mainPane?.classList.add('full-view');
+  } else {
+    mainPane?.classList.remove('full-view');
+  }
+}
+
 
 tocCollapseWidth.addEventListener("change", (e: MediaQueryListEvent) => {
-  if (sidebar && mainFrame && mainPane && rightSidebarPanel && fullView) {
+  if (sidebar && mainFrame && mainPane && rightSidebarPanel && hideSidebar && hideToC) {
     if (e.matches) {
-      fullView.checked = false;
+      hideSidebar.checked = false;
+      hideToC.checked = false;
       rightSidebarPanel.style.display = 'revert';
       mainPane.style.setProperty('--sl-sidebar-width', 'revert');
       sidebar.style.display = 'revert';
@@ -70,23 +83,31 @@ tocCollapseWidth.addEventListener("change", (e: MediaQueryListEvent) => {
   } 
 });
 
-fullView?.addEventListener('change', (e) => {
-  if (sidebar && mainFrame && mainPane && rightSidebarPanel) {
+hideSidebar?.addEventListener('change', (e) => {
+  if (sidebar && mainFrame && mainPane) {
 		if ((e.target as HTMLInputElement).checked) {
 			sidebar.style.display = 'none';
 			mainFrame.style.setProperty('--sl-content-inline-start', '0rem');
       mainPane.style.width = '100%';
-      rightSidebarPanel.style.display = 'none';
-			mainPane.style.setProperty('--sl-sidebar-width', '0rem');
-      mainPane.classList.add('full-view');
 		} else {
 			sidebar.style.display = 'block';
 			mainFrame.style.setProperty('--sl-content-inline-start', 'revert');
       mainPane.style.removeProperty('width');
-      rightSidebarPanel.style.display = 'block';
-			mainPane.style.setProperty('--sl-sidebar-width', '14rem');
-      mainPane.classList.remove('full-view');
 		}
 	}
+  updateClass();
+});
+
+hideToC?.addEventListener('change', (e) => {
+	if (rightSidebarPanel && mainPane) {
+		if ((e.target as HTMLInputElement).checked) {
+			rightSidebarPanel.style.display = 'none';
+			mainPane.style.setProperty('--sl-sidebar-width', '0rem');
+		} else {
+			rightSidebarPanel.style.display = 'block';
+			mainPane.style.setProperty('--sl-sidebar-width', '14rem');
+		}
+	}
+  updateClass();
 });
 </script>
