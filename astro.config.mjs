@@ -3,6 +3,7 @@ import starlight from "@astrojs/starlight";
 import remarkMath from "remark-math";
 import rehypeMathjax from "rehype-mathjax";
 import starlightLinksValidator from "starlight-links-validator";
+import starlightFullViewMode from "starlight-fullview-mode";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +20,7 @@ export default defineConfig({
         "./node_modules/@interledger/docs-design-system/src/styles/teal-theme.css",
         "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
       ],
-      plugins: [starlightLinksValidator()],
+      plugins: [starlightLinksValidator(), starlightFullViewMode()],
       expressiveCode: {
         styleOverrides: {
           borderColor: "transparent",

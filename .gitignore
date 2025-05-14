@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -20,7 +21,9 @@ pnpm-debug.log*
 .DS_Store
 
 # no lock file 乁⁠(⁠ ⁠•⁠_⁠•⁠ ⁠)⁠ㄏ
+bun.lock
 bun.lockb
+package-lock.json
 
 # vale
 vale/*
