@@ -1,0 +1,58 @@
+---
+title: Emphasis text
+---
+
+import EmphasisText from '/src/components/docs/EmphasisText.astro'
+import { Steps } from '@astrojs/starlight/components'
+
+The `EmphasisText` component makes text slightly larger and slightly bolder than the H3, H4, and StylishHeader styles. Like the StylishHeader, the enclosed text doesn't appear in the TOC.
+
+There's two reasons for this component's existence. First is appearance. Sometimes you want to make text a bit more bold (`<b>`, `<strong>`) but larger than normal paragraph size. The component keeps you from needing to manually add inline styles (for example, `style="font-weight:900; font-size:2em;"`) and promotes consistency.
+
+The second reason is accessibility. Aria labels for headings in published Starlight docs look like this: `section titled = My example`. Making text visually stand out doesn't make it a section. When published, the EmphasisText renders as a `<strong>`, which is more appropriate (and accurate).
+
+## Usage
+
+Import the `EmphasisText` component like so:
+
+```js
+import EmphasisText from '/src/components/docs/EmphasisText.astro'
+```
+
+Use the `<EmphasisText>` component within your content like so:
+
+```js
+<EmphasisText text='This text has a lot of emphasis.' />
+```
+
+## Working example
+
+<EmphasisText text='This right here is emphasized text.' />
+
+I'm adding more words here so that there's something between the emphasized text and the next H2.
+
+## Add to another project
+
+As of May 2025, the Web Monetization docs are the only docs set up to use this component. If you want to add it to another doc project:
+
+<Steps>
+1. Locate the `src/components/docs` folder. If `docs` doesn't exist, create it.
+2. Create a file named `EmphasisText.astro`. 
+3. Add the following to the file and save.
+    ```js
+    ---
+    const { text } = Astro.props;
+    ---
+    <p>
+        <strong class="emphasisText">{text}</strong>
+    </p>
+
+    <style>
+        .emphasisText {
+            font-size: var(--sl-text-h3);
+        }
+    </style>
+    ```
+4. Restart your local environment if it doesn't seem to be working.
+
+</Steps>
