@@ -1,0 +1,19 @@
+extends: consistency
+message: "Inconsistent spelling of '%s'."
+level: warning
+ignorecase: true
+either:
+  advisor: adviser
+  cancelled: canceled
+  colour: color
+  emphasise: emphasize
+  finalise: finalize
+  grey: gray
+  learnt: learned
+  monetisation: monetization
+  monetise: monetize
+  monetised: monetized
+  organise: organize
+  organised: organized
+  organising: organizing
+  recognise: recognize

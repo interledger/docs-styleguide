@@ -1,0 +1,7 @@
+extends: existence
+# Don't make a singular noun plural by adding (s) or (es) to the end
+message: "Don't add '%s' to a singular noun. Use plural instead."
+ignorecase: true
+level: warning
+raw:
+  - '\(s\)|\(es\)'
