@@ -1,0 +1,8 @@
+extends: existence
+# For example, 64 GB not 64GB
+message: "Put a nonbreaking space between the number and the unit in '%s'."
+nonword: true
+level: suggestion
+tokens:
+  - \b\d+(?:B|kB|MB|GB|TB)
+  - \b\d+(?:ns|ms|s|min|h|d)

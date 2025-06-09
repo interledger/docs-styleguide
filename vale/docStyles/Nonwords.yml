@@ -1,0 +1,26 @@
+extends: substitution
+message: "Consider using '%s' instead of '%s'."
+ignorecase: true
+level: warning
+action:
+  name: replace
+swap:
+  analyzation: analysis
+  annoyment: annoyance
+  dispersement: disbursement|dispersal
+  doubtlessly: doubtless|undoubtedly
+  irregardless: regardless
+  minimalize: minimize
+  minimalized: minimized
+  minimalizes: minimizes
+  minimalizing: minimizing
+  optimalize: optimize
+  proprietous: proper
+  relative inexpense: relatively low price|affordability
+  seldomly: seldom
+  supposebly: supposedly
+  thusly: thus
+  uncategorically: categorically
+  undoubtably: undoubtedly|indubitably
+  unequivocable: unequivocal
+  unrelentlessly: unrelentingly|relentlessly
