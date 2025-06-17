@@ -1,12 +1,13 @@
-APIs
-CSPs
 [Dd]iv
 Fedwire
+GateHub
 [Hh]ackathon
 href
 [Ii]frame
 [Ii]nterledger
 Interledger Foundation
+Interledger Wallet
+Web Monetization
 micropayment
 [Nn]amespace
 onboarding
