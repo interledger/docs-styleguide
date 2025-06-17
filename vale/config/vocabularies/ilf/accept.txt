@@ -1,7 +1,14 @@
+APIs
+CSPs
+[Dd]iv
 Fedwire
 [Hh]ackathon
+href
+[Ii]frame
 [Ii]nterledger
+Interledger Foundation
 micropayment
+[Nn]amespace
 onboarding
 Pino
 Postgres
