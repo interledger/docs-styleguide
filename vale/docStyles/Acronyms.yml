@@ -8,7 +8,6 @@ second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
   - API
-  - APIs
   - ACH
   - ASE
   - ASP
@@ -16,7 +15,6 @@ exceptions:
   - CHIPS
   - CLI
   - CPU
-  - CSPs
   - CSS
   - CSV
   - DEBUG
