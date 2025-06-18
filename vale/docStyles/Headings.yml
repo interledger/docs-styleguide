@@ -6,12 +6,14 @@ match: $sentence
 indicators:
   - ":"
 exceptions:
+  - amountSent
   - Azure
   - Certbot
   - CLI
   - Cosmos
   - Docker
   - Emmet
+  - FAQ
   - GraphQL
   - gRPC
   - I
