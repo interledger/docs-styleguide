@@ -3,6 +3,7 @@ message: "'%s' should use sentence-style capitalization."
 level: warning
 scope: heading
 match: $sentence
+threshold: 0.9
 indicators:
   - ":"
 exceptions:
