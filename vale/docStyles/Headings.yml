@@ -6,7 +6,6 @@ match: $sentence
 indicators:
   - ":"
 exceptions:
-  - amountSent
   - Azure
   - Certbot
   - CLI
