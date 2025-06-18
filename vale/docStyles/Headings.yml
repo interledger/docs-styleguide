@@ -29,6 +29,7 @@ exceptions:
   - Postgres
   - Rafiki
   - REPL
+  - RSS
   - Studio
   - TigerBeetle
   - TypeScript
