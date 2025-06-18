@@ -1,5 +1,5 @@
 extends: capitalization
-message: "'%s' should use sentence-style capitalization."
+message: "Should '%s' use sentence-style capitalization?"
 level: warning
 scope: heading
 match: $sentence

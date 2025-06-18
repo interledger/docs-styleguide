@@ -1,6 +1,6 @@
 extends: existence
-message: "Don't use '%s'."
+message: "Can '%s' be removed from this sentence?"
 ignorecase: true
-level: warning
+level: suggestion
 tokens:
   - very

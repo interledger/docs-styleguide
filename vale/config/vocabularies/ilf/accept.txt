@@ -1,4 +1,7 @@
+allowlist
+amountSent
 APIs
+blocklist
 CSPs
 [Dd]iv
 Fedwire
@@ -6,13 +9,16 @@ GateHub
 [Hh]ackathon
 href
 [Ii]frame
+incomingPayment
 [Ii]nterledger
 Interledger Foundation
 Interledger Wallet
 Web Monetization
+Web Monetization Playground
 micropayment
 [Nn]amespace
 onboarding
+paymentPointer
 Pino
 Postgres
 repo
