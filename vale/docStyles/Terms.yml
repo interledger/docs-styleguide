@@ -1,0 +1,59 @@
+extends: substitution
+message: "Prefer '%s' over '%s'."
+level: suggestion
+ignorecase: true
+action:
+  name: replace
+swap:
+  "(?:agent|virtual assistant|intelligent personal assistant)": personal digital assistant
+  "(?:assembler|machine language)": assembly language
+  "(?:drive C:|drive C>|C: drive)": drive C
+  "(?:internet bot|web robot)s?": bot(s)
+  "(?:microsoft cloud|the cloud)": cloud
+  "(?:mobile|smart) ?phone": phone
+  "24/7": every day
+  "chat ?bots?": chatbot(s)
+  above: preceding
+  adaptor: adapter
+  administrate: administer
+  afterwards: afterward
+  a\.k\.a|aka: or|also known as
+  alphabetic: alphabetical
+  alphanumerical: alphanumeric
+  an APIs: an API's
+  an URL: a URL
+  anti-aliasing: antialiasing
+  anti-malware: antimalware
+  anti-spyware: antispyware
+  anti-virus: antivirus
+  appendixes: appendices
+  application: app
+  approx\.: approximately
+  artificial intelligence: AI
+  authN: authentication
+  authZ: authorization
+  autoupdate: automatically update
+  blacklist: blocklist
+  cellular data: mobile data
+  cellular network: mobile network
+  CLI: command-line tool
+  Container Engine: Kubernetes Engine
+  content type: media type
+  file name: filename
+  functionality: capability|feature
+  grayed-out: unavailable
+  HTTPs: HTTPS
+  k8s: Kubernetes
+  keypress: keystroke
+  monetisation: monetization
+  monetise: monetize
+  monetised: monetized
+  open-source: open source
+  regex: regular expression
+  SHA1: SHA-1|HAS-SHA1
+  sign into: sign in to
+  sign-?on: single sign-on
+  tablet: device
+  url: URL
+  vs\.: versus
+  World Wide Web: web
