@@ -15,6 +15,7 @@ swap:
   a (?:large)? majority of: most
   a (?:large)? number of: many
   a myriad of: myriad
+  advanced planning: planning
   adversely impact: hurt
   all across: across
   all of (?!a sudden|these): all
@@ -24,12 +25,13 @@ swap:
   almost all: most
   almost never: seldom
   along the lines of: similar to
+  already existing: existing
+  already exists: exists
   am in agreement: agree
   amount of time: time
   an adequate number of: enough
   an appreciable number of: many
   an estimated: about
-  android: Android
   any and all: all
   are displayed: appear
   are going to: will
@@ -39,6 +41,8 @@ swap:
   as a result of: because of
   as of yet: yet
   as per: per
+  as well as: and
+  as yet: yet
   at a later date: later
   at all times: always
   at the present time: now
@@ -47,8 +51,11 @@ swap:
   based on the fact that: because
   basic necessity: necessity
   because of the fact that: because
+  brief summary: summary
+  by means of: by
   came to a realization: realized
   came to an abrupt end: ended abruptly
+  came to the conclusion: concluded
   carry out an evaluation of: evaluate
   check box: checkbox
   click on: click|click in
@@ -65,6 +72,8 @@ swap:
   despite the fact that: although
   disabled?: turn off|off
   disappear from sight: disappear
+  do not include: exclude
+  don't include: exclude
   doomed to fail: doomed
   drag and drop: drag
   drag-and-drop: drag
@@ -72,15 +81,25 @@ swap:
   during the period of: during
   during the time that: while
   emergency situation: emergency
+  end result: result
   establish connectivity: connect
+  exact same: same
+  exactly the same: the same
+  examples of this are: For example
   except when: unless
   excessive number: too many
   extend an invitation: invite
   fall down: fall
   fell down: fell
   fewer data: less data
+  final outcome: outcome
   for the duration of: during
+  for the purpose of: for
+  for the reason that: because
+  foreseeable future: future
+  future plans: plans
   gather together: gather
+  give consideration to: consider
   Google account: Google Account
   Google accounts: Google Accounts
   Googling: search with Google
@@ -89,6 +108,9 @@ swap:
   has the capacity to: can
   has the opportunity to: could
   has to: must
+  have a look at: look
+  have an impact on: impact
+  have the ability to: be able to
   have to: must
   hold a meeting: meet
   if this is not the case: if not
@@ -106,27 +128,40 @@ swap:
   in spite of the fact that: although
   in spite of: despite
   in the (?:very)? near future: soon
+  in the event of: if there's
   in the event that: if
-  in the neighborhood of: roughly
+  in the neighborhood of: about
+  in the sense that: because
   in the vicinity of: close to
+  integrated together: integrated
   it would appear that: apparently
   is displayed: appears
   is going to: will
   is in agreement: agrees
+  last but not least: last
   lift up: lift
   made reference to: referred to
-  make reference to: refer to
+  made a contribution to: contributed
+  make a contribution to: contribute
+  make reference to: refer
   mix together: mix
+  narrow down: narrow
   none at all: none
   not in a position to: unable
   not possible: impossible
   of major importance: important
+  on the occassion of: when
+  outside of: outside
   perform an assessment of: assess
+  period of time: period
   pertaining to: about
   place an order: order
   plays a key role in: is essential to
   present time: now
+  proposed plan: plan
   readily apparent: apparent
+  reported on: reported
+  revert back: revert
   some of the: some
   span across: span
   stylesheet: style sheet
@@ -136,17 +171,24 @@ swap:
   synch: sync
   take action: act
   take into account: consider
+  take into consideration: consider
+  the majority of: most
   the question as to whether: whether
   there is no doubt but that: doubtless
   this day and age: this age
   this is a subject that: this subject
+  through the use of: using
   time (?:frame|period): time
+  to a large extent: largely
   un(?:check|select): clear
   under the provisions of: under
   until such time as: until
   used for fuel purposes: used for fuel
+  vast majority: majority
+  ways in which: ways
   were in agreement: agreed
   whether or not: whether
   will need to: must
   with regard to: regarding
   with the exception of: except for
+  within: in
