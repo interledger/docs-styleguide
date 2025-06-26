@@ -2,6 +2,7 @@
 title: Starlight components and misc
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { CodeBlock } from "@interledger/docs-design-system";
 
 ## Components
@@ -28,10 +29,6 @@ Code blocks in Markdown are fenced by three beginning and ending backticks (` ``
 
 Hovering over a Starlight code block will display a copy button.
 
-:::note
-As of November 29, 2023, this button will not appear when using the in-house [ChunkedSnippet](/oppm/chunkedsnippet) component. We're tracking the issue in https://github.com/interledger/open-payments/issues/384.
-:::
-
 #### Syntax highlighting
 
 You can indicate the programming language to use if you want to use syntax highlighting. Astro uses [Shiki](https://shiki.style/languages), so check their documentation if you aren't sure if your language is supported.
@@ -48,7 +45,7 @@ This code block has a title! HJ made the component. Isn't she neat?
 
 </CodeBlock>
 
-As of November 2023, Starlight now supports adding titles to code blocks; however, the title is styled to appear in a tab. Also, to use the Starlight title, you **must** specify a programming language.
+As of November 2023, Starlight now supports adding titles to code blocks, but the title is styled to appear in a tab. Also, to use the Starlight title, you **must** specify a programming language.
 
 We've chosen to keep our in-house `CodeBlock` component because we like the style more. However, you are free to use the Starlight defaults if they fit better with what you're documenting.
 
@@ -62,7 +59,7 @@ I mean, at least it works by default now, right?
 ```
 ````
 
-By default, a Starlight code block will be rendered as a terminal window if a shell scripting language is used (e.g., `bash`, `shell`, `zsh`). Titles are styled differently in this context.
+By default, a Starlight code block will be rendered as a terminal window if a shell scripting language is used (for example, `bash`, `shell`, `zsh`). Titles are styled differently in this context.
 
 For example:
 
@@ -73,9 +70,44 @@ See what it looks like?
 See the [Frames and titles](https://starlight.astro.build/guides/authoring-content/#frames-and-titles) section in Starlight's docs for more information.
 
 ### Tabs
-<p>
-<mark>*This section needs to be added, along with info about tab synching.*</mark>
-</p>
+
+You can keep multiple tab groups in a page synchronized by using `syncKey`. 
+
+All tabs on a page with the same `syncKey` value will display the same active label. This is especially helpful when documenting programming languages. Note that the synching only persists on the page, not across pages. 
+
+Add an identical `syncKey` property to each `<TabItem>`.
+
+```js {1, 8}
+<Tabs syncKey="constellations">
+  <TabItem label="Orion">Bellatrix</TabItem>
+  <TabItem label="Gemini">Pollux</TabItem>
+</Tabs>
+
+_Some exoplanets:_
+
+<Tabs syncKey="constellations">
+  <TabItem label="Orion">HD 34445 b</TabItem>
+  <TabItem label="Gemini">Pollux b</TabItem>
+</Tabs>
+```
+
+#### Example
+
+<Tabs syncKey="constellations">
+  <TabItem label="Orion">Bellatrix</TabItem>
+  <TabItem label="Gemini">Pollux</TabItem>
+</Tabs>
+
+<hr />
+
+<Tabs syncKey="constellations">
+  <TabItem label="Orion">HD 34445 b</TabItem>
+  <TabItem label="Gemini">Pollux b</TabItem>
+</Tabs>
+
+:::note
+You can also [add icons](https://starlight.astro.build/components/tabs/#add-icons-to-tabs) to the tabs, but as of June 2025, you're limited to Starlight's [built-in icons](https://starlight.astro.build/reference/icons/#all-icons).
+:::
 
 ## Misc
 
@@ -83,9 +115,9 @@ See the [Frames and titles](https://starlight.astro.build/guides/authoring-conte
 
 If there's a style you need to apply to an entire page, to every instance of an element, you can do so in the frontmatter. 
 
-For example, the tables in the [Sequence diagram style guide](/content/sequence-diagrams) were behaving poorly. Text aligned itself to `baseline` which pushed the content in the last row outside of the table's bounds. Also, some code that needed to appear on a single line was breaking. 
+For example, the tables in the [Sequence diagram style guide](/content/sequence-diagrams) were behaving poorly. Text aligned itself to `baseline` which pushed the content in the last row outside the table's bounds. Also, some code that needed to appear on a single line was breaking. 
 
-Instead of adding styles within each table in the page, the styles were applied to the page itself like so:
+Instead of adding styles in each table in the page, the styles were applied to the page itself like so:
 
 ```
 ---

@@ -24,3 +24,4 @@ Postgres
 repo
 [Rr]evshare
 [Rr]afiki
+[Tt]estnet
