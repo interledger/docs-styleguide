@@ -4,15 +4,13 @@ title: MermaidWrapper
 
 import { MermaidWrapper, Mermaid } from "@interledger/docs-design-system";
 
-This component allows users to open a Mermaid diagram in a new tab. The component is helpful when a diagram is larger than our available content area.
+This component allows users to open a Mermaid diagram in a new tab, as well as download the diagram as an SVG file. The component is helpful when a diagram is larger than our available content area.
 
 :::note
 We assume that you have already imported the [Mermaid component](/shared/mermaid), otherwise, what on earth are you wrapping with this?
 :::
 
-The component adds a link to "View full image" with an external link indicator under the bottom-right corner of the image. It takes in a `src` and `alt`, just like a normal `img` element.
-
-The `client:load` attribute is required for the component to work because the component uses Javascript for interactivity.
+The component adds a link to "View full image" with an external link indicator under the bottom-right corner of the image, as well as a link to "Download diagram", which will download the diagram as an SVG file when clicked. Do use the `diagramName` prop to specify the name of the diagram file that will be saved to the user's local machine (otherwise it will default to `diagram.svg`).
 
 To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
@@ -28,7 +26,7 @@ Use the `<MermaidWrapper>` component within your content like so:
 
 {/* prettier-ignore */}
 ````jsx
-<MermaidWrapper client:load>
+<MermaidWrapper diagramName="alice-to-john">
 
 {/* prettier-ignore */}
 <Mermaid
@@ -46,7 +44,7 @@ By default, there will be a border around the diagram. To remove the border, pas
 
 {/* prettier-ignore */}
 ```jsx
-<MermaidWrapper client:load hasBorder={false}>
+<MermaidWrapper hasBorder={false} diagramName="healthcheck">
 
 {/* prettier-ignore */}
 <Mermaid
@@ -77,7 +75,7 @@ If you're using some sort of format-on-save functionality in your code editor, l
 
 The default styling which includes a border:
 
-<MermaidWrapper client:load>
+<MermaidWrapper diagramName="healthcheck">
 
 {/* prettier-ignore */}
 <Mermaid
@@ -99,7 +97,7 @@ The default styling which includes a border:
 
 When `hasBorder: false` is used:
 
-<MermaidWrapper client:load hasBorder={false}>
+<MermaidWrapper hasBorder={false} diagramName="alice-to-john">
 
 {/* prettier-ignore */}
 <Mermaid
