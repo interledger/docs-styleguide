@@ -10,7 +10,11 @@ This component allows users to open a Mermaid diagram in a new tab, as well as d
 We assume that you have already imported the [Mermaid component](/shared/mermaid), otherwise, what on earth are you wrapping with this?
 :::
 
-The component adds a link to "View full image" with an external link indicator under the bottom-right corner of the image, as well as a link to "Download diagram", which will download the diagram as an SVG file when clicked. Do use the `diagramName` prop to specify the name of the diagram file that will be saved to the user's local machine (otherwise it will default to `diagram.svg`).
+The component adds a link to "View full image" with an external link indicator under the bottom-right corner of the image, as well as a link to "Download diagram", which will download the diagram as an SVG file when clicked. It takes in a `viewLabel`, `downloadLabel` and `diagramName` properties.
+
+The `viewLabel` and `downloadLabel` props allow you to customize the text of the buttons, the use case being for pages that are not in English. If you don't provide these props, they will default to "View full diagram" and "Download diagram", respectively.
+
+Do use the `diagramName` prop to specify the name of the diagram file that will be saved to the user's local machine (otherwise it will default to `diagram.svg`).
 
 To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
@@ -63,6 +67,24 @@ By default, there will be a border around the diagram. To remove the border, pas
 </MermaidWrapper>
 ```
 
+To translate the labels for the diagram's available actions, pass in the `viewLabel` and `downloadLabel` attributes.
+
+{/* prettier-ignore */}
+````jsx
+<MermaidWrapper diagramName="alice-to-john" viewLabel="查看图表" downloadLabel="下载">
+
+{/* prettier-ignore */}
+<Mermaid
+  graph={`sequenceDiagram
+   小丽->>阿韩: 阿韩, 近来好吗？
+   阿韩-->>小丽: 好得很!
+   小丽-)阿韩: 行，待会儿见!
+`}
+/>
+
+</MermaidWrapper>
+````
+
 If you're using some sort of format-on-save functionality in your code editor, like Prettier, it might mess up your formatting. Ask Prettier, for example, to ignore your Mermaid block just in case. Refer to the example code above.
 
 ```
@@ -105,6 +127,23 @@ When `hasBorder: false` is used:
    Alice->>John: Hello John, how are you?
    John-->>Alice: Great!
    Alice-)John: See you later!
+`}
+/>
+
+</MermaidWrapper>
+
+### Translated labels
+
+When `viewLabel` and `downloadLabel` are used:
+
+<MermaidWrapper diagramName="alice-to-john" viewLabel="查看图表" downloadLabel="下载">
+
+{/* prettier-ignore */}
+<Mermaid
+  graph={`sequenceDiagram
+   小丽->>阿韩: 阿韩, 近来好吗？
+   阿韩-->>小丽: 好得很!
+   小丽-)阿韩: 行，待会儿见!
 `}
 />
 
