@@ -30,6 +30,35 @@ pnpm start
 ```
 </Card>
 
+<Card title="After a GraphQL schema change" icon="star">
+
+GraphQL schema changes are rare, but when they happen, here's what to do:
+
+**Generate the GraphQL docs**
+
+Run these commands in the `packages/documentation` folder:
+
+```
+npx spectaql config-auth.yml // Auth Admin API
+
+npx spectaql config-backend.yml // Backend Admin API
+```
+
+These commands generate the static HTML files for the GraphQL API docs.
+
+**Add custom pages to search indexing**
+
+Open the generated HTML files (`src/pages/apis/graphql/auth/index.html` and `src/pages/apis/graphql/backend/index.html`) and add the `data-pagefind-body` attribute to the `<div id="docs">` element:
+
+```
+    <div id="docs" data-pagefind-body>
+      ...
+    </div>
+```
+
+This ensures that the GraphQL API docs are included in the site search.
+</Card>
+
 ## Nouns
 
 ### Common nouns
