@@ -1,10 +1,13 @@
 allowlist
 amountSent
 APIs
+ASEs
+Astro
 blocklist
 CSPs
 [Dd]iv
 Fedwire
+[Ff]rontmatter
 GateHub
 [Hh]ackathon
 href
@@ -15,6 +18,7 @@ Interledger Foundation
 Interledger Wallet
 Web Monetization
 Web Monetization Playground
+Monetization's
 micropayment
 [Nn]amespace
 onboarding
@@ -24,4 +28,6 @@ Postgres
 repo
 [Rr]evshare
 [Rr]afiki
+SDKs
+Shiki
 [Tt]estnet
