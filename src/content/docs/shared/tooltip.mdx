@@ -13,8 +13,6 @@ This component allows you add a small, stylized question mark element that, when
 
 The component is built to be accessible in accordance to the guidance from [WAI Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/). 
 
-The `client:load` attribute is required for the component to work because it uses Javascript for interactivity.
-
 To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
@@ -28,7 +26,7 @@ import { Tooltip } from "@interledger/docs-design-system";
 The component can be used within your content in a few ways. Technically, you can add the following in the location you want the question mark element to appear:
 
 ```jsx
-<Tooltip content="This appears on hover" client:load></Tooltip>
+<Tooltip content="This appears on hover"></Tooltip>
 ```
 
 However, a better practice is to wrap the word or phrase that the tooltip pertains to.
@@ -36,19 +34,19 @@ However, a better practice is to wrap the word or phrase that the tooltip pertai
 In the following example, the question mark element will appear after the word _this_.
 
 ```jsx
-Define <Tooltip content="Hint text" client:load>this</Tooltip> term.
+Define <Tooltip content="Hint text">this</Tooltip> term.
 ```
 
 In this next example, the question mark element will appear between the word _to_ and the ending punctuation.
 
 ```jsx title="Example 2"
-<Tooltip content="This appears on hover" client:load>
+<Tooltip content="This appears on hover">
   <a href="/URL">This is the content</a> that the tooltip relates to 
 </Tooltip>.
 ```
 
 ## Working examples
 
-This is a sentence that has many technical terms. A <Tooltip content="Concise and clear explanation here" client:load>tooltip</Tooltip> could help with explaining a term when hovered over. Don't make them too long though.
+This is a sentence that has many technical terms. A <Tooltip content="Concise and clear explanation here">tooltip</Tooltip> could help with explaining a term when hovered over. Don't make them too long though.
 
-This example contains a tooltip along with a link to see <Tooltip content='Bubees is not a typo. Bubees is a cat.' client:load><a href="http://www.autofish.net/mirrors/images/animals/cats/bubees.jpg">Bubees</a></Tooltip>.
+This example contains a tooltip along with a link to see <Tooltip content='Bubees is not a typo. Bubees is a cat.'><a href="http://www.autofish.net/mirrors/images/animals/cats/bubees.jpg">Bubees</a></Tooltip>.

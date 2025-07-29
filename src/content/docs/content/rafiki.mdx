@@ -2,13 +2,13 @@
 title: Rafiki style guide
 ---
 
-import { Card } from '@astrojs/starlight/components';
+import { Card, Tabs, TabItem } from '@astrojs/starlight/components';
 
 <Card title="Before committing changes" icon="star">
 
 1. Your PR title must contain the appropriate prefix (`docs:`).
 
-2. Run the following command within the `/packages/documentation` directory:
+2. Run the following command in the `/packages/documentation` directory:
 
     ```
     npx prettier . --write
@@ -69,61 +69,50 @@ This ensures that the GraphQL API docs are included in the site search.
 
 ### backend/frontend 
 
-When writing about the backend/frontend services and packages in Rafiki, spell as shown. Don't hyphenate or add a space (e.g., back end). FWIW, this is how Microsoft, Google, and Cloudflare treat the terms in their docs.
+When writing about the backend/frontend services and packages in Rafiki, spell as shown. Don't hyphenate or add a space (for example, back end). FWIW, this is how Microsoft, Google, and Cloudflare treat the terms in their docs.
 
 ## Rafiki-specific styles
 
 ### Custom table styles
 
-We've implemented a few different custom table styles specifically for Rafiki docs. These custom styles were developed because we were running into scrolling issues as well as column width issues, primarily when text was formatted as code.
+Many of the tables in the Rafiki docs are wider than the main content panel. We've tried to care for this in a few ways.
 
-You can wrap your markdown table in an HTML `<div>` with one of the following custom table styles:
+* We implemented toggles across all doc sites that allows you to collapse/expand the left and right panels. This gives the main content panel a wider viewable area.
+* We also added support to the Rafiki docs for custom CSS table styles.
 
-### overflow-table
+You can wrap your markdown table in one of the following `div`s.
 
-A long and wide table (vertical and horizontal scrollbars on overflow) with **regular column sizing**.
+<Tabs>
+  <TabItem label="overflow-table">
+    ```html
+    <div class="overflow-table">
+      // Markdown table goes here
+    </div>
+    ```
+    **Example**
+    ![Regular overflow table example](/img/rafiki-overflow-table.png)
+  </TabItem>
+  <TabItem label="wide-column">
+    The `wide-column` sets the minimum width of the table (sum of the total width of all columns) to 60rem.
 
-```html
-<div class="overflow-table">
+    ```html
+    <div class="overflow-table wide-column">
+      // Markdown table goes here
+    </div>
+    ```
+    **Example**
 
-| Column Header 1 | Column Header 2 | Column Header 3 |
-| --------------- | --------------- | --------------- |
-| Content         | Content         | Content         |
-| Content         | Content         | Content         |
+    ![Wide overflow table example](/img/rafiki-overflow-wide.png)
+  </TabItem>
+  <TabItem label="wider-column">
+    The `wider-column` sets the minimum width of the table (sum of the total width of all columns) to 80rem.
+    ```html
+    <div class="overflow-table wider-column">
+      // Markdown table goes here
+    </div>
+    ```
+    **Example**
 
-</div>
-```
-
-### overflow-table wide-column
-
-A long and wide table (vertical and horizontal scrollbars on overflow) that needs extra wide columns to accommodate text formatted as code.
-
-`wide-column` sets the minimum width of the table (sum of the total width of all columns) to **60rem**.
-
-```html
-<div class="overflow-table wide-column">
-
-| Column Header 1 | Column Header 2 | Column Header 3 |
-| --------------- | --------------- | --------------- |
-| Content         | Content         | Content         |
-| Content         | Content         | Content         |
-
-</div>
-```
-
-### overflow-table wider-column
-
-A long and wide table (vertical and horizontal scrollbars on overflow) that needs even larger, extra wide columns to accommodate text formatted as code.
-
-`wider-column` sets the minimum width of the table (sum of the total width of all columns) to **80rem**.
-
-```html
-<div class="overflow-table wider-column">
-
-| Column Header 1 | Column Header 2 | Column Header 3 |
-| --------------- | --------------- | --------------- |
-| Content         | Content         | Content         |
-| Content         | Content         | Content         |
-
-</div>
-```
+    ![Wider overflow table example](/img/rafiki-overflow-wider.png)
+  </TabItem>
+</Tabs>

@@ -1,5 +1,5 @@
 extends: substitution
-message: "Prefer '%s' over '%s'."
+message: "Consider '%s' instead of '%s'." 
 level: suggestion
 ignorecase: true
 action:
@@ -42,7 +42,6 @@ swap:
   file name: filename
   functionality: capability|feature
   grayed-out: unavailable
-  HTTPs: HTTPS
   k8s: Kubernetes
   keypress: keystroke
   monetisation: monetization
@@ -54,6 +53,6 @@ swap:
   sign into: sign in to
   sign-?on: single sign-on
   tablet: device
-  url: URL
   vs\.: versus
   World Wide Web: web
+  

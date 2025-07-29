@@ -6,7 +6,7 @@ sidebar:
 
 import { CodeBlock } from "@interledger/docs-design-system";
 
-The majority of content within the documentation projects are written in Markdown. This page touches on some high-level Markdown topics. For more information on Markdown syntax, see:
+Most content in the documentation projects are written in Markdown. This page touches on some high-level Markdown topics. For more information on Markdown syntax, see:
 
 * https://starlight.astro.build/guides/authoring-content/
 * https://www.markdownguide.org/basic-syntax/
@@ -18,21 +18,23 @@ Frontmatter [YAML](https://dev.to/paulasantamaria/introduction-to-yaml-125f) is 
 
 Escape a character by adding a backslash before the character.
 
-For example, to show \{client_domain/jwks.json\} in plain text, without Starlight giving you an error, you'd need to format it like this:
+For example, to show \{client_domain/jwks.json\} in plain text (as shown here), without Starlight giving you an error, you'd need to format it like this:
 
-`\{client_domain/jwks.json\}`
+`\{client_domain/jwks.json}`
 
 ## Frontmatter
 
-A `title` is required frontmatter for most files. One scenario in which a title is **not** required is when the file is a [partial](/content/global#content-reuse). 
-
-Check the full list of [frontmatter configuration](https://starlight.astro.build/reference/frontmatter/) for more fun options.
+Most files require a `title` in their frontmatter. 
 
 ```md
 ---
 title: Remember to set this
 ---
 ```
+
+One scenario in which a title is **not** required is when the file is a [partial](/content/global#content-reuse). 
+
+Check the full list of [frontmatter configuration](https://starlight.astro.build/reference/frontmatter/) for more fun options.
 
 ## Images
 
@@ -50,7 +52,7 @@ You may want to further organise the `img` folder with subfolders if the project
 
 ## Headings
 
-Starlight is configured to automatically use your page title as a top-level heading and will include an "Overview" heading at top of each page's table of contents. Starlight does not provide a native way hide "Overview" or change the wording. 
+Starlight automatically uses your page title as a top-level heading and includes an "Overview" heading at top of each page's table of contents. Starlight doesn't provide a native way hide "Overview" or change the wording. However, we do have the [RemoveOverview](/shared/removeoverview) component.
 
 ### Automatic heading anchor links
 
@@ -60,18 +62,16 @@ Level 2 (`<h2>`) and Level 3 (`<h3>`) headings automatically appear in a page's 
 
 ## Advanced Markdown and MDX configuration
 
-Starlight uses Astro’s Markdown and MDX renderer built on remark and rehype. You can add support for custom syntax and behavior by adding `remarkPlugins` or `rehypePlugins` in your Astro config file. See [“Configuring Markdown and MDX”](https://docs.astro.build/en/guides/markdown-content/#configuring-markdown-and-mdx) in the Astro docs to learn more.
+Starlight uses Astro's Markdown and MDX renderer built on remark and rehype. You can add support for custom syntax and behavior by adding `remarkPlugins` or `rehypePlugins` in your Astro config file. See [“Configuring Markdown and MDX”](https://docs.astro.build/en/guides/markdown-content/#configuring-markdown-and-mdx) in the Astro docs to learn more.
 
 ### Mermaid diagrams
 
-:::danger
-We no longer support mermaid diagrams using the markdown syntax. Instead, use our custom [`Mermaid` component](/shared/mermaid).
-:::
+Use our custom [`Mermaid` component](/shared/mermaid) to add Mermaid diagrams to the docs.
 
 ### Mathjax
 
 :::caution
-This component requires an extra dependency on [remark-math](https://github.com/remarkjs/remark-math/tree/main) and [rehype-mathjax](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-mathjax) and thus is not enabled by default on all projects. Ping the person responsible for documentation architecture if your project doesn't render mathjax properly.
+This component requires an extra dependency on [remark-math](https://github.com/remarkjs/remark-math/tree/main) and [rehype-mathjax](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-mathjax) and thus isn't enabled by default on all projects. Ping the person responsible for documentation architecture if your project doesn't render mathjax properly.
 :::
 
 $currencyAmount = \frac{value}{10^{assetScale}}$

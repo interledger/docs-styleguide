@@ -11,8 +11,6 @@ In October 2024, we decided to move away from using the Disclosure component in 
 
 This component allows you to show/hide content within a collapsible container. 
 
-The `client:load` attribute is required for the component to work because the component uses Javascript for interactivity.
-
 To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
 ## Usage
@@ -26,7 +24,7 @@ import { Disclosure } from "@interledger/docs-design-system";
 Use the `<Disclosure>` component within your content like so:
 
 ```jsx
-<Disclosure toggleText="Show code snippets" client:load>
+<Disclosure toggleText="Show code snippets">
    <!-- Your content, can be markup or markdown -->
 </Disclosure>
 ```
@@ -40,7 +38,7 @@ You can nest the Disclosure component with the built-in Starlight [`<Tabs>`](htt
 ````jsx
 import { Tabs, TabItem } from '@astrojs/starlight/components'
 
-<Disclosure toggleText="Show code snippets" client:load>
+<Disclosure toggleText="Show code snippets">
    <Tabs>
       <TabItem label='Request'>
       ```bash
@@ -71,13 +69,13 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
 
 ### Simple hidden text
 
-<Disclosure toggleText="Show hidden text" client:load>
+<Disclosure toggleText="Show hidden text">
   Just some text that does not need to be seen on first load
 </Disclosure>
 
 ### Combination of disclosures, tabs, and code blocks
 
-<Disclosure toggleText="Show code snippets" client:load>
+<Disclosure toggleText="Show code snippets">
    <Tabs>
       <TabItem label='Request'>
       ```bash
@@ -101,7 +99,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
       </TabItem>
 
       <TabItem label='TypeScript'>
-         <Disclosure toggleText="Clone Open Payments snippets repo" client:load>
+         <Disclosure toggleText="Clone Open Payments snippets repo">
 
          1. Open Terminal.
          2. Change the current working directory to where you want to clone repo.

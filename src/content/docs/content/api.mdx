@@ -9,7 +9,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
 
 This guide is designed for writers and contributors involved in documenting our APIs, which use both GraphQL and REST API technologies.
 
-At Interledger, we maintain multiple repositories that encompass a variety of projects, each serving different purposes within our ecosystem. This style guide aims to provide a cohesive framework for documenting these APIs so that our docs are clear, consistent, and aligned with our standards.
+At Interledger, we maintain multiple repositories that encompass a variety of projects, each serving different purposes in our ecosystem. This style guide aims to provide a cohesive framework for documenting these APIs so that our docs are clear, consistent, and aligned with our standards.
 
 ## GraphQL
 
@@ -23,7 +23,7 @@ For more in-depth information about GraphQL, take a look at the following resour
 
 ### Documenting GraphQL examples
 
-We've created a standardized format to maintain a consistent look and feel when documenting example GraphQL queries and mutations. Each GraphQL example should be organized into three tabs: **Operation**, **Variables**, and **Response**.
+We've created a standardized format to maintain a consistent look and feel when documenting example GraphQL queries and mutations. Organize each GraphQL example into three tabs: **Operation**, **Variables**, and **Response**.
 
 To create these multi-tabbed GraphQL examples, we're using the built-in Starlight [`<Tabs>` and `<TabItem>`](https://starlight.astro.build/components/tabs/) components. Each of the examples below will show the `<TabItem>` tags. The full example will be wrapped in the `<Tabs>` tag.
 
@@ -38,7 +38,7 @@ Make sure you import the `<Tabs>` and `<TabItem>` components to your MDX file li
 
 - Include the query/mutation in a code block
 - Specify `graphql` as the language for syntax highlighting
-- Do not include the query/mutation name in the header
+- Exclude the query/mutation name from the header
 
 <CodeBlock title="Operation tab markdown format">
 
