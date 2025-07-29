@@ -4,25 +4,13 @@ title: Global style guide
 
 import { Tooltip } from "@interledger/docs-design-system";
 
-:::caution
-This guide is in progress and won’t be complete until we start digging into the other doc sites.
-:::
-
-This guide covers styles that are shared between all doc sites using the Starlight framework.
-
-Styles should apply to all sites whenever possible; however, there could be a need for site-specific styles. If you can’t find what you’re looking for in this guide, check in a site-specific guide.
-
-- [Web Monetization](/content/webmonetization)
-- [Rafiki](/content/rafiki)
-- [Open Payments](/content/openpayments)
-- Payment Pointers (not started)
-- [Interledger](/content/interledger) (not started)
+There are certain styles that we should consistently follow regardless of the doc site we are working on. If you can't find information about a style here, check the site-specific guides linked in the sidenav.
 
 ## Rule #1
 
 Break the rules.
 
-Ok, try not to, but the audience’s best interest should always come first. Deviations are OK if they help enhance the clarity of the doc.
+Ok, try not to, but the audience's best interest should always come first. Deviations are OK if they help enhance the clarity of the doc.
 
 ## Account servicing entity
 
@@ -40,7 +28,7 @@ For buttons with labels/text strings, bold the text that appears in the button. 
 - Click **Revoke public & private key**. ✅
 - Click on Revoke public & private key. ❌
 
-For buttons that are icons (e.g., arrows), describe what should be clicked and don't use bold. Avoid using the word _on_ unless it helps with clarity. For example:
+For buttons that are icons (for example, arrows), describe what should be clicked and don't use bold. Avoid using the word _on_ unless it helps with clarity. For example:
 
 - Click the arrow to proceed. ✅
 - Click on the **arrow** to proceed. ❌
@@ -65,20 +53,20 @@ Add a comma before the conjunction in a list of three or more items. This is kno
 
 ## Content reuse
 
-Consider using MDX transclusion, also called MDX partials, if you’re using the same content across multiple page in the same doc project. Transclusion lets you embed MDX documents in other documents. We’ll refer to these embedded documents as partials.
+Consider using MDX transclusion, also called MDX partials, if you're using the same content across multiple page in the same doc project. Transclusion lets you embed MDX documents in other documents. We’ll refer to these embedded documents as partials.
 
 ### /src/partials
 
-Place MDX files to embed within the `/src/partials` folder. Create the folder if it doesn’t exist.
+Place MDX partial files in the `/src/partials` folder. Create the folder if it doesn't exist.
 
 ### Partial files
 
-Typically, partials should be used for small chunks of repeating content. If the partial file contains more than a paragraph, there may be a better way to present the information within the doc project.
+Typically, partials should be used for small chunks of repeating content. If the partial file contains more than a paragraph, there may be a better way to present the information in the doc project.
 
 Note:
 
-- Don’t include frontmatter in your partials file (e.g., `title`).
-- Headings within a partials file do not appear in a page’s table of contents.
+- Don't include frontmatter in your partials file (for example, `title`).
+- Headings in a partials file **will not** appear in a page’s table of contents.
 - Multiple partial files are supported within a single page.
 
 ### Embed a partial
@@ -89,9 +77,9 @@ First, import the partial file into the page:
 import NoPay from "/src/partials/glitchNoPay.mdx";
 ```
 
-Name the partial however you’d like, but without spaces. In the example above, the partial's name is `NoPay`.
+Name the partial however you’d like, but without spaces. In the preceding example, the partial's name is `NoPay`.
 
-Using the name you defined, add the partial within the page's content, in the location it should appear:
+Using the name you defined, add the partial in the page's content, in the location it should appear:
 
 ```mdx
 This is a paragraph of text. I want the partial content to appear beneath this paragraph.
@@ -140,17 +128,17 @@ https://moz.com/learn/seo/alt-text
 ## Initialisms
 
 - Capitalize each letter in an initialism.
-- Spell out the entire phrase on first use within a page, then include initialism in parentheses.
+- Spell out the entire phrase on first use in a page, then include initialism in parentheses.
 - In long pages, periodically spell out the entire phrase and include the initialism in parentheses. Long is subjective, use your best judgment.
 - If you use an initialism for a term that also appears in the glossary, add the initialism to the glossary term.
-- Don’t use initialisms for a term that only appears a few times within a page. Few is subjective, use your best judgment.
+- Don't use initialisms for a term that only appears a few times in a page. Few is subjective, use your best judgment.
 
 ## Lists
 
 - Lists should typically contain a minimum of three items.
 - Use unordered lists (bullets) when item order is unimportant.
-- Use ordered (numbered) lists when order is important (e.g., item #1 must be completed before item #2).
-- Keep each list as parallel as possible. This list is not a good example.
+- Use ordered (numbered) lists when order is important (for example, item #1 must be completed before item #2).
+- Keep each list as parallel as possible. This list isn't a good example.
   - All items start with a noun, or all start with a verb.
   - All items have ending punctuation, or none do.
   - All items start with a capital letter, or all start with lowercase.
@@ -158,19 +146,19 @@ https://moz.com/learn/seo/alt-text
 
 ## Please
 
-We're taking [Google's approach](https://developers.google.com/style/word-list#please): Don’t use please in the normal course of explaining how to use a product, even if you’re explaining a difficult task.
+We're taking [Google's approach](https://developers.google.com/style/word-list#please): Don't use "please" in the normal course of explaining how to use a product, even if you're explaining a difficult task.
 
 ## See
 
-Previously, we tried to be more inclusive by staying away from using *see* when referring to a link (e.g., *see XYZ for more information*).
+Previously, we tried to be more inclusive by staying away from using *see* when referring to a link (for example, *see XYZ for more information*).
 
 We've decided that it **is** OK to use *see*.
 
-The W3C uses *see* for link references within their [Accessibility, Usability, and Inclusion](https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/) page. Similarly, Google uses it within their [Write inclusive documentation](https://developers.google.com/style/inclusive-documentation) page and their [word list](https://developers.google.com/style/word-list#see) indicates its OK to use when referring to links and cross-references.
+The W3C uses *see* for link references in their [Accessibility, Usability, and Inclusion](https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/) page. Similarly, Google uses it in their [Write inclusive documentation](https://developers.google.com/style/inclusive-documentation) page and their [word list](https://developers.google.com/style/word-list#see) indicates its OK to use when referring to links and cross-references.
 
 ## SHA (secure hash algorithm)
 
-SHA is a common technical term that does not need to be defined before it's first use. 
+SHA is a common technical term that doesn't need to be defined before it's first use. 
 
 When an a/an article is needed, use **a**. 
 
@@ -179,9 +167,9 @@ When an a/an article is needed, use **a**.
 
 ## Sidebar categories
 
-Starlight does not allow a sidebar category, or book, to also be a page. For example, clicking **Shared Component** in this project's sidebar expands/collapses the category without navigating you to a new page.
+Starlight doesn't allow a sidebar category, or book, to also be a page. For example, clicking **Shared Component** in this project's sidebar expands/collapses the category without navigating you to a new page.
 
-Since a category cannot be a page, ensure the category's name and pages within the category are titled somewhat differently.
+Since a category can't be a page, ensure the category's name and the pages in the category are titled somewhat differently.
 
 For example:
 
@@ -193,7 +181,7 @@ For example:
 
 ## Sidebar external links
 
-If an external link is required in the sidebar, you can make use of Astro's [sidebar `attrs` property](https://starlight.astro.build/guides/sidebar/#custom-html-attributes) to open the link in a new tab and also add an indicator icon to show the link is external.
+If an external link is required in the sidebar, you can use Astro's [sidebar `attrs` property](https://starlight.astro.build/guides/sidebar/#custom-html-attributes) to open the link in a new tab and also add an indicator icon to show the link is external.
 
 ```js
 sidebar: [
@@ -215,7 +203,7 @@ Always spell out test network. Don't abbreviate to testnet.
 
 ## Tooltips
 
-The [Tooltip](/shared/tooltip) component allows you to add additional text to a word or phrase. The text appears when you hover your cursor over the <Tooltip content='This is an example tooltip' client:load><span>question mark</span></Tooltip>.
+The [Tooltip](/shared/tooltip) component allows you to add additional text to a word or phrase. The text appears when you hover your cursor over the <Tooltip content='This is an example tooltip'><span>question mark</span></Tooltip>.
 
 - Tooltips should be short. Consider linking to a page or glossary term instead of using the Tooltip component if a tooltip becomes too long.
 - Longer tooltips that appear at the top of the page might be cut off by the UI.

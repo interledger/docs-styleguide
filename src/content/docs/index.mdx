@@ -14,7 +14,7 @@ bun run start
 ```
 </Card>
 
-Interledger uses [Starlight](https://starlight.astro.build/getting-started/) (powered by [Astro](https://docs.astro.build/en/getting-started/)) for all its documentation sites. In order to keep our visual styling consistent across our numerous documentation sites, we have packaged our styles and shared components in an [npm package](https://www.npmjs.com/package/@interledger/docs-design-system).
+Interledger uses [Starlight](https://starlight.astro.build/getting-started/) (powered by [Astro](https://docs.astro.build/en/getting-started/)) for all its documentation sites. To keep our visual styling consistent across our numerous documentation sites, we have packaged our styles and shared components in an [npm package](https://www.npmjs.com/package/@interledger/docs-design-system).
 
 ```bash
 npm i @interledger/docs-design-system
@@ -22,19 +22,27 @@ npm i @interledger/docs-design-system
 
 Feel free to install with the package manager of your choice.
 
-Because we are using Starlight, content has to be authored in Markdown or MDX. 
+Because we're using Starlight, content must be authored in Markdown or MDX. 
 
 :::caution[Best practice]
 Create new pages as MDX files. 
 :::
 
-Components can be written in JSX, and imported into MDX files. Documentation pages cannot be `.astro` files. You are free to create Astro pages in the `/pages` folder though.
+Components can be written in JSX, and imported into MDX files. Documentation pages can't be `.astro` files. You are free to create Astro pages in the `/pages` folder though.
 
 ## Visual themes
 
-We have two visual themes for now, teal and orange. These themes are built on top of Starlight's defaults and overrides some of the out-of-the-box styling. They are just CSS files, so use them with the path to `node_modules`. Unfortunately, we did not have enough braincells to figure out how to make it prettier than that. To use them in the `astro.config.mjs`:
+Visual themes change the default way the Starlight UI appears to our audience by introducing new styling and overriding some native styling. Each theme is a CSS file, used with the path to `node_modules`.
 
-```js
+If you are using them in an Astro layout file, then the import must look like this:
+
+```jsx wrap
+import '/node_modules/@interledger/docs-design-system/src/styles/teal-theme
+```
+
+To use them in the `astro.config.mjs`:
+
+```js wrap
 export default defineConfig({
   integrations: [
     starlight({
@@ -47,18 +55,14 @@ export default defineConfig({
 });
 ```
 
-If you are using them in an Astro layout file, then the import must look like this:
-
-```jsx
-import '/node_modules/@interledger/docs-design-system/src/styles/teal-theme
-```
+When we first rolled out Starlight, we used different themes (specifically colors) across doc sets. That's why you might see `orange-theme`, for example. Now we use the teal theme pretty much across the board to promote consistency between doc sets. We also use `ilf-docs`. If we need something for a specific doc set, there could be an additional CSS file.
 
 ## Components
 
 Starlight provides some built-in components that are commonly used for documentation sites. Refer to the [Starlight documentation](https://starlight.astro.build/guides/components#built-in-components) for detailed information on how to use them.
 
 :::note
-The Starlight team releases new components from time to time. If you find a component in their doc that doesn't work with an Interledger doc site, we may need to upgrade our version of Starlight.
+The Starlight team releases new components from time to time. If you find a component in their doc that doesn't work with our sites, we may need to upgrade our version of Starlight.
 :::
 
 We also have a number of documentation-specific helper components that can be imported and used where necessary. You can refer to the individual pages in the sidebar to see them in action.
@@ -69,20 +73,20 @@ If you are using multiple shared components on a single page, you can import the
 import { CodeBlock, LinkOut } from "@interledger/docs-design-system";
 ```
 
-For more information about importing things in Javascript, refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
+For more information about importing things in JavaScript, refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
 
 ## Docs site building
 
-Each documentation site will inevitably have its own unique requirements. One may have custom pages and components which do not apply to any of the other documentation sites. As such, we have a general pattern for handling this. For CSS, our shared styles are all in the [docs-design-system](https://www.npmjs.com/package/@interledger/docs-design-system) npm package. If the documentation site you're building is simple enough, you might not even need more than what was [outlined above](#visual-themes).
+Each documentation site inevitably has its own unique requirements. One site could have custom pages and components which don't apply to any of the other documentation sites. As such, we have a general pattern for handling this. For CSS, our shared styles are all in the [docs-design-system](https://www.npmjs.com/package/@interledger/docs-design-system) npm package. If the documentation site you're building is simple enough, you might not even need more than what was [outlined above](#visual-themes).
 
-In the event there are certain components or elements that only apply to specific documentation sites, we will need to write additional styles. These will go into the `/src/styles` folder, and use the project name as the file name, e.g. `rafiki.css`.
+In the event there are certain components or elements that only apply to specific documentation sites, we'll need to write additional styles. Put the styles into the `/src/styles` folder, and use the project name as the filename, e.g. `rafiki.css`.
 
-```js
+```js wrap
 export default defineConfig({
   integrations: [
     starlight({
       customCss: [
-        "./node_modules/@interledger/docs-design-system/src/styles/orange-theme.css",
+        "./node_modules/@interledger/docs-design-system/src/styles/teal-theme.css",
         "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
         "./src/styles/rafiki.css",
       ],
@@ -93,9 +97,9 @@ export default defineConfig({
 
 Some of our sites also have custom pages, like [Web Monetization](https://webmonetization.org) or the [Interledger Developer Portal](https://interledger.org/developers).
 
-These are pages that live outside the Starlight integration ecosystem, and do not come with any styles nor structure. As such, you will also need to create a layout which forms the base structure of a standard web page, down to the `<!doctype html>` and `<head>` elements.
+These are pages that live outside the Starlight integration ecosystem, and don't come with any styles or structure. As such, you will also need to create a layout which forms the base structure of a standard web page, down to the `<!doctype html>` and `<head>` elements.
 
-You can create multiple layout files if there are different types of pages required, and all these layout files will go into the `/src/layouts` folder, while the pages themselves will go into the `/src/pages` folder. It is highly recommended you read the [Astro documentation](https://docs.astro.build/en/core-concepts/astro-pages/) to familiarise yourself with how this all works.
+You can create multiple layout files if there are different types of pages required. All these layout files go into the `/src/layouts` folder, while the pages themselves go into the `/src/pages` folder. It's highly recommended you read the [Astro documentation](https://docs.astro.build/en/core-concepts/astro-pages/) to familiarise yourself with how this all works.
 
 This is a very generic starter sample layout that you can work off from:
 

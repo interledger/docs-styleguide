@@ -1,9 +1,11 @@
 allowlist
 amountSent
 APIs
+API's
 ASEs
 Astro
 blocklist
+[Cc]onfig
 CSPs
 [Dd]iv
 Fedwire
@@ -11,6 +13,7 @@ Fedwire
 GateHub
 [Hh]ackathon
 href
+HTTP
 [Ii]frame
 incomingPayment
 [Ii]nterledger
@@ -30,4 +33,6 @@ repo
 [Rr]afiki
 SDKs
 Shiki
+[Ss]ubfolder
 [Tt]estnet
+[Tt]ooltip
