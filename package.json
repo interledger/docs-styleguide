@@ -9,13 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.34.4",
-    "@interledger/docs-design-system": "^0.9.0",
-    "astro": "^5.11.0",
+    "@astrojs/starlight": "^0.36.2",
+    "@interledger/docs-design-system": "^0.10.1",
+    "astro": "^5.15.9",
     "rehype-mathjax": "^7.1.0",
     "remark-math": "^6.0.0",
-    "sharp": "^0.34.2",
-    "starlight-fullview-mode": "^0.2.3",
-    "starlight-links-validator": "^0.17.0"
+    "sharp": "^0.34.5",
+    "starlight-fullview-mode": "^0.2.6",
+    "starlight-links-validator": "^0.19.1"
   }
 }
