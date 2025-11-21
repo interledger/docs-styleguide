@@ -9,7 +9,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components'
 
 This guide is designed for writers and contributors involved in documenting our APIs, which use both GraphQL and REST API technologies.
 
-At Interledger, we maintain multiple repositories that encompass a variety of projects, each serving different purposes in our ecosystem. This style guide aims to provide a cohesive framework for documenting these APIs so that our docs are clear, consistent, and aligned with our standards.
+At Interledger, we maintain multiple repositories that encompass a variety of projects, each serving different purposes across our ecosystem. This style guide aims to provide a cohesive framework for documenting these APIs so that our docs are clear, consistent, and aligned with our standards.
 
 ## GraphQL
 
@@ -123,7 +123,7 @@ Before this style guide was created, there were older GraphQL examples that, in 
     }
     ```
   </TabItem>
-  <TabItem label="Arguments">
+  <TabItem label="Variables">
     ```json
     {
       "input": {
@@ -163,7 +163,7 @@ Before this style guide was created, there were older GraphQL examples that, in 
     }
     ```
   </TabItem>
-  <TabItem label="Arguments">
+  <TabItem label="Variables">
     ```json
     {
       "input": {
@@ -191,4 +191,87 @@ Before this style guide was created, there were older GraphQL examples that, in 
 
 ## REST API
 
-Coming soon
+From [restfulapi.net](https://restfulapi.net/), a REST API (Representational State Transfer) provides a standardized way to interact with resources using predictable HTTP requests (GET, POST, PUT, DELETE). REST APIs are designed for interoperability and human readability, enabling developers to work with predictable resource paths and standardized data formats such as JSON. Each endpoint represents a resource, and responses use standard HTTP status codes to indicate success or failure.
+
+For more in-depth information about REST APIs, take a look at the following resources:
+
+- [REST API tutorial](https://restfulapi.net/)
+- [MDN Docs: HTTP overview](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [OpenAPI specification](https://spec.openapis.org/oas/latest.html)
+
+In [Open Payments](https://openpayments.dev/), REST APIs expose operations such as creating incoming and outgoing payments, requesting quotes, and handling authentication. Each follows conventional HTTP request/response semantics defined in our [OpenAPI specifications](https://github.com/interledger/open-payments-specifications).
+
+### Documenting REST API examples
+
+Our REST API examples appear in two primary contexts within the Open Payments docs:
+
+1. [SDK pages](https://openpayments.dev/sdk/before-you-begin/): Focused, single-operation walkthroughs showing how to call individual endpoints (for example, creating an incoming payment)
+2. [Guide pages](https://openpayments.dev/guides/accept-otp-online-purchase/): Broader workflows that combine multiple operations into real world end-to-end use cases (for example, accept a one-time payment for an online purchase)
+
+Although both types of content reference the same underlying API endpoints, the way examples are embedded and presented differs slightly. This section explains how to structure and format these examples consistently.
+
+:::note
+When writing or updating Open Payments SDK and guide pages, refer also to the [Open Payments style guide](/content/openpayments). It defines higher‑level conventions such as naming, formatting, and guide structure that complement the REST‑specific example guidance below.
+:::
+
+#### SDK pages
+
+Each SDK page demonstrates how a single API operation is implemented across multiple SDKs. These examples are presented in a multi-language tabbed interface, where each programming language has its own `<TabItem>` component.
+
+Like the GraphQL examples above, we're using the built-in Starlight [`<Tabs>` and `<TabItem>`](https://starlight.astro.build/components/tabs/) components.
+
+:::tip
+Make sure you import the `<Tabs>` and `<TabItem>` components to your MDX file like so:
+
+`import { Tabs, TabItem } from '@astrojs/starlight/components'`
+:::
+
+##### Using the tabbed interface
+
+As stated earlier, the `<Tabs>` component is wrapped around all language examples, and each language is inside its own `<TabItem>` component. It's important to note that writers do not edit the code examples directly. Code snippets are sourced automatically from each SDK's repository. It's our role to make sure that the structure, order, and labeling of the tabs are consistent across all SDK pages.
+
+- Maintain a consistent tab order (TypeScript/JavaScript, Rust, PHP)
+- Each `<TabItem>` label should include both the language name and its corresponding icon when available (for example, `icon="seti:javascript"`)
+- Use [`<ChunkedSnippet>`](/oppm/chunkedsnippet/) to import maintained code blocks directly from SDK repositories
+
+<CodeBlock title="Example structure of an SDK page">
+````
+<Tabs>
+  <TabItem label="TypeScript/JavaScript" icon="seti:javascript">
+    // Code snippet automatically pulled from open-payments-snippets
+  </TabItem>
+  <TabItem label="Rust" icon="seti:rust">
+    // Snippet automatically pulled from open-payments-rust
+  </TabItem>
+  <TabItem label="PHP" icon="seti:php">
+    // Snippet automatically pulled from open-payments-php-snippets
+  </TabItem>
+</Tabs>
+````
+</CodeBlock>
+
+These conventions ensure a consistent presentation across all SDK examples, even as we add new languages.
+
+#### Guide pages
+
+Open Payments developer guides demonstrate complete workflows that combine multiple REST API operations. Each step typically shows one request/response sequence.
+
+Writers should follow the broader framework in the [Open Payments style guide](/content/openpayments/#developer-guides) for page elements like the page summary, scenario, endpoints list, and the steps in the guide. That guide also defines the formatting details for [API requests](/content/openpayments/#code-for-requests) and [API responses](/content/openpayments/#code-for-responses). 
+
+Keep both request and response examples visually lightweight and predictable. Each should fit comfortably within a single screen view so readers can understand an operation at a glance. Refer to the following tips for both example requests and responses.
+
+##### API request considerations
+
+Example API requests should illustrate the endpoint, HTTP method, and relevant data.
+
+- Keep payloads brief and realistic
+- Include the parameters that can influence the specific response being demonstrated
+- When different endpoints share common data (like wallet addresses or grants), display those values consistently throughout the guide so readers can easily recognize them
+
+##### API response considerations
+
+Example API responses should represent what relevant data comes back from the API, and it doesn't always have to include a full payload.
+
+- Emphasize what changed or what was created as a result of the request (for example, a new ID that was generated or a status that changed)
+- Trim unrelated fields to keep the focus on the result shown
+- Follow the same component pattern as SDK pages: a `<details>` block labeled "Example response" containing a short explanatory line and a `json wrap` block that matches the OpenAPI spec 
