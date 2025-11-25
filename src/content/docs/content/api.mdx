@@ -228,23 +228,23 @@ Make sure you import the `<Tabs>` and `<TabItem>` components to your MDX file li
 
 ##### Using the tabbed interface
 
-As stated earlier, the `<Tabs>` component is wrapped around all language examples, and each language is inside its own `<TabItem>` component. It's important to note that writers do not edit the code examples directly. Code snippets are sourced automatically from each SDK's repository. It's our role to make sure that the structure, order, and labeling of the tabs are consistent across all SDK pages.
+As stated earlier, the `<Tabs>` component is wrapped around all language examples, and each language is inside its own `<TabItem>` component. Writers do not edit the code examples themselves. Developers maintain those code snippets in their respective SDK repositories, and writers embed them into SDK pages with [`<ChunkedSnippet>`](/oppm/chunkedsnippet/) components. It's our role to make sure that the structure, order, and labeling of the tabs are consistent across all SDK pages.
 
 - Maintain a consistent tab order (TypeScript/JavaScript, Rust, PHP)
-- Each `<TabItem>` label should include both the language name and its corresponding icon when available (for example, `icon="seti:javascript"`)
+- Each `<TabItem>` label should include both the language name and its [corresponding icon](https://starlight.astro.build/reference/icons/#all-icons) when available (for example, `icon="seti:javascript"`)
 - Use [`<ChunkedSnippet>`](/oppm/chunkedsnippet/) to import maintained code blocks directly from SDK repositories
 
-<CodeBlock title="Example structure of an SDK page">
+<CodeBlock title="Simplified tabbed interface - example">
 ````
 <Tabs>
   <TabItem label="TypeScript/JavaScript" icon="seti:javascript">
-    // Code snippet automatically pulled from open-payments-snippets
+    <ChunkedSnippet source="..."  chunk="..."/>
   </TabItem>
   <TabItem label="Rust" icon="seti:rust">
-    // Snippet automatically pulled from open-payments-rust
+    <ChunkedSnippet source="..."  chunk="..."/>
   </TabItem>
   <TabItem label="PHP" icon="seti:php">
-    // Snippet automatically pulled from open-payments-php-snippets
+    <ChunkedSnippet source="..."  chunk="..."/>
   </TabItem>
 </Tabs>
 ````
