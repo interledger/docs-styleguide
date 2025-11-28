@@ -3,6 +3,8 @@ title: Interledger documentation style guide
 description: Style guide for Interledger's documentation sites
 ---
 
+{/* prettier-ignore-start */}
+
 import { CodeBlock } from "@interledger/docs-design-system";
 import { Card } from "@astrojs/starlight/components";
 
@@ -103,6 +105,8 @@ You can create multiple layout files if there are different types of pages requi
 
 This is a very generic starter sample layout that you can work off from:
 
+{/* prettier-ignore-start */}
+
 <CodeBlock title="/src/layouts/Layout.astro">
 
 ```astro
@@ -123,8 +127,7 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="author" content="Interledger Foundation" />
-    <meta name="description" content={description ? description : 'Making
-    payments as easy as sending an email'}>
+    <meta name="description" content={description ? description : 'Making payments as easy as sending an email'}>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content="{Astro.generator}" />
     <title>{title ? `${title} | Interledger` : 'Interledger'}</title>
@@ -139,7 +142,7 @@ const { title, description } = Astro.props;
 
 </CodeBlock>
 
-It had been possible to [override the default Starlight components](https://starlight.astro.build/guides/overriding-components/) since v0.11.0, and most of our documentation sites implement this for our site header. This is because the default search bar takes up too much space for our aesthetic liking. 乁 ⁠(⁠ ⁠•⁠_⁠•⁠ ⁠)⁠ ㄏ
+It had been possible to [override the default Starlight components](https://starlight.astro.build/guides/overriding-components/) since v0.11.0, and most of our documentation sites implement this for our site header. This is because the default search bar takes up too much space for our aesthetic liking. 乁 ⁠(⁠ ⁠•⁠_⁠•⁠ ⁠)⁠ ㄏ
 
 Although we have contemplated making this a shared component, each site header is different enough that we've decided to leave it up to each individual site to handle. Consult the documentation for how this works.
 
@@ -173,3 +176,5 @@ import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 ```
 
 </CodeBlock>
+
+{/* prettier-ignore-end */}

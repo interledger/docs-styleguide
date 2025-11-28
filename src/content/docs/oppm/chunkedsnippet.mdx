@@ -6,7 +6,7 @@ title: ChunkedSnippet
 This component only exists in the [Open Payments repository](https://github.com/interledger/open-payments/tree/main/docs/src/components). Raise [an issue](https://github.com/interledger/docs-design-system/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml&title=%5BFEATURE%5D+%3Ctitle%3E) if you feel it should be elevated into the shared library.
 :::
 
-This component allows you to display specially formatted code snippet files from a public GitHub repo within a page. 
+This component allows you to display specially formatted code snippet files from a public GitHub repo within a page.
 
 The snippet files must have "chunking comments" for the component to work correctly. [Example](https://raw.githubusercontent.com/interledger/open-payments-snippets/main/wallet-address/wallet-address-get.ts).
 
@@ -19,7 +19,7 @@ To use the component, the page must be in `.mdx` format. Change the format from 
 Import the `ChunkedSnippet` component like so:
 
 ```jsx
-import ChunkedSnippet from "/src/components/ChunkedSnippet.astro";
+import ChunkedSnippet from '/src/components/ChunkedSnippet.astro'
 ```
 
 Use the `<ChunkedSnippet>` component within your content like so:
