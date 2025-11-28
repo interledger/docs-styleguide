@@ -2,7 +2,7 @@
 title: API style guide
 ---
 
-import { CodeBlock } from "@interledger/docs-design-system"
+import { CodeBlock } from '@interledger/docs-design-system'
 import { Tabs, TabItem } from '@astrojs/starlight/components'
 
 ## Introduction
@@ -32,7 +32,6 @@ Make sure you import the `<Tabs>` and `<TabItem>` components to your MDX file li
 
 `import { Tabs, TabItem } from '@astrojs/starlight/components'`
 :::
-
 
 #### Operation tab
 
@@ -83,7 +82,7 @@ Make sure you import the `<Tabs>` and `<TabItem>` components to your MDX file li
 </CodeBlock>
 
 :::note
-Before this style guide was created, there were older GraphQL examples that, in most cases, contained a table displaying variable names and descriptions. If you are updating one of these older examples, delete this table. The input object documentation explains all of the variables and we link to that page in the Variables tab. 
+Before this style guide was created, there were older GraphQL examples that, in most cases, contained a table displaying variable names and descriptions. If you are updating one of these older examples, delete this table. The input object documentation explains all of the variables and we link to that page in the Variables tab.
 :::
 
 #### Response tab
@@ -146,6 +145,7 @@ Before this style guide was created, there were older GraphQL examples that, in 
       }
     }
     ```
+
   </TabItem>
 </Tabs>
 ````
@@ -186,6 +186,7 @@ Before this style guide was created, there were older GraphQL examples that, in 
       }
     }
     ```
+
   </TabItem>
 </Tabs>
 
@@ -235,19 +236,19 @@ As stated earlier, the `<Tabs>` component is wrapped around all language example
 - Use [`<ChunkedSnippet>`](/oppm/chunkedsnippet/) to import maintained code blocks directly from SDK repositories
 
 <CodeBlock title="Simplified tabbed interface - example">
-````
-<Tabs>
-  <TabItem label="TypeScript/JavaScript" icon="seti:javascript">
-    <ChunkedSnippet source="..."  chunk="..."/>
-  </TabItem>
-  <TabItem label="Rust" icon="seti:rust">
-    <ChunkedSnippet source="..."  chunk="..."/>
-  </TabItem>
-  <TabItem label="PHP" icon="seti:php">
-    <ChunkedSnippet source="..."  chunk="..."/>
-  </TabItem>
-</Tabs>
-````
+  ````
+  <Tabs>
+    <TabItem label="TypeScript/JavaScript" icon="seti:javascript">
+      <ChunkedSnippet source="..." chunk="..." />
+    </TabItem>
+    <TabItem label="Rust" icon="seti:rust">
+      <ChunkedSnippet source="..." chunk="..." />
+    </TabItem>
+    <TabItem label="PHP" icon="seti:php">
+      <ChunkedSnippet source="..." chunk="..." />
+    </TabItem>
+  </Tabs>
+  ````
 </CodeBlock>
 
 These conventions ensure a consistent presentation across all SDK examples, even as we add new languages.
@@ -256,7 +257,7 @@ These conventions ensure a consistent presentation across all SDK examples, even
 
 Open Payments developer guides demonstrate complete workflows that combine multiple REST API operations. Each step typically shows one request/response sequence.
 
-Writers should follow the broader framework in the [Open Payments style guide](/content/openpayments/#developer-guides) for page elements like the page summary, scenario, endpoints list, and the steps in the guide. That guide also defines the formatting details for [API requests](/content/openpayments/#code-for-requests) and [API responses](/content/openpayments/#code-for-responses). 
+Writers should follow the broader framework in the [Open Payments style guide](/content/openpayments/#developer-guides) for page elements like the page summary, scenario, endpoints list, and the steps in the guide. That guide also defines the formatting details for [API requests](/content/openpayments/#code-for-requests) and [API responses](/content/openpayments/#code-for-responses).
 
 Keep both request and response examples visually lightweight and predictable. Each should fit comfortably within a single screen view so readers can understand an operation at a glance. Refer to the following tips for both example requests and responses.
 
@@ -274,4 +275,4 @@ Example API responses should represent what relevant data comes back from the AP
 
 - Emphasize what changed or what was created as a result of the request (for example, a new ID that was generated or a status that changed)
 - Trim unrelated fields to keep the focus on the result shown
-- Follow the same component pattern as SDK pages: a `<details>` block labeled "Example response" containing a short explanatory line and a `json wrap` block that matches the OpenAPI spec 
+- Follow the same component pattern as SDK pages: a `<details>` block labeled "Example response" containing a short explanatory line and a `json wrap` block that matches the OpenAPI spec
