@@ -47,6 +47,8 @@ All commands are run from the root of the project, from a terminal:
 | `bun run preview`         | Preview your build locally, before deploying     |
 | `bun run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `bun run astro -- --help` | Get help using the Astro CLI                     |
+| `bun run format`          | Format and auto-fix code with Prettier & ESLint  |
+| `bun run lint`            | Check formatting and linting without making changes |
 
 You can substitute the `bun` commands with whatever package manager of your choice uses.
 
