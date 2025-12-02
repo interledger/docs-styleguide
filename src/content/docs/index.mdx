@@ -103,8 +103,6 @@ You can create multiple layout files if there are different types of pages requi
 
 This is a very generic starter sample layout that you can work off from:
 
-<!-- prettier-ignore-start -->
-
 <CodeBlock title="/src/layouts/Layout.astro">
 
 ```astro
@@ -125,8 +123,7 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="author" content="Interledger Foundation" />
-    <meta name="description" content={description ? description : 'Making 
-    payments as easy as sending an email'}>
+    <meta name="description" content={description ? description : 'Making payments as easy as sending an email'}>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content="{Astro.generator}" />
     <title>{title ? `${title} | Interledger` : 'Interledger'}</title>
@@ -175,5 +172,3 @@ import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
 ```
 
 </CodeBlock>
-
-<!-- prettier-ignore-end -->

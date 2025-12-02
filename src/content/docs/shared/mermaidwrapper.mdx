@@ -29,7 +29,7 @@ import { Mermaid, MermaidWrapper } from '@interledger/docs-design-system'
 Use the `<MermaidWrapper>` component within your content like so:
 
 {/* prettier-ignore */}
-````jsx
+````mdx
 <MermaidWrapper diagramName="alice-to-john">
 
 {/* prettier-ignore */}
@@ -47,7 +47,7 @@ Use the `<MermaidWrapper>` component within your content like so:
 By default, there will be a border around the diagram. To remove the border, pass in a `hasBorder={false}` attribute.
 
 {/* prettier-ignore */}
-```jsx
+```mdx
 <MermaidWrapper hasBorder={false} diagramName="healthcheck">
 
 {/* prettier-ignore */}
@@ -70,7 +70,7 @@ By default, there will be a border around the diagram. To remove the border, pas
 To translate the labels for the diagram's available actions, pass in the `viewLabel` and `downloadLabel` attributes.
 
 {/* prettier-ignore */}
-````jsx
+````mdx
 <MermaidWrapper diagramName="alice-to-john" viewLabel="查看图表" downloadLabel="下载">
 
 {/* prettier-ignore */}
