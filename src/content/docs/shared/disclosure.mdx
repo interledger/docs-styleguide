@@ -23,7 +23,7 @@ import { Disclosure } from '@interledger/docs-design-system'
 
 Use the `<Disclosure>` component within your content like so:
 
-```mdx
+```jsx
 <Disclosure toggleText="Show code snippets">
   {/* Your content, can be markup or markdown */}
 </Disclosure>
@@ -35,7 +35,7 @@ In general, the `toggleText` can be wrapped in single or double quotes. However,
 
 You can nest the Disclosure component with the built-in Starlight [`<Tabs>`](https://starlight.astro.build/guides/components#tabs) component. This is helpful when displaying multiple related code snippets.
 
-````mdx
+````jsx
 import { Tabs, TabItem } from '@astrojs/starlight/components'
 
 <Disclosure toggleText="Show code snippets">
