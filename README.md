@@ -39,15 +39,15 @@ curl -fsSL https://bun.sh/install | bash
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun run start`           | Starts local dev server at `localhost:1105`      |
-| `bun run build`           | Build your production site to `./dist/`          |
-| `bun run preview`         | Preview your build locally, before deploying     |
-| `bun run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun run astro -- --help` | Get help using the Astro CLI                     |
-| `bun run format`          | Format and auto-fix code with Prettier & ESLint  |
+| Command                   | Action                                              |
+| :------------------------ | :-------------------------------------------------- |
+| `bun install`             | Installs dependencies                               |
+| `bun run start`           | Starts local dev server at `localhost:1105`         |
+| `bun run build`           | Build your production site to `./dist/`             |
+| `bun run preview`         | Preview your build locally, before deploying        |
+| `bun run astro ...`       | Run CLI commands like `astro add`, `astro check`    |
+| `bun run astro -- --help` | Get help using the Astro CLI                        |
+| `bun run format`          | Format and auto-fix code with Prettier & ESLint     |
 | `bun run lint`            | Check formatting and linting without making changes |
 
 You can substitute the `bun` commands with whatever package manager of your choice uses.
