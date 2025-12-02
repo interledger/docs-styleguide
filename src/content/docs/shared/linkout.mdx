@@ -42,10 +42,9 @@ To disable the indicator icon, set the `withIcon` prop to `false`.
 
 In some cases, using this component at the beginning of a line can cause GitHub checks to fail.
 
+{/* prettier-ignore */}
 ```html title="Component at beginning of line" wrap
-<LinkOut href="https://openpayments.dev/">Open Payments</LinkOut> is an open
-RESTful API and an API standard that enables clients to interface with Open
-Payments-enabled accounts. RESTful API and an API standard that enables clients
+<LinkOut href="https://openpayments.dev/">Open Payments</LinkOut> is an open RESTful API and an API standard that enables clients to interface with Open Payments-enabled accounts. RESTful API and an API standard that enables clients
 to interface with Open
 ```
 
@@ -53,10 +52,9 @@ One way around this issue is to add `{/* prettier-ignore */}` above the line. Ho
 
 As such, we've chosen to circumvent the issue by never starting a line with this component in any project. Instead, work the component into the beginning sentence. All it takes is a single word before the component to prevent failed checks.
 
+{/* prettier-ignore */}
 ```html title="Component within a line" wrap
-The <LinkOut href="https://openpayments.dev/">Open Payments</LinkOut> APIs are
-open RESTful APIs that enable clients to interface with Open Payments-enabled
-accounts.
+The <LinkOut href="https://openpayments.dev/">Open Payments</LinkOut> APIs are open RESTful APIs that enable clients to interface with Open Payments-enabled accounts.
 ```
 
 See [Docs Design System Issue #24](https://github.com/interledger/docs-design-system/issues/24) for more information.
