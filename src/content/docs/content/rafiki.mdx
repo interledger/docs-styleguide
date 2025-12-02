@@ -2,23 +2,24 @@
 title: Rafiki style guide
 ---
 
-import { Card, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Card, Tabs, TabItem } from '@astrojs/starlight/components'
 
 <Card title="Before committing changes" icon="star">
 
-1. Your PR title must contain the appropriate prefix (`docs:`).
+1.  Your PR title must contain the appropriate prefix (`docs:`).
 
-2. Run the following command in the `/packages/documentation` directory:
+2.  Run the following command in the `/packages/documentation` directory:
 
     ```
     npx prettier . --write
     ```
 
-    You can also try the following. It might work, or you might get an error. 
+    You can also try the following. It might work, or you might get an error.
 
     ```
     pnpm format
     ```
+
 </Card>
 
 <Card title="After a Starlight upgrade to rafiki" icon="star">
@@ -57,17 +58,19 @@ Open the generated HTML files (`src/pages/apis/graphql/auth/index.html` and `src
 ```
 
 This ensures that the GraphQL API docs are included in the site search.
+
 </Card>
 
 ## Nouns
 
 ### Common nouns
-* authorization server
-* resource server 
+
+- authorization server
+- resource server
 
 ## Spellings
 
-### backend/frontend 
+### backend/frontend
 
 When writing about the backend/frontend services and packages in Rafiki, spell as shown. Don't hyphenate or add a space (for example, back end). FWIW, this is how Microsoft, Google, and Cloudflare treat the terms in their docs.
 
@@ -77,8 +80,8 @@ When writing about the backend/frontend services and packages in Rafiki, spell a
 
 Many of the tables in the Rafiki docs are wider than the main content panel. We've tried to care for this in a few ways.
 
-* We implemented toggles across all doc sites that allows you to collapse/expand the left and right panels. This gives the main content panel a wider viewable area.
-* We also added support to the Rafiki docs for custom CSS table styles.
+- We implemented toggles across all doc sites that allows you to collapse/expand the left and right panels. This gives the main content panel a wider viewable area.
+- We also added support to the Rafiki docs for custom CSS table styles.
 
 You can wrap your markdown table in one of the following `div`s.
 
@@ -103,6 +106,7 @@ You can wrap your markdown table in one of the following `div`s.
     **Example**
 
     ![Wide overflow table example](/img/rafiki-overflow-wide.png)
+
   </TabItem>
   <TabItem label="wider-column">
     The `wider-column` sets the minimum width of the table (sum of the total width of all columns) to 80rem.
@@ -114,5 +118,6 @@ You can wrap your markdown table in one of the following `div`s.
     **Example**
 
     ![Wider overflow table example](/img/rafiki-overflow-wider.png)
+
   </TabItem>
 </Tabs>

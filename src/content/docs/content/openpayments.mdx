@@ -2,19 +2,23 @@
 title: Open Payments style guide
 ---
 
-import { Card, Steps } from '@astrojs/starlight/components';
+import { Card, Steps } from '@astrojs/starlight/components'
 
 <Card title="Before committing changes" icon="star">
 
 1. Your PR title must contain the appropriate prefix (`docs:`).
 2. Run the following command in the `doc` directory:
-    ```
-    npx prettier . --write
-    ```
-    You can also try the following. It might work, or you might get an error.
-    ```
-    pnpm format
-    ```
+
+   ```
+   npx prettier . --write
+   ```
+
+   You can also try the following. It might work, or you might get an error.
+
+   ```
+   pnpm format
+   ```
+
 </Card>
 
 <Card title="After a Starlight upgrade to open-payments" icon="star">
@@ -67,20 +71,20 @@ Use the `:::tip` aside and briefly describe the purpose of the guide. Don't repe
 
 ### Overview
 
-Include some general information about the guide that helps to set up the subsequent Scenario section. 
+Include some general information about the guide that helps to set up the subsequent Scenario section.
 
-For example, in *Set up recurring payments with a fixed incoming amount*, we use a "subscription payment" as a general example of a recurring transfer of money of the same amount. Then, the scenario section uses "streaming service" as a specific kind of recurring subscription.
+For example, in _Set up recurring payments with a fixed incoming amount_, we use a "subscription payment" as a general example of a recurring transfer of money of the same amount. Then, the scenario section uses "streaming service" as a specific kind of recurring subscription.
 
 ### Scenario
 
-Describe the specific scenario the guide will cover. Include values for things like currency type, amount, recurrence schedule, etc. The guide's steps must follow what you describe here. 
+Describe the specific scenario the guide will cover. Include values for things like currency type, amount, recurrence schedule, etc. The guide's steps must follow what you describe here.
 
 List and define the parties involved in the scenario. One will always be the reader of the guide and the role they're assuming (developer, platform operator, etc.). Other parties could include merchant/retailer, service provider, customer, sender, recipient.
 
 Bold the party name and use a (bold) colon. Then include the description in normal text. For example:
 
-* **Retailer:** the athletics company
-* **Developer:** you, as the developer working on the client appropriate
+- **Retailer:** the athletics company
+- **Developer:** you, as the developer working on the client appropriate
 
 :::note
 This was a style that naturally came about, not one that was discussed. If you find guides that don't follow this format, update them. Not a high priority.
@@ -95,40 +99,42 @@ Provide a bulleted list of every API that's used in the guide. Prefix each API w
 ```
 <Badge text="GET" variant="note" />
 ```
+
 ```
 <Badge text="POST" variant="success" />
 ```
+
 ```
 <Badge text="DELETE" variant="danger" />
 ```
 
-If the guide mentions optional APIs, exclude them from this list. This list is what's *required*.
+If the guide mentions optional APIs, exclude them from this list. This list is what's _required_.
 
 ### Steps
 
-* [The steps themselves](#the-steps-themselves)
-* [Step overview](#step-overview)
-* [Code for requests](#code-for-requests)
-* [Code for responses](#code-for-responses)
+- [The steps themselves](#the-steps-themselves)
+- [Step overview](#step-overview)
+- [Code for requests](#code-for-requests)
+- [Code for responses](#code-for-responses)
 
 #### The steps themselves
 
-* Each step number is a heading (usually an H3).
-* Each step starts with a verb (no -ing suffix).
-* Use existing guides as a template for how to word the steps. For example, *Request the creation of an incoming payment resource* is wordy, but it clearly indicates we're talking about a resource, not a grant.
+- Each step number is a heading (usually an H3).
+- Each step starts with a verb (no -ing suffix).
+- Use existing guides as a template for how to word the steps. For example, _Request the creation of an incoming payment resource_ is wordy, but it clearly indicates we're talking about a resource, not a grant.
 
 #### Step overview
 
-* Each step should have some kind of explanation about its purpose. 
-* If you're instructing someone to call an API, prefix the API name with the appropriate Badge component (see [Endpoints](#endpoints)) and relative-link the name of the API to its page. If you're only mentioning an API, exclude a Badge or link.
+- Each step should have some kind of explanation about its purpose.
+- If you're instructing someone to call an API, prefix the API name with the appropriate Badge component (see [Endpoints](#endpoints)) and relative-link the name of the API to its page. If you're only mentioning an API, exclude a Badge or link.
 
 #### Code for requests
 
 Request snippets should come from a developer. If the developer is nice enough to add the snippets to the doc, review the markdown to make sure it's formatted correctly.
 
-* Each step should use a synced Tabs component (`<Tabs syncKey="lang">`).
-* Each language should have its own tab and include the [lang's icon](https://starlight.astro.build/reference/icons/#all-icons), if available.
-* Each code block should specify the lang and use the `wrap` property (` ```ts wrap `).
+- Each step should use a synced Tabs component (`<Tabs syncKey="lang">`).
+- Each language should have its own tab and include the [lang's icon](https://starlight.astro.build/reference/icons/#all-icons), if available.
+- Each code block should specify the lang and use the `wrap` property (` ```ts wrap `).
 
 Update each snippet, when possible, to be specific to your scenario. Look at other guides for examples. You might need a developer to help with parts of it.
 
@@ -143,29 +149,32 @@ Don't add blank lines between code in a block. It causes errors.
 We should be able to create the API responses by using the snippets and our API docs.
 
 When formatting the response:
-* Hide the response in a `<detail>` element.
-* Use `Example response` (or similar) as the `summary`.
-* Include a descriptive sentence or two about where the response is coming from. 
-* Use ` ```json wrap ` in the code block.
+
+- Hide the response in a `<detail>` element.
+- Use `Example response` (or similar) as the `summary`.
+- Include a descriptive sentence or two about where the response is coming from.
+- Use ` ```json wrap ` in the code block.
 
 :::note
 Don't add blank lines between code in a block. It causes errors.
 :::
 
 When revising the response's values:
-* Make sure they're specific to your scenario.
-* Pay attention to timestamp values (e.g., `createdAt`). They should incrementally increase as the steps progress.
-* Fully or partially abbreviate long values that aren't needed to understand the flow. We commonly use this for access tokens, UUIDs, ilp addresses, and shared secrets. Add an inline comment to the end of the line describing what the value represents.
-  * If abbreviating the whole value, use `"..."`.
+
+- Make sure they're specific to your scenario.
+- Pay attention to timestamp values (e.g., `createdAt`). They should incrementally increase as the steps progress.
+- Fully or partially abbreviate long values that aren't needed to understand the flow. We commonly use this for access tokens, UUIDs, ilp addresses, and shared secrets. Add an inline comment to the end of the line describing what the value represents.
+  - If abbreviating the whole value, use `"..."`.
     ```json wrap title="Example"
     {
       "access_token": {
-        "value": "...", //access token value for incoming payment grant
+        "value": "..." //access token value for incoming payment grant
       }
     }
-  * If abbreviating part of a value, use `{...}`.
+    ```
+  - If abbreviating part of a value, use `{...}`.
     ```json wrap title="Example"
     {
-      "manage": "https://auth.happylifebank.example.com/token/{...}", // management uri for access token
+      "manage": "https://auth.happylifebank.example.com/token/{...}" // management uri for access token
     }
     ```

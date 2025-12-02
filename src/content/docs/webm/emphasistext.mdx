@@ -22,12 +22,12 @@ import EmphasisText from '/src/components/docs/EmphasisText.astro'
 Use the `<EmphasisText>` component within your content like so:
 
 ```js
-<EmphasisText text='This text has a lot of emphasis.' />
+<EmphasisText text="This text has a lot of emphasis." />
 ```
 
 ## Working example
 
-<EmphasisText text='This right here is emphasized text.' />
+<EmphasisText text="This right here is emphasized text." />
 
 I'm adding more words here so that there's something between the emphasized text and the next H2.
 
@@ -39,7 +39,7 @@ As of May 2025, the Web Monetization docs are the only docs set up to use this c
 1. Locate the `src/components/docs` folder. If `docs` doesn't exist, create it.
 2. Create a file named `EmphasisText.astro`. 
 3. Add the following to the file and save.
-    ```js
+    ```astro
     ---
     const { text } = Astro.props;
     ---
@@ -53,6 +53,7 @@ As of May 2025, the Web Monetization docs are the only docs set up to use this c
         }
     </style>
     ```
+
 4. Restart your local environment if it doesn't seem to be working.
 
 </Steps>

@@ -2,9 +2,9 @@
 title: RemoveOverview
 ---
 
-import { FileTree } from '@astrojs/starlight/components';
+import { FileTree } from '@astrojs/starlight/components'
 
-This component allows you to hide the *Overview* heading from a page's table of contents.
+This component allows you to hide the _Overview_ heading from a page's table of contents.
 
 ## Usage
 
@@ -16,17 +16,20 @@ This component is added on a per-site basis. It's not technically a shared compo
 If you can't find `PageSidebar.astro`, it may not have been added to the site yet. Just let Sarah know.
 :::
 
+{/* prettier-ignore */}
 <FileTree>
-- src
-    - components
-        - docs
+- src 
+    - components 
+        - docs 
             - **PageSidebar.astro**
 </FileTree>
 
 Enter the path to the offending page in the `removeOverview` section like so:
 
+{/* prettier-ignore */}
 ```js
 const removeOverview = [
-    'docs/resources/glossary',
-    'docs/payments/send-receive',
+    'docs/resources/glossary', 
+    'docs/payments/send-receive'
+    ]
 ```

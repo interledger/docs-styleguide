@@ -2,14 +2,14 @@
 title: Disclosure
 ---
 
-import { Disclosure } from "@interledger/docs-design-system";
-import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Disclosure } from '@interledger/docs-design-system'
+import { Tabs, TabItem } from '@astrojs/starlight/components'
 
 :::caution
 In October 2024, we decided to move away from using the Disclosure component in favor of the standard HTML [details element](/classes/details). Please use `<details>` going forward. We may deprecate the Disclosure component in the future.
 :::
 
-This component allows you to show/hide content within a collapsible container. 
+This component allows you to show/hide content within a collapsible container.
 
 To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
@@ -18,19 +18,19 @@ To use the component, the page must be in `.mdx` format. Change the format from 
 Import the `Disclosure` component like so:
 
 ```jsx
-import { Disclosure } from "@interledger/docs-design-system";
+import { Disclosure } from '@interledger/docs-design-system'
 ```
 
 Use the `<Disclosure>` component within your content like so:
 
 ```jsx
 <Disclosure toggleText="Show code snippets">
-   <!-- Your content, can be markup or markdown -->
+  <!-- Your content, can be markup or markdown -->
 </Disclosure>
 ```
 
 :::note[Single vs double quotes]
-In general, the `toggleText` can be wrapped in single or double quotes. However, if the content contains punctuation, you must wrap the content in double quotes to avoid errors. 
+In general, the `toggleText` can be wrapped in single or double quotes. However, if the content contains punctuation, you must wrap the content in double quotes to avoid errors.
 :::
 
 You can nest the Disclosure component with the built-in Starlight [`<Tabs>`](https://starlight.astro.build/guides/components#tabs) component. This is helpful when displaying multiple related code snippets.

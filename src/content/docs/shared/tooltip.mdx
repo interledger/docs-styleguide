@@ -2,16 +2,17 @@
 title: Tooltip
 ---
 
-import { Tooltip } from "@interledger/docs-design-system";
+import { Tooltip } from '@interledger/docs-design-system'
 
-This component allows you add a small, stylized question mark element that, when hovered over, displays a text box. 
+This component allows you add a small, stylized question mark element that, when hovered over, displays a text box.
 
 :::note[Considerations]
-* Tooltip text should be short. If the text becomes too long, consider linking to a page or glossary term instead.
-* Longer tooltips that appear near the top of the page might be cut off by the UI.
-:::
 
-The component is built to be accessible in accordance to the guidance from [WAI Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/). 
+- Tooltip text should be short. If the text becomes too long, consider linking to a page or glossary term instead.
+- Longer tooltips that appear near the top of the page might be cut off by the UI.
+  :::
+
+The component is built to be accessible in accordance to the guidance from [WAI Tooltip Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tooltip/).
 
 To use the component, the page must be in `.mdx` format. Change the format from `.md` to `.mdx` if necessary. All your existing markdown will still be supported without issue.
 
@@ -20,7 +21,7 @@ To use the component, the page must be in `.mdx` format. Change the format from 
 Import the `Tooltip` component like so:
 
 ```jsx
-import { Tooltip } from "@interledger/docs-design-system";
+import { Tooltip } from '@interledger/docs-design-system'
 ```
 
 The component can be used within your content in a few ways. Technically, you can add the following in the location you want the question mark element to appear:
@@ -41,8 +42,9 @@ In this next example, the question mark element will appear between the word _to
 
 ```jsx title="Example 2"
 <Tooltip content="This appears on hover">
-  <a href="/URL">This is the content</a> that the tooltip relates to 
-</Tooltip>.
+  <a href="/URL">This is the content</a> that the tooltip relates to
+</Tooltip>
+.
 ```
 
 ## Working examples

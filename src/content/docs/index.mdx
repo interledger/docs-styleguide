@@ -3,8 +3,8 @@ title: Interledger documentation style guide
 description: Style guide for Interledger's documentation sites
 ---
 
-import { CodeBlock } from "@interledger/docs-design-system";
-import { Card } from "@astrojs/starlight/components";
+import { CodeBlock } from '@interledger/docs-design-system'
+import { Card } from '@astrojs/starlight/components'
 
 <Card title="After a Starlight upgrade to docs-styleguide" icon="star">
 ```
@@ -22,10 +22,10 @@ npm i @interledger/docs-design-system
 
 Feel free to install with the package manager of your choice.
 
-Because we're using Starlight, content must be authored in Markdown or MDX. 
+Because we're using Starlight, content must be authored in Markdown or MDX.
 
 :::caution[Best practice]
-Create new pages as MDX files. 
+Create new pages as MDX files.
 :::
 
 Components can be written in JSX, and imported into MDX files. Documentation pages can't be `.astro` files. You are free to create Astro pages in the `/pages` folder though.
@@ -47,12 +47,12 @@ export default defineConfig({
   integrations: [
     starlight({
       customCss: [
-        "./node_modules/@interledger/docs-design-system/src/styles/teal-theme.css",
-        "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
-      ],
-    }),
-  ],
-});
+        './node_modules/@interledger/docs-design-system/src/styles/teal-theme.css',
+        './node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css'
+      ]
+    })
+  ]
+})
 ```
 
 When we first rolled out Starlight, we used different themes (specifically colors) across doc sets. That's why you might see `orange-theme`, for example. Now we use the teal theme pretty much across the board to promote consistency between doc sets. We also use `ilf-docs`. If we need something for a specific doc set, there could be an additional CSS file.
@@ -70,7 +70,7 @@ We also have a number of documentation-specific helper components that can be im
 If you are using multiple shared components on a single page, you can import them like so:
 
 ```jsx
-import { CodeBlock, LinkOut } from "@interledger/docs-design-system";
+import { CodeBlock, LinkOut } from '@interledger/docs-design-system'
 ```
 
 For more information about importing things in JavaScript, refer to [import on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import).
@@ -86,13 +86,13 @@ export default defineConfig({
   integrations: [
     starlight({
       customCss: [
-        "./node_modules/@interledger/docs-design-system/src/styles/teal-theme.css",
-        "./node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css",
-        "./src/styles/rafiki.css",
-      ],
-    }),
-  ],
-});
+        './node_modules/@interledger/docs-design-system/src/styles/teal-theme.css',
+        './node_modules/@interledger/docs-design-system/src/styles/ilf-docs.css',
+        './src/styles/rafiki.css'
+      ]
+    })
+  ]
+})
 ```
 
 Some of our sites also have custom pages, like [Web Monetization](https://webmonetization.org) or the [Interledger Developer Portal](https://interledger.org/developers).
@@ -107,24 +107,27 @@ This is a very generic starter sample layout that you can work off from:
 
 ```astro
 ---
-import '../styles/dinosaurland.css';
+import '../styles/dinosaurland.css'
 
 interface Props {
-	title: string;
-	description?: string;
+  title: string
+  description?: string
 }
 
-const { title, description } = Astro.props;
+const { title, description } = Astro.props
 ---
 
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="author" content="Interledger Foundation" />
-    <meta name="description" content={description ? description : 'Making
-    payments as easy as sending an email'}>
+    <meta
+      name="description"
+      content={description
+        ? description
+        : 'Making payments as easy as sending an email'}
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content="{Astro.generator}" />
     <title>{title ? `${title} | Interledger` : 'Interledger'}</title>
@@ -139,7 +142,7 @@ const { title, description } = Astro.props;
 
 </CodeBlock>
 
-It had been possible to [override the default Starlight components](https://starlight.astro.build/guides/overriding-components/) since v0.11.0, and most of our documentation sites implement this for our site header. This is because the default search bar takes up too much space for our aesthetic liking. 乁 ⁠(⁠ ⁠•⁠_⁠•⁠ ⁠)⁠ ㄏ
+It had been possible to [override the default Starlight components](https://starlight.astro.build/guides/overriding-components/) since v0.11.0, and most of our documentation sites implement this for our site header. This is because the default search bar takes up too much space for our aesthetic liking. 乁 ⁠(⁠ ⁠•⁠_⁠•⁠ ⁠)⁠ ㄏ
 
 Although we have contemplated making this a shared component, each site header is different enough that we've decided to leave it up to each individual site to handle. Consult the documentation for how this works.
 
@@ -149,14 +152,15 @@ We want to keep some other UI components that come with the default header, so t
 
 ```astro
 ---
-import type { Props } from '@astrojs/starlight/props';
-import Search from "@astrojs/starlight/components/Search.astro";
-import ThemeSelect from "@astrojs/starlight/components/ThemeSelect.astro";
-import SocialIcons from "@astrojs/starlight/components/SocialIcons.astro";
+import type { Props } from '@astrojs/starlight/props'
+import Search from '@astrojs/starlight/components/Search.astro'
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro'
+import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro'
 ---
+
 <div class="header sl-flex">
   <a href="/" class="site-logo">
-    <img src="/img/logo.svg" alt="Rafiki logo">
+    <img src="/img/logo.svg" alt="Rafiki logo" />
   </a>
   <div class="secondary-wrap">
     <Search {...Astro.props} />

@@ -2,15 +2,16 @@
 title: Starlight components and misc
 ---
 
-import { Tabs, TabItem } from '@astrojs/starlight/components';
-import { CodeBlock } from "@interledger/docs-design-system";
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+import { CodeBlock } from '@interledger/docs-design-system'
 
 ## Components
+
 Starlight offers a number of native components that we can use to style pages. The [Components](https://starlight.astro.build/components/using-components/) section in their docs outline how to use each one, though a few we commonly use are listed here.
 
-* [Asides](https://starlight.astro.build/components/asides/)
-* [Badges](https://starlight.astro.build/components/badges/)
-* [Tabs](https://starlight.astro.build/components/tabs/)
+- [Asides](https://starlight.astro.build/components/asides/)
+- [Badges](https://starlight.astro.build/components/badges/)
+- [Tabs](https://starlight.astro.build/components/tabs/)
 
 If a component is listed in their doc, but you get an error when trying to use it, we may need to upgrade Starlight.
 
@@ -18,10 +19,10 @@ If a component is listed in their doc, but you get an error when trying to use i
 
 If you use badges to call out a particular REST API method, use the variant that most closely matches what appears for OpenAPIs in Swagger.
 
-* GET - `variant="note"` (blue)
-* POST - `variant="success"` (green)
-* PUT - `variant="caution"` (yellow)
-* DELETE - `variant="danger"` (red)
+- GET - `variant="note"` (blue)
+- POST - `variant="success"` (green)
+- PUT - `variant="caution"` (yellow)
+- DELETE - `variant="danger"` (red)
 
 ### Code blocks
 
@@ -53,7 +54,7 @@ We've chosen to keep our in-house `CodeBlock` component because we like the styl
 I mean, at least it works by default now, right?
 ```
 
-````js
+````
 ```js title="Starlight default title style"
 I mean, at least it works by default now, right?
 ```
@@ -71,9 +72,9 @@ See the [Frames and titles](https://starlight.astro.build/guides/authoring-conte
 
 ### Tabs
 
-You can keep multiple tab groups in a page synchronized by using `syncKey`. 
+You can keep multiple tab groups in a page synchronized by using `syncKey`.
 
-All tabs on a page with the same `syncKey` value will display the same active label. This is especially helpful when documenting programming languages. Note that the synching only persists on the page, not across pages. 
+All tabs on a page with the same `syncKey` value will display the same active label. This is especially helpful when documenting programming languages. Note that the synching only persists on the page, not across pages.
 
 Add an identical `syncKey` property to each `<TabItem>`.
 
@@ -113,9 +114,9 @@ You can also [add icons](https://starlight.astro.build/components/tabs/#add-icon
 
 ### Style a single page with CSS
 
-If there's a style you need to apply to an entire page, to every instance of an element, you can do so in the frontmatter. 
+If there's a style you need to apply to an entire page, to every instance of an element, you can do so in the frontmatter.
 
-For example, the tables in the [Sequence diagram style guide](/content/sequence-diagrams) were behaving poorly. Text aligned itself to `baseline` which pushed the content in the last row outside the table's bounds. Also, some code that needed to appear on a single line was breaking. 
+For example, the tables in the [Sequence diagram style guide](/content/sequence-diagrams) were behaving poorly. Text aligned itself to `baseline` which pushed the content in the last row outside the table's bounds. Also, some code that needed to appear on a single line was breaking.
 
 Instead of adding styles in each table in the page, the styles were applied to the page itself like so:
 
