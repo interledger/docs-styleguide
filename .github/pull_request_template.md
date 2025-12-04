@@ -13,4 +13,4 @@ Link issues here -  using `fixes #number`
 
 ## Checklist
 
-- [ ] I have run `bun run format` (or `bun run lint`) to check formatting and linting
+- [ ] I have run `pnpm format` (or `pnpm lint`) to check formatting and linting
