@@ -72,6 +72,12 @@ export default defineConfig({
           autogenerate: {
             directory: 'webm'
           }
+        },
+        {
+          label: 'Vale',
+          autogenerate: {
+            directory: 'vale'
+          }
         }
       ]
     })

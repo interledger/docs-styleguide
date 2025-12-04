@@ -1,0 +1,69 @@
+---
+title: Vale overview
+---
+
+[Vale](https://vale.sh/docs) is an open source command line tool that checks documentation against style and vocabulary rules, and alerts you when there's issues. We use Vale such that alerts appear in VS Code.
+
+<img
+  src="/img/vale-vscode-problems.png"
+  alt="Example of Vale errors in the VS Code Problems panel"
+  border="1px"
+/>
+
+Vale's docs point out that "Vale focuses on ensuring consistency across multiple authors (according to customizable guidelines) rather than the general "correctness" of a single author's work."
+
+## How we use Vale
+
+Vale comes with a number of default styles and rules, some of which are overridden by our own styles and rules. We currently use the same set of customizations across all our doc projects; however, Vale can support project-specific customizations.
+
+### Alerts
+
+Vale supports three levels of alerts: suggestion, warning, and error. These levels can be tied to CI builds, but we don't do that (yet). When we do, anything flagged at the error level will cause the build to fail.
+
+We only use suggestion and warning at this time. Both levels can be ignored if appropriate and won't cause anything to break.
+
+### Spelling and terminology
+
+Vale checks for spelling errors based on [this open source dictionary](https://github.com/errata-ai/en_US-web) for American English by default. When an error is flagged, you'll see it tagged as `Vale.Spelling` in the VS Code Problem panel.
+
+We have our own vocabulary file for terms that Vale would otherwise flag as errors (like Interledger). This file is in `/vale/config/vocabularies/ilf/accept.txt`. Note that there's also a `reject.txt` but we haven't had a need to use it yet.
+
+Vale knows to use our vocabulary because it's defined in the `.vale.ini` file at the root of the `docs-styleguide` project.
+
+### Styles
+
+Style rules are more granular and can be very specific. They enforce particular writing constructs. Each style has its own `.yml` file in `/vale/docStyles` that describes what Vale should look for, the message to show the user (us), and how to handle a failed check (the alert level).
+
+We tested a few style packages provided by Vale and found that each package had a few styles we wanted to implement, but otherwise were N/A or too restrictive.
+
+We decided to take the style files that applied to our work and manually create whatever else we need.
+
+Vale knows to use `docStyles` because it's defined in the `.vale.ini` file at the root of the `docs-styleguide` project.
+
+#### Example style file format
+
+```yml title="Example style file"
+extends: existence
+message: "Do not start a paragraph with a 'but'."
+level: warning
+scope: paragraph
+action:
+	name: remove
+tokens:
+	- ^But
+```
+
+- `extend`: `existence` is the most general extension point. It looks for the existence of particular tokens. For comparison, another extension point is `substitution`, which associates a string with a preferred form.
+- `message` is what's shown in the UI (in the case of VS Code) or CLI and is used to describe the issue to the user.
+- `level` defines the severity of the rule. Valid values are `suggestion`, `warning`, and `error`.
+- `scope` defines the scope of the rule. In this example, the rule is applied to each paragraph. Other options include `heading` and `list`.
+- The `action` allows us to define a dynamic fix. In VS Code, for example, the UI would show a “Quick Fix” option that would remove an instance of But at the beginning of a sentence rather than having to click into the sentence and delete it manually. **You still need to pay attention to the doc itself.** In this example, removing “But” from the start of a sentence would mean the following word would need to be manually capitalized (because it's now at the start of the sentence).
+- In our example, `tokens` contains the regex pattern the rule will look for. The carat `^` tells the rule to match what follows at the start of a line. In other words, “Look for the word But at the start of each line”.
+
+## Updating vocab or styles
+
+When we want to add, remove, or change vocab/styles, it's no different than pushing/pulling any other change through GitHub. However, since we don't work in the `docs-styleguide` repo often, we should tell each other when there's an update to pull.
+
+## Common issues
+
+TBD... we may have solved our most common of commonest issues.
