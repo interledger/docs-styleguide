@@ -1,0 +1,26 @@
+---
+title: Upgrade Vale
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components'
+
+As of December 2025, we're using Vale v3.13.
+
+1. Using CLI, check Vale's version. Try `vale -v` and if that doesn't work, try `vale -version`.
+
+2. Reinstall Vale. _It might not matter where you run the command from_, but if you want, you can go into `.../docs-styleguide/vale` in CLI.
+   <Tabs>
+     <TabItem label="Mac">```shell $ brew reinstall vale ```</TabItem>
+     <TabItem label="Windows">
+       ```shell > choco uninstall vale > choco install vale ```
+     </TabItem>
+     <TabItem label="Linux">
+       ```shell $ snap remove vale $ snap install vale ```
+     </TabItem>
+   </Tabs>
+3. Using CLI, go into `.../docs-styleguide/vale` if you aren't there already. Run:
+   ```shell
+   vale sync
+   ```
+4. Check that the version number is updated.
+5. Get latest from the `docs-styleguide` project. This step isn't required to perform the upgrade but is a best practice.
