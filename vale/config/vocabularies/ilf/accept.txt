@@ -3,36 +3,47 @@ amountSent
 APIs
 API's
 ASEs
-Astro
+ASE's
+astro
 blocklist
 [Cc]onfig
 CSPs
+[Dd]eliverable
+[Dd]eliverables
+[Dd]iscoverability
 [Dd]iv
 Fedwire
 [Ff]rontmatter
 GateHub
 [Hh]ackathon
+[Hh]ackathons
 href
 HTTP
 [Ii]frame
+incomingAmount
 incomingPayment
 [Ii]nterledger
 Interledger Foundation
 Interledger Wallet
-Web Monetization
-Web Monetization Playground
-Monetization's
 micropayment
+Monetization's
+MSISDN
+MSISDNs
 [Nn]amespace
+OAuth
 onboarding
 paymentPointer
 Pino
 Postgres
 repo
-[Rr]evshare
 [Rr]afiki
+[Rr]evshare
 SDKs
+SDK's
 Shiki
 [Ss]ubfolder
 [Tt]estnet
 [Tt]ooltip
+URI's
+Web Monetization
+Web Monetization Playground
