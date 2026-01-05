@@ -4,6 +4,21 @@ title: Web Monetization style guide
 
 import { Card } from '@astrojs/starlight/components'
 
+<Card title="Before committing changes" icon="star">
+
+:::note[Formatting commands]
+As of 05 January 2026, the PRs implementing the format and lint commands are failing/not merged. We don't need to run the commands until the PRs are merged.
+:::
+
+1. Ensure your PR title contains the appropriate prefix (`docs:`).
+2. Run the following commands in the `doc` directory and fix any errors:
+   ```
+   bun run format
+   bun run lint
+   ```
+
+</Card>
+
 <Card title="After a Starlight upgrade to webmonetization" icon="star">
 ```
 cd <to project folder>
@@ -36,7 +51,7 @@ Don't use account servicing entity/ASE in the Web Monetization docs. Use wallet/
 
 ## Payment pointer vs wallet address
 
-Payment pointer and wallet address are not synonyms. Refer to both when appropriate.
+Payment pointer and wallet address aren't synonyms. Refer to both when appropriate.
 
 ## Spellings
 
@@ -46,6 +61,6 @@ We're a US-based 501(c)(3). Use the US spelling of monetization, with a z rather
 
 ### web monetize
 
-If we follow standard US grammar rules, then web monetize and its other forms (e.g., web monetized) should probably be hyphenated.
+If we follow standard US grammar rules, then web monetize and its other forms (for example, web monetized) should probably be hyphenated.
 
 In the past, I found that the term was used so frequently that the hyphens were visually distracting. I made a style decision to drop the hyphens. We can revisit this decision.
