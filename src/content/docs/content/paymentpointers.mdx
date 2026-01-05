@@ -4,6 +4,17 @@ title: Paymentpointers.org style guide
 
 import { Card } from '@astrojs/starlight/components'
 
+<Card title="Before committing changes" icon="star">
+
+1. Ensure your PR title contains the appropriate prefix (`docs:`).
+2. Run the following commands in the `doc` directory and fix any errors:
+    ```
+    bun run format
+    bun run lint
+    ```
+
+</Card>
+
 <Card title="After a Starlight upgrade to paymentpointers" icon="star">
 ```
 cd <to project folder>

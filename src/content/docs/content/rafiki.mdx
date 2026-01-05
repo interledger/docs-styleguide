@@ -6,18 +6,13 @@ import { Card, Tabs, TabItem } from '@astrojs/starlight/components'
 
 <Card title="Before committing changes" icon="star">
 
-1.  Your PR title must contain the appropriate prefix (`docs:`).
+1.  Ensure your PR title contains the appropriate prefix (`docs:`).
 
-2.  Run the following command in the `/packages/documentation` directory:
-
-    ```
-    npx prettier . --write
-    ```
-
-    You can also try the following. It might work, or you might get an error.
+2.  Run the following commands in the `/packages/documentation` directory and fix any errors:
 
     ```
     pnpm format
+    pnpm lint
     ```
 
 </Card>

@@ -6,18 +6,12 @@ import { Card, Steps } from '@astrojs/starlight/components'
 
 <Card title="Before committing changes" icon="star">
 
-1. Your PR title must contain the appropriate prefix (`docs:`).
-2. Run the following command in the `doc` directory:
-
-   ```
-   npx prettier . --write
-   ```
-
-   You can also try the following. It might work, or you might get an error.
-
-   ```
-   pnpm format
-   ```
+1. Ensure your PR title contains the appropriate prefix (`[DOCS]`).
+2. Run the following commands in the `doc` directory and fix any errors:
+    ```
+    pnpm format
+    pnpm lint
+    ```
 
 </Card>
 
@@ -67,13 +61,13 @@ The following sections, at minimum, should be included in all Open Payments deve
 
 ### Summary
 
-Use the `:::tip` aside and briefly describe the purpose of the guide. Don't repeat the page title.
+Use the `:::tip` aside and include a brief description of the guide's purpose. Don't repeat the page title.
 
 ### Overview
 
 Include some general information about the guide that helps to set up the subsequent Scenario section.
 
-For example, in _Set up recurring payments with a fixed incoming amount_, we use a "subscription payment" as a general example of a recurring transfer of money of the same amount. Then, the scenario section uses "streaming service" as a specific kind of recurring subscription.
+For example, in _Set up recurring payments with a fixed incoming amount_, we use a "subscription payment" as a general example of a recurring transfer of money of the same amount. Then, the scenario section uses "streaming service" as a specific type recurring subscription.
 
 ### Scenario
 
@@ -87,7 +81,7 @@ Bold the party name and use a (bold) colon. Then include the description in norm
 - **Developer:** you, as the developer working on the client appropriate
 
 :::note
-This was a style that naturally came about, not one that was discussed. If you find guides that don't follow this format, update them. Not a high priority.
+This was a style that came about organically, not one that was discussed. If you find guides that don't follow this format, update them. Not a high priority.
 :::
 
 Remember to refer to existing guides for examples.
@@ -125,7 +119,7 @@ If the guide mentions optional APIs, exclude them from this list. This list is w
 
 #### Step overview
 
-- Each step should have some kind of explanation about its purpose.
+- Each step should have some type of explanation about its purpose.
 - If you're instructing someone to call an API, prefix the API name with the appropriate Badge component (see [Endpoints](#endpoints)) and relative-link the name of the API to its page. If you're only mentioning an API, exclude a Badge or link.
 
 #### Code for requests
@@ -162,7 +156,7 @@ Don't add blank lines between code in a block. It causes errors.
 When revising the response's values:
 
 - Make sure they're specific to your scenario.
-- Pay attention to timestamp values (e.g., `createdAt`). They should incrementally increase as the steps progress.
+- Pay attention to timestamp values (for example, `createdAt`). They should incrementally increase as the steps progress.
 - Fully or partially abbreviate long values that aren't needed to understand the flow. We commonly use this for access tokens, UUIDs, ilp addresses, and shared secrets. Add an inline comment to the end of the line describing what the value represents.
   - If abbreviating the whole value, use `"..."`.
     ```json wrap title="Example"
