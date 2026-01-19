@@ -1,11 +1,12 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "docs-styleguide",
       "dependencies": {
         "@astrojs/starlight": "^0.36.2",
-        "@interledger/docs-design-system": "^0.10.3",
+        "@interledger/docs-design-system": "^0.11.0",
         "astro": "^5.15.9",
         "rehype-mathjax": "^7.1.0",
         "remark-math": "^6.0.0",
@@ -218,7 +219,7 @@
 
     "@img/sharp-win32-x64": ["@img/sharp-win32-x64@0.34.5", "", { "os": "win32", "cpu": "x64" }, "sha512-+29YMsqY2/9eFEiW93eqWnuLcWcufowXewwSNIT6UwZdUUCrM3oFjMWH/Z6/TMmb4hlFenmfAVbpWeup2jryCw=="],
 
-    "@interledger/docs-design-system": ["@interledger/docs-design-system@0.10.3", "", { "dependencies": { "mermaid": "^11.12.1" } }, "sha512-kQdpHUDqS3RWYrYuL6dunOG0h0alNZBNqh2n+J09LCiDxwz9/7aVvF8fCdo2gaTI8w+lcE9/CRnuEF7h26PLUA=="],
+    "@interledger/docs-design-system": ["@interledger/docs-design-system@0.11.0", "", { "dependencies": { "mermaid": "^11.12.1" } }, "sha512-gcHZEI7qnzu7O4e2DZiyQUfO+wkLQ7XB/y3igKB5Eow2+/kKTMUJFI2Y277Kw2imhqD5mBBtGFOOiahy6y0qkA=="],
 
     "@jridgewell/sourcemap-codec": ["@jridgewell/sourcemap-codec@1.5.5", "", {}, "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og=="],
 
