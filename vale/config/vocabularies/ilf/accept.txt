@@ -4,7 +4,7 @@ APIs
 API's
 ASEs
 ASE's
-astro
+[Aa]stro
 blocklist
 [Cc]onfig
 CSPs
@@ -34,6 +34,7 @@ OAuth
 paymentPointer
 Pino
 Postgres
+PostgreSQL
 repo
 [Rr]afiki
 [Rr]evshare
@@ -42,7 +43,9 @@ SDK's
 Shiki
 [Ss]ubfolder
 [Tt]estnet
+[Tt]igerbeetle
 [Tt]ooltip
 URI's
+Vale
 Web Monetization
 Web Monetization Playground

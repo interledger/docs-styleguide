@@ -21,6 +21,7 @@ exceptions:
   - CSV
   - DEBUG
   - DELETE
+  - DNS
   - DOM
   - DPI
   - EGG
@@ -52,6 +53,7 @@ exceptions:
   - MSISDN
   - MXN
   - NET
+  - NGINX
   - NOTE
   - NPM
   - NVDA
@@ -86,6 +88,7 @@ exceptions:
   - TODO
   - TSX
   - TTL
+  - TXT
   - UCT
   - UNIX
   - URI
