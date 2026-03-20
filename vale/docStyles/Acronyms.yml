@@ -13,6 +13,7 @@ exceptions:
   - ASE
   - ASP
   - CAD
+  - CDN
   - CHIPS
   - CLI
   - CPU
@@ -33,12 +34,14 @@ exceptions:
   - GPU
   - GTK
   - GUI
+  - HMAC
   - HTML
   - HTTP
   - HTTPS
   - IDE
   - ILF
   - ILP
+  - ISO
   - JAR
   - JSON
   - JSX
@@ -70,22 +73,28 @@ exceptions:
   - SDK
   - SGD
   - SHA
+  - SPSP
   - SQL
   - SSH
   - SSL
+  - STREAM
   - SVG
   - SWIFT
   - TBD
   - TCP
+  - TLS
   - TODO
   - TSX
+  - TTL
   - UCT
+  - UNIX
   - URI
   - URL
   - USA
   - USB
   - USD
   - UTF
+  - UUID
   - XML
   - XSS
   - YAML

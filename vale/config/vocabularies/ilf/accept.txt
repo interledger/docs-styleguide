@@ -30,7 +30,7 @@ Monetization's
 MSISDNs
 [Nn]amespace
 OAuth
-onboarding
+[Oo]nboarding
 paymentPointer
 Pino
 Postgres
