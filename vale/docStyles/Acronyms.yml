@@ -19,6 +19,7 @@ exceptions:
   - CSS
   - CSV
   - DEBUG
+  - DELETE
   - DOM
   - DPI
   - EGG
@@ -36,13 +37,16 @@ exceptions:
   - HTTP
   - HTTPS
   - IDE
+  - ILF
   - ILP
   - JAR
   - JSON
   - JSX
   - LESS
   - LLDB
+  - MDN
   - MDX
+  - MSISDN
   - MXN
   - NET
   - NOTE
@@ -55,6 +59,7 @@ exceptions:
   - PHP
   - PNPM
   - POST
+  - PUT
   - RAM
   - REST
   - REPL
@@ -64,6 +69,7 @@ exceptions:
   - SCSS
   - SDK
   - SGD
+  - SHA
   - SQL
   - SSH
   - SSL

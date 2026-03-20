@@ -27,7 +27,6 @@ Interledger Foundation
 Interledger Wallet
 micropayment
 Monetization's
-MSISDN
 MSISDNs
 [Nn]amespace
 OAuth

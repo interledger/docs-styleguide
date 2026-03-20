@@ -6,6 +6,7 @@ match: $sentence
 indicators:
   - ":"
 exceptions:
+  - API 
   - Azure
   - Certbot
   - CLI
@@ -15,13 +16,16 @@ exceptions:
   - FAQ
   - GraphQL
   - gRPC
+  - HTML
   - I
   - Interledger
   - Kratos
   - Kubernetes
   - Linux
   - macOS
+  - Markdown
   - Marketplace
+  - MDX
   - MongoDB
   - Nginx
   - Okta
@@ -30,7 +34,12 @@ exceptions:
   - Postgres
   - Rafiki
   - REPL
+  - REST
+  - REST API
+  - REST APIs
   - RSS
+  - SDK
+  - SHA
   - Studio
   - TigerBeetle
   - TypeScript
