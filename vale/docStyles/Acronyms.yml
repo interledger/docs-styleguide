@@ -13,6 +13,7 @@ exceptions:
   - ASE
   - ASP
   - CAD
+  - CDN
   - CHIPS
   - CLI
   - CPU
@@ -20,6 +21,7 @@ exceptions:
   - CSV
   - DEBUG
   - DELETE
+  - DNS
   - DOM
   - DPI
   - EGG
@@ -33,12 +35,14 @@ exceptions:
   - GPU
   - GTK
   - GUI
+  - HMAC
   - HTML
   - HTTP
   - HTTPS
   - IDE
   - ILF
   - ILP
+  - ISO
   - JAR
   - JSON
   - JSX
@@ -49,6 +53,7 @@ exceptions:
   - MSISDN
   - MXN
   - NET
+  - NGINX
   - NOTE
   - NPM
   - NVDA
@@ -70,22 +75,29 @@ exceptions:
   - SDK
   - SGD
   - SHA
+  - SPSP
   - SQL
   - SSH
   - SSL
+  - STREAM
   - SVG
   - SWIFT
   - TBD
   - TCP
+  - TLS
   - TODO
   - TSX
+  - TTL
+  - TXT
   - UCT
+  - UNIX
   - URI
   - URL
   - USA
   - USB
   - USD
   - UTF
+  - UUID
   - XML
   - XSS
   - YAML

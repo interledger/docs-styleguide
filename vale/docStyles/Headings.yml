@@ -6,14 +6,17 @@ match: $sentence
 indicators:
   - ":"
 exceptions:
-  - API 
+  - API
+  - Auth Admin API 
   - Azure
+  - Backend Admin API
   - Certbot
   - CLI
   - Cosmos
   - Docker
   - Emmet
   - FAQ
+  - Grant Negotiation and Authorization Protocol
   - GraphQL
   - gRPC
   - HTML
@@ -40,6 +43,7 @@ exceptions:
   - RSS
   - SDK
   - SHA
+  - Simple Payment Setup Protocol
   - Studio
   - TigerBeetle
   - TypeScript
