@@ -5,4 +5,4 @@ nonword: true
 level: suggestion
 tokens:
   - \b\d+(?:B|kB|MB|GB|TB)
-  - \b\d+(?:ns|ms|s|min|h|d)
+  - \b\d+(?:ns|ms|s|min|h)
