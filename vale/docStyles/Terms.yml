@@ -12,7 +12,6 @@ swap:
   "(?:mobile|smart) ?phone": phone
   "24/7": every day
   "chat ?bots?": chatbot(s)
-  above: preceding
   adaptor: adapter
   administrate: administer
   afterwards: afterward

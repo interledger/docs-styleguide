@@ -18,7 +18,6 @@ GateHub
 [Hh]ackathon
 [Hh]ackathons
 href
-HTTP
 [Ii]frame
 incomingAmount
 incomingPayment

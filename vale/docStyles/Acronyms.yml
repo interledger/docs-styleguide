@@ -38,7 +38,9 @@ exceptions:
   - HMAC
   - HTML
   - HTTP
+  - http
   - HTTPS
+  - https
   - IDE
   - ILF
   - ILP
@@ -96,6 +98,7 @@ exceptions:
   - USA
   - USB
   - USD
+  - UTC
   - UTF
   - UUID
   - XML
