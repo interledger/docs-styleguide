@@ -1,5 +1,4 @@
 allowlist
-amountSent
 APIs
 API's
 ASEs
@@ -12,6 +11,7 @@ CSPs
 [Dd]eliverables
 [Dd]iscoverability
 [Dd]iv
+Docker Compose
 Fedwire
 [Ff]rontmatter
 GateHub
@@ -19,8 +19,6 @@ GateHub
 [Hh]ackathons
 href
 [Ii]frame
-incomingAmount
-incomingPayment
 [Ii]nterledger
 Interledger Foundation
 Interledger Wallet
@@ -34,6 +32,7 @@ paymentPointer
 Pino
 Postgres
 PostgreSQL
+postgresql
 repo
 [Rr]afiki
 [Rr]evshare
@@ -42,7 +41,7 @@ SDK's
 Shiki
 [Ss]ubfolder
 [Tt]estnet
-[Tt]igerbeetle
+[Tt]igerBeetle
 [Tt]ooltip
 URI's
 Vale
