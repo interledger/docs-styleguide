@@ -12,6 +12,7 @@ exceptions:
   - ASCII
   - ASE
   - ASP
+  - AWS
   - CAD
   - CDN
   - CHIPS
@@ -60,6 +61,7 @@ exceptions:
   - NPM
   - NVDA
   - OSS
+  - OTEL
   - PATH
   - PDF
   - PEB
