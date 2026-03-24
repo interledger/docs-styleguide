@@ -30,7 +30,7 @@ OAuth
 [Oo]nboarding
 paymentPointer
 Pino
-Postgres
+[Pp]ostgres
 PostgreSQL
 postgresql
 repo
@@ -41,6 +41,7 @@ SDK's
 Shiki
 [Ss]ubfolder
 [Tt]estnet
+[Tt]igerbeetle
 [Tt]igerBeetle
 [Tt]ooltip
 URI's

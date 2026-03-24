@@ -6,11 +6,11 @@ action:
   name: replace
 swap:
   (?:e-mail|Email|E-mail): email
-  (?:extract|take away|eliminate): remove
   (?:in order to|as a means to): to
   (?:inform|let me know): tell
   (?:kill|terminate|abort): stop|exit|cancel|end
   (?:previous|prior) to: before
+  (?:take away|eliminate): remove
   (?:utilize|make use of): use
   a (?:large)? majority of: most
   a (?:large)? number of: many
