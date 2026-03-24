@@ -41,8 +41,8 @@ SDK's
 Shiki
 [Ss]ubfolder
 [Tt]estnet
-[Tt]igerbeetle
-[Tt]igerBeetle
+tigerbeetle
+TigerBeetle
 [Tt]ooltip
 URI's
 Vale
