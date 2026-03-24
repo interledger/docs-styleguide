@@ -30,9 +30,6 @@ OAuth
 [Oo]nboarding
 paymentPointer
 Pino
-[Pp]ostgres
-PostgreSQL
-postgresql
 repo
 [Rr]afiki
 [Rr]evshare
