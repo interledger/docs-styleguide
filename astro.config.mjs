@@ -51,39 +51,27 @@ export default defineConfig({
         },
         {
           label: 'Style guides',
-          autogenerate: {
-            directory: 'content'
-          }
+          items: [{ autogenerate: { directory: 'content' } }]
         },
         {
           label: 'Classes, styles, HTML, etc',
-          autogenerate: {
-            directory: 'classes'
-          }
+          items: [{ autogenerate: { directory: 'classes' } }]
         },
         {
           label: 'Shared Components',
-          autogenerate: {
-            directory: 'shared'
-          }
+          items: [{ autogenerate: { directory: 'shared' } }]
         },
         {
           label: 'Open Payments Components',
-          autogenerate: {
-            directory: 'oppm'
-          }
+          items: [{ autogenerate: { directory: 'oppm' } }]
         },
         {
           label: 'Web Monetization Components',
-          autogenerate: {
-            directory: 'webm'
-          }
+          items: [{ autogenerate: { directory: 'webm' } }]
         },
         {
           label: 'Vale',
-          autogenerate: {
-            directory: 'vale'
-          }
+          items: [{ autogenerate: { directory: 'vale' } }]
         }
       ]
     })
