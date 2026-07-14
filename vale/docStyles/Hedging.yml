@@ -4,18 +4,34 @@ ignorecase: true
 level: suggestion
 tokens:
   - ', so to speak'
+  - among the earliest
+  - among the most
   - appears to be
+  - as you might expect
+  - certainly
+  - clearly
   - could be
   - I assume
   - I would argue that
   - it appears that
   - it can be argued that
+  - it goes without saying
+  - it is worth noting
+  - it should be noted
+  - it's important to note
   - it's probable that
+  - it's worth mentioning
   - kind of
   - likely
   - may
   - might
+  - needless to say
   - not necessarily
+  - notably
+  - obviously
+  - of course
+  - one of the first
+  - one of the most
   - perhaps
   - possible
   - potentially
@@ -23,7 +39,12 @@ tokens:
   - probably
   - seems like
   - seems to be
+  - some of the earliest
+  - some of the most
   - sort of
+  - there is no doubt
   - to a certain degree
+  - undoubtedly
   - unlikely
   - usually
+  - without a doubt
