@@ -8,79 +8,121 @@ second: '(?:\b[A-Z][a-z]+ )+\(([A-Z]{3,5})\)'
 # ... with the exception of these:
 exceptions:
   - ACH
+  - AES
+  - AFL
+  - AID
+  - AIP
+  - ANSI
+  - APDU
   - API
   - ASCII
   - ASE
   - ASP
   - AWS
+  - BDK
   - CAD
   - CDN
+  - CDOL
   - CHIPS
   - CLI
+  - CMAC
   - CPU
+  - CSR
   - CSS
   - CSV
   - DEBUG
   - DELETE
+  - DGI
   - DNS
   - DOM
   - DPI
+  - DUKPT
+  - ECDSA
   - EGG
+  - EMV
   - EUR
   - FAQ
+  - FCI
   - GBP
   - GCC
   - GDB
   - GET
   - GNAP
+  - GNU
+  - GPG
   - GPU
   - GTK
   - GUI
   - HMAC
+  - HSM
   - HTML
   - HTTP
   - http
   - HTTPS
   - https
+  - ICC
   - IDE
+  - IIN
   - ILF
   - ILP
+  - IPEK
   - ISO
   - JAR
   - JSON
   - JSX
+  - KCV
+  - KSN
+  - KYB
   - LESS
   - LLDB
+  - LMK
+  - MAC
   - MDN
   - MDX
   - MSISDN
   - MXN
   - NET
+  - NFC
   - NGINX
   - NOTE
   - NPM
   - NVDA
   - OSS
   - OTEL
+  - PAN
   - PATH
+  - PCI
   - PDF
+  - PDOL
   - PEB
+  - PGP
   - PHP
+  - PIN
   - PNPM
+  - POS
   - POST
+  - PPSE
+  - PSP
   - PUT
   - RAM
   - REST
   - REPL
+  - RFC
+  - RID
+  - RKI
   - RSA
   - RSS
+  - SCA
   - SCM
   - SCSS
+  - SDAD
   - SDK
   - SGD
   - SHA
   - SPSP
   - SQL
+  - SRED
+  - SSAD
   - SSH
   - SSL
   - STREAM
@@ -89,6 +131,7 @@ exceptions:
   - TBD
   - TCP
   - TLS
+  - TMK
   - TODO
   - TSX
   - TTL
@@ -108,3 +151,4 @@ exceptions:
   - YAML
   - ZAR
   - ZIP
+  - ZMK
