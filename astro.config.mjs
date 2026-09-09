@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 import starlight from '@astrojs/starlight'
+import { unified } from '@astrojs/markdown-remark'
 import remarkMath from 'remark-math'
 import rehypeMathjax from 'rehype-mathjax'
 import starlightLinksValidator from 'starlight-links-validator'
@@ -9,8 +10,10 @@ import starlightFullViewMode from 'starlight-fullview-mode'
 export default defineConfig({
   site: 'https://interledger.net',
   markdown: {
-    remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeMathjax]
+    processor: unified({
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeMathjax]
+    })
   },
   integrations: [
     starlight({
