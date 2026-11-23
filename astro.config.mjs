@@ -9,6 +9,10 @@ import starlightFullViewMode from 'starlight-fullview-mode'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://interledger.net',
+  // Starlight 0.43 stopped setting this, so Astro's default ('attribute') applied.
+  // 'where' lets a component's scoped styles reach child components through
+  // `class`, such as the logo in Header.astro.
+  scopedStyleStrategy: 'where',
   markdown: {
     processor: unified({
       remarkPlugins: [remarkMath],
