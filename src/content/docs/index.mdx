@@ -124,9 +124,11 @@ const { title, description } = Astro.props
     <meta name="author" content="Interledger Foundation" />
     <meta
       name="description"
-      content={description
-        ? description
-        : 'Making payments as easy as sending an email'}
+      content={
+        description
+          ? description
+          : 'Making payments as easy as sending an email'
+      }
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content="{Astro.generator}" />
